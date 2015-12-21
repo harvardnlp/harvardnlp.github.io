@@ -4,8 +4,9 @@ title: About
 permalink: /about/
 ---
 
-{% for member in site.data.member %}
+{% for member in site.data.members %}
 
 {{member.name}}
+{{member.title}}
 
 {% endfor %}
