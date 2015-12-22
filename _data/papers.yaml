@@ -1,23 +1,35 @@
 - title: A Neural Attention Model for Abstractive Sentence Summarization 
-  authors : Alexander M. Rush, Sumit Chopra, and Jason Weston.
-  conference : Proceedings of EMNLP 2015. 
+  authors : Alexander M. Rush, Sumit Chopra, and Jason Weston
+  conference : Proceedings of EMNLP 2015.
+  pdf : http://arxiv.org/pdf/1509.00685.pdf
+  code : https://github.com/facebook/NAMAS
 
 - title: Character-Aware Neural Language Models 
-  authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush.
+  authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
   conference : Proceedings of AAAI 2016
+  code : https://github.com/yoonkim/lstm-char-cnn
+  pdf : http://arxiv.org/abs/1508.06615.pdf
 
 - title: Towards AI-Complete Question Answering A Set of Prerequisite Toy Tasks 
-  authors: Jason Weston, Antoine Bordes, Sumit Chopra, Tomas Mikolov, and Alexander M. Rush.
-
+  authors: Jason Weston, Antoine Bordes, Sumit Chopra, Tomas Mikolov, and Alexander M. Rush
+  pdf : http://arxiv.org/pdf/1502.05698.pdf
+  conference: Arxiv Preprint 
 - title: Learning Anaphoricity and Antecedent Ranking Features for Coreference Resolution 
-  authors : Sam Wiseman, Alexander M. Rush, Jason Weston, and Stuart M. Shieber.
+  authors : Sam Wiseman, Alexander M. Rush, Jason Weston, and Stuart M. Shieber
   conference : Proceedings of ACL 2015. 
+  pdf : people.seas.harvard.edu/~srush/acl15.pdf
+  code : https://github.com/swiseman/nn_coref
 
 - title: A Fast Variational Approach for Learning Markov Random Field Language Models 
-  authors: Yacine Jernite, Alexander M. Rush, and David Sontag.
+  authors: Yacine Jernite, Alexander M. Rush, and David Sontag
   conference : Proceedings of ICML 2015.
+  code : https://github.com/srush/MRF-LM/
+  slides : people.seas.harvard.edu/~srush/ICMLpresentationFinalNoAnimation.pdf
+  pdf : people.seas.harvard.edu/~srush/icml15.pdf
 
 - title: Transforming Dependencies into Phrase Structures 
-  authors: Lingpeng Kong, Alexander M. Rush, and Noah A. Smith.
+  authors: Lingpeng Kong, Alexander M. Rush, and Noah A. Smith
   conference: Proceedings of NAACL 2015. 
-
+  slides: naacl_poster.pdf
+  pdf: naacl15.pdf
+  code :  https://github.com/ikekonglp/PAD

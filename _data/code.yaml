@@ -1,0 +1,11 @@
+- link: https://github.com/harvardnlp/NAMAS
+  title: Abstractive Summarization
+
+- link: https://github.com/yoonkim/lstm-char-cnn
+  title: Character-Aware Language Modeling 
+
+- link: https://github.com/harvardnlp/sent-conv-torch
+  title: Convolutional Sentence Classification
+
+- link: https://github.com/ikekonglp/PAD 
+  title : Parse Converter
