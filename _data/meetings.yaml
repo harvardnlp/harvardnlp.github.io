@@ -1,48 +1,51 @@
 - term: Spring 2016
   meetings: 
     - date: Feb 3
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: Character-Aware Langauge Modeling (Kim et. al, 2016)
+      cite: DBLP:journals/corr/KimJSR15
+      presenter: Yoon
     - date: Feb 10
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: Read and Comprehend (Hermann, 2015), 
+      cite: readcomp
+      presenter: Mike
+    - date: 
+      paper: The Goldilocks Principle (Hill et al, 2016)
+      cite: 2015arXiv151102301H
+      presenter: 
     - date: Feb 17
-      paper: Test Paper
-      link: testlink
+      paper: Pixel Recurrent  (van den Oord et al, 2016)
+      cite: 2016arXiv160106759V
       presenter: Sasha
     - date: Mar 2
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: Alpha Go (Silver et al, 2016)
+      cite: alphago
+      presenter: Alex
     - date: Mar 9
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
-
+      paper: Semi-supervised Sequence Learning (Dai and Le, 2015)
+      cite: "DBLP:journals/corr/DaiL15a"
+      presenter: Jeffrey
     - date: Mar 23
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: Never-Ending Language Learning (Mitchell et al, 2015)
+      cite: "DBLP:conf/aaai/MitchellCHTBCMG15"
+      presenter: Saketh
     - date: Mar 30
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: Diverse Decoding (Li and Jurafsky, 2016)
+      cite: 2016arXiv160100372L
+      presenter: Yoon
     - date: Apr 6
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: Practical Variational Inference for Neural Networks (Grave, 2011)
+      cite: "DBLP:conf/nips/Graves11"
+      presenter: Sam
     - date: Apr 13
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: What to talk about and when? (Mei, 2015)
+      cite: 2015arXiv150900838M
+      presenter: Allen
     - date: Apr 20
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: Thesis Presentation
+      link: 
+      presenter: Keyon
     - date: Apr 27
-      paper: Test Paper
-      link: testlink
-      presenter: Sasha
+      paper: Talk
+      link:
+      presenter: 
 
