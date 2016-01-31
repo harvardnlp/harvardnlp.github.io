@@ -1,7 +1,7 @@
 - term: Spring 2016
   meetings: 
     - date: Feb 3
-      paper: Character-Aware Langauge Modeling (Kim et. al, 2016)
+      paper: Character-Aware Language Modeling (Kim et. al, 2016)
       cite: DBLP:journals/corr/KimJSR15
       presenter: Yoon
     - date: Feb 10
@@ -33,7 +33,7 @@
       cite: 2016arXiv160100372L
       presenter: Yoon
     - date: Apr 6
-      paper: Practical Variational Inference for Neural Networks (Grave, 2011)
+      paper: Practical Variational Inference for Neural Networks (Graves, 2011)
       cite: "DBLP:conf/nips/Graves11"
       presenter: Sam
     - date: Apr 13
