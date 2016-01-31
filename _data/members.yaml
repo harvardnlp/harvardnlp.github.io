@@ -5,7 +5,7 @@
       url: "http://www.eecs.harvard.edu/shieber/"
       pic: "http://www.eecs.harvard.edu/shieber/Photos/Media/Images/2.jpg"
       title : Professor
-    - name : Alexander Rush
+    - name : Alexander<br> Rush
       email : srush@seas.harvard.edu
       github: srush
       url: "http://rush.seas.harvard.edu/"
@@ -29,7 +29,7 @@
       githubid: 13193139
       url: "http://github.com/vkrakovna"
       
-    - name : Allen Schmaltz
+    - name : Allen<br> Schmaltz
       github: allenschmaltz
       githubid: 2748209
       email : blank
