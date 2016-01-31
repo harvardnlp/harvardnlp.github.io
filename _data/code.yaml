@@ -1,11 +1,24 @@
-- link: https://github.com/harvardnlp/NAMAS
-  title: Abstractive Summarization
+- link: https://github.com/harvardnlp/sent-conv-torch
+  title: Convolutional Sentence Classification (Kim, 2014)
+  abstract: |
+    Simplified Torch implementation of the convolution sentence classification work.
 
 - link: https://github.com/yoonkim/lstm-char-cnn
   title: Character-Aware Language Modeling 
+  abstract: |
+    Character Aware Language Modeling
 
-- link: https://github.com/harvardnlp/sent-conv-torch
-  title: Convolutional Sentence Classification
+- link: https://github.com/swiseman/nn_coref
+  title: Coreference Resolution
+  abstract : |
+    Coreference System
 
+- link: https://github.com/harvardnlp/NAMAS
+  title: ABS Abstractive Summarization
+  abstract: |
+    Abstractive Summarization
+    
 - link: https://github.com/ikekonglp/PAD 
-  title : Parse Converter
+  title : PAD Phrase-structure After Dependencies
+  abstract : C++ implementation of 
+
