@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 ---
 
+
 {% for group in site.data.members %}
 <div class ="row" style="margin-top=20px">
 <div class="col-md-7" >
@@ -22,3 +23,4 @@ permalink: /about/
 {% endfor %}
 </div>
 {% endfor %}
+</div>
