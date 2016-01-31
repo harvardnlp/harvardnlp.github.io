@@ -1,24 +1,55 @@
+- group : Faculty
+  people :
+    - name : Stuart Shieber
+      github: srush
+      url: "http://www.eecs.harvard.edu/shieber/"
+      pic: "http://www.eecs.harvard.edu/shieber/Photos/Media/Images/2.jpg"
+      title : Professor
+    - name : Alexander Rush
+      email : srush@seas.harvard.edu
+      github: srush
+      url: "http://rush.seas.harvard.edu/"
+      githubid: 35882
+      title : Assistant Professor
+- group : Graduate Students
+  people :
+    - name: Sebastian Gehrmann
+      githubid: 2212304
+      github: sebastianGehrmann
+      url: "http://github.com/sebastianGehrmann"
+      title: PhD Student
+ 
+    - name : Yoon Kim
+      email : yoonkim@seas.harvard.edu
+      url : "http://www.people.fas.harvard.edu/~yoonkim/"
+      github: yoonkim
+      githubid: 5378003 
+      title : PhD Student
 
-- name : Yoon Kim
-  email : blank
-  title : PhD Student
+    - name : Allen Schmaltz
+      github: allenschmaltz
+      githubid: 2748209
+      email : blank
+      url: "http://github.com/allenschmaltz"
+      title: PhD Student
 
-- name : Allen Schmaltz
-  email : blank
-  title: PhD Student
+    - name : Sam Wiseman
+      email : swiseman@seas.harvard.edu
+      title : PhD Student
+      githubid: 4635868
+      url: "http://github.com/swiseman"
+      title: PhD Student
+- group: Undergraduate Researchers
+  people:
+    - name : Jeffrey Ling
+      email: blank
+      url: https://github.com/jeffreyling
+      githubid: 5473863
+      title: Undergrad Researcher
+  
+    - name : Alex Wang
+      email: blank
+      url: https://github.com/W4ngatang
+      githubid: 5520155
+      title: Undergrad Researcher
 
-- name : Sam Wiseman
-  email : swiseman@seas.harvard.edu
-  title : PhD Student
-
-- name : Jeffrey Ling
-  email: blank
-  title: Undergraduate
-
-- name : Alex Wang
-  email: blank
-  title: Undergraduate
-
-- name : Keyon Vafe
-  email: blank
-  title: Undergraduate

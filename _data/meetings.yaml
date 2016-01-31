@@ -1,12 +1,49 @@
 - term: Spring, 2016
   meetings: 
-    - date: January 25
+    - date: Feb 3
       paper: Test Paper
       link: testlink
       presenter: Sasha
-    - date: Febuary 1
+    - date: Feb 10
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+    - date: Feb 17
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+    - date: Mar 2
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+    - date: Mar 9
       paper: Test Paper
       link: testlink
       presenter: Sasha
 
-- term: Fall, 2015
+    - date: Mar 23
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+    - date: Mar 30
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+    - date: Apr 6
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+    - date: Apr 13
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+    - date: Apr 20
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+    - date: Apr 27
+      paper: Test Paper
+      link: testlink
+      presenter: Sasha
+
+      

@@ -1,14 +1,14 @@
-- title: A Neural Attention Model for Abstractive Sentence Summarization 
-  authors : Alexander M. Rush, Sumit Chopra, and Jason Weston
-  conference : Proceedings of EMNLP 2015.
-  pdf : http://arxiv.org/pdf/1509.00685.pdf
-  code : https://github.com/facebook/NAMAS
-
 - title: Character-Aware Neural Language Models 
   authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
   conference : Proceedings of AAAI 2016
   code : https://github.com/yoonkim/lstm-char-cnn
   pdf : http://arxiv.org/abs/1508.06615.pdf
+
+- title: A Neural Attention Model for Abstractive Sentence Summarization 
+  authors : Alexander M. Rush, Sumit Chopra, and Jason Weston
+  conference : Proceedings of EMNLP 2015.
+  pdf : http://arxiv.org/pdf/1509.00685.pdf
+  code : https://github.com/facebook/NAMAS
 
 - title: Towards AI-Complete Question Answering A Set of Prerequisite Toy Tasks 
   authors: Jason Weston, Antoine Bordes, Sumit Chopra, Tomas Mikolov, and Alexander M. Rush
