@@ -25,7 +25,10 @@
       github: yoonkim
       githubid: 5378003 
       title : PhD Student
-
+    - name: Victoria Krakovna
+      githubid: 13193139
+      url: "http://github.com/vkrakovna"
+      
     - name : Allen Schmaltz
       github: allenschmaltz
       githubid: 2748209
@@ -45,14 +48,28 @@
       email: blank
       url: https://github.com/jeffreyling
       githubid: 5473863
-      title: Undergrad Researcher
-  
+      title: Undergrad Researcher 
+    - name : Keyon Vafa
+      email: blank
+      title: Undergraduate
+      url: https://github.com/keyonvafa
+      githubid: 10766891
+      github: 10766891
+
     - name : Alex Wang
       email: blank
       url: https://github.com/W4ngatang
       githubid: 5520155
       title: Undergrad Researcher
-    - name : Keyon Vafa
+
+    - name : Hugh Zabriskie
       email: blank
       title: Undergraduate
+      url: https://github.com/glasperfan
+      githubid: 6545534
 
+    - name : Mike Zhai
+      email: blank
+      title: Undergraduate
+      url: https://github.com/mzhai2
+      githubid: 5619828

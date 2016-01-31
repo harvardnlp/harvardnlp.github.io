@@ -15,12 +15,10 @@ permalink: /about/
 {% for member in group.people %}
 
 
-<div class="col-md-3"><div><a href="{{url}}">
+<div class="col-md-3"><div><a href="{{member.url}}">
 <img class="img-thumbnail" src="{% if member.githubid  %}https://avatars2.githubusercontent.com/u/{{member.githubid}}?v=3&s=400{% else %}{{member.pic}}{% endif %}"></a></div>
-<h4>{{member.name}}</h4> </div>
-<a href> </a>
+<div style="margin-bottom:20px"><center><h4>{{member.name}}</h4></center></div> </div>
 
 {% endfor %}
 </div>
 {% endfor %}
-</div>
