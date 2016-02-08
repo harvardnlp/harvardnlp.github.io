@@ -5,14 +5,14 @@
       cite: DBLP:journals/corr/KimJSR15
       presenter: Yoon
     - date: Feb 10
-      paper: Read and Comprehend (Hermann, 2015), 
-      cite: readcomp
-      presenter: Mike
-    - date: 
+      paper: Compressing LSTMs into CNNs (Geras et al, 2015), 
+      cite: compresscnn
+      presenter: Sam
+    - date: Feb 17
       paper: The Goldilocks Principle (Hill et al, 2016)
       cite: 2015arXiv151102301H
-      presenter: 
-    - date: Feb 17
+      presenter: Mike
+    - date: Feb 24
       paper: Pixel Recurrent Networks (van den Oord et al, 2016)
       cite: 2016arXiv160106759V
       presenter: Sasha
