@@ -13,9 +13,9 @@
       cite: 2015arXiv151102301H
       presenter: Mike
     - date: Feb 24
-      paper: Pixel Recurrent Networks (van den Oord et al, 2016)
-      cite: 2016arXiv160106759V
-      presenter: Sasha
+      paper: Never-Ending Learning
+      cite: "DBLP:conf/aaai/MitchellCHTBCMG15"
+      presenter: Saketh
     - date: Mar 2
       paper: Alpha Go (Silver et al, 2016)
       cite: alphago
@@ -25,9 +25,8 @@
       cite: "DBLP:journals/corr/DaiL15a"
       presenter: Jeffrey
     - date: Mar 23
-      paper: Never-Ending Language Learning (Mitchell et al, 2015)
-      cite: "DBLP:conf/aaai/MitchellCHTBCMG15"
-      presenter: Saketh
+      paper: Kai-Wei Chang Talk
+      presenter: Kai-Wei
     - date: Mar 30
       paper: Diverse Decoding (Li and Jurafsky, 2016)
       cite: 2016arXiv160100372L
