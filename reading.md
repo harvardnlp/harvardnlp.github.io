@@ -24,7 +24,7 @@ permalink: /meetings/
 <table class="table table-striped table-hover">
 <tr><th> Date</th> <th> Paper</th> <th>Presenter </th></tr>
 {% for paper in term.meetings %}
-<tr><td> {{ paper.date }}  </td> <td><a href="#cite_{{paper.cite}}"> {{paper.paper}}</a> </td><td> {{paper.presenter}} </td></tr>
+<tr><td> {{ paper.date }}  </td> <td><a href="{{paper.cite}}"> {{paper.paper}}</a> </td><td> {{paper.presenter}} </td></tr>
 {% endfor %}
 </table>
 {% endfor %}

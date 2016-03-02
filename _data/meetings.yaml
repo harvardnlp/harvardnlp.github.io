@@ -2,49 +2,50 @@
   meetings: 
     - date: Feb 3
       paper: Character-Aware Language Modeling (Kim et. al, 2016)
-      cite: DBLP:journals/corr/KimJSR15
+      cite: "#cite_DBLP:journals/corr/KimJSR15"
       presenter: Yoon
     - date: Feb 10
       paper: Compressing LSTMs into CNNs (Geras et al, 2015), 
-      cite: compresscnn
+      cite: "#cite_compresscnn"
       presenter: Sam
     - date: Feb 17
       paper: The Goldilocks Principle (Hill et al, 2016)
-      cite: 2015arXiv151102301H
+      cite: "#cite_2015arXiv151102301H"
       presenter: Mike
     - date: Feb 24
       paper: Never-Ending Learning
-      cite: "DBLP:conf/aaai/MitchellCHTBCMG15"
+      cite: "#cite_DBLP:conf/aaai/MitchellCHTBCMG15"
       presenter: Saketh
     - date: Mar 2
       paper: Alpha Go (Silver et al, 2016)
-      cite: alphago
+      cite: "#cite_alphago"
       presenter: Alex
     - date: Mar 9
       paper: Semi-supervised Sequence Learning (Dai and Le, 2015)
-      cite: "DBLP:journals/corr/DaiL15a"
+      cite: "#cite_DBLP:journals/corr/DaiL15a"
       presenter: Jeffrey
     - date: Mar 23
-      paper: Kai-Wei Chang Talk
+      paper: Kai-Wei Chang
+      cite: "http://web.engr.illinois.edu/~kchang10/"
       presenter: Kai-Wei
     - date: Mar 30
-      paper: Diverse Decoding (Li and Jurafsky, 2016)
-      cite: 2016arXiv160100372L
-      presenter: Yoon
+      paper: Tao Lei 
+      cite: "http://people.csail.mit.edu/taolei/"
+      presenter: Tao
     - date: Apr 6
-      paper: Practical Variational Inference for Neural Networks (Graves, 2011)
-      cite: "DBLP:conf/nips/Graves11"
-      presenter: Sam
+      paper: Diverse Decoding (Li and Jurafsky, 2016)
+      cite: "#cite_2016arXiv160100372L"
+      presenter: Yoon
     - date: Apr 13
-      paper: What to talk about and when? (Mei, 2015)
-      cite: 2015arXiv150900838M
-      presenter: Allen
+      paper: Donald Sturgeon 
+      cite: "http://dsturgeon.net/about/"
+      presenter: Donald
     - date: Apr 20
-      paper: Thesis Presentation
+      paper: Lu Wang 
+      cite: "http://www.ccs.neu.edu/home/luwang/" 
+      presenter: Lu
+    - date: Apr 27
+      paper: Keyon Thesis
       link: 
       presenter: Keyon
-    - date: Apr 27
-      paper: Talk
-      link:
-      presenter: 
 
