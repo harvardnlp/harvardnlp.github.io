@@ -1,7 +1,7 @@
 - link: https://github.com/harvardnlp/sent-conv-torch
   title: Convolutional Sentence Classification (Kim, 2014)
   abstract: |
-    Simplified Torch implementation of the convolution sentence classification work.
+    Torch implementation of convolutional sentence classification.
 
 - link: https://github.com/yoonkim/lstm-char-cnn
   title: Character-Aware Language Modeling 
@@ -14,11 +14,11 @@
     Coreference System
 
 - link: https://github.com/harvardnlp/NAMAS
-  title: ABS Abstractive Summarization
+  title: "ABS: Abstractive Summarization"
   abstract: |
     Abstractive Summarization
     
 - link: https://github.com/ikekonglp/PAD 
-  title : PAD Phrase-structure After Dependencies
-  abstract : C++ implementation of 
+  title : "PAD: Phrase-structure After Dependencies"
+  abstract : C++ parser implementation 
 

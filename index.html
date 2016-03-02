@@ -1,23 +1,64 @@
 ---
-layout: default
+layout: page
+title: About
 ---
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <p>The natural-language processing group at Harvard (harvardnlp)
+  is a collection of researchers and students (both graduate and 
+    undergraduate) interested in computational
+  methods for human language. This includes machine learning
+  methodology, tasks requiring artificial intelligence, and cognitive
+  understanding of language. Recently we have been following developments
+  in deep learning for natural language processing. </p>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <p>
+  If you are interested this area, we suggest taking one of the 
+  <a href="courses">courses</a> we offer in the area. We also hold a
+  weekly <a href="meetings">reading group</a> where we discuss developments
+  in the field and invite local speakers.</p>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  
+  <p>Our research group also publishes <a href="papers">research</a>
+    on machine learning for natural-language processing among other topics.
+    The recent focus of our work has been on character-based language modeling,
+    deep learning for coreference resolution, and automatic summarization of
+    sentences. We also aim to release <a href="code">code</a> to the research
+  community. </p>
+  
+  <!-- <h1 class="page-heading">Posts</h1> -->
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <!-- <ul class="post-list"> -->
+  <!--   {% for post in site.posts %} -->
+  <!--     <li> -->
+  <!--       <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
+
+  <!--       <h2> -->
+  <!--         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> -->
+  <!--       </h2> -->
+  <!--     </li> -->
+  <!--   {% endfor %} -->
+  <!-- </ul> -->
+
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
 
 </div>
+
+{% for group in site.data.members %}
+<div class ="row" style="margin-top=20px">
+<div class="col-md-7" >
+<h3>{{group.group}}</h3>
+</div>
+</div>
+<div class ="row">
+{% for member in group.people %}
+
+
+<div class="col-md-3"><div><a href="{{member.url}}">
+<img class="img-thumbnail" src="{% if member.githubid  %}https://avatars2.githubusercontent.com/u/{{member.githubid}}?v=3&s=400{% else %}{{member.pic}}{% endif %}"></a></div>
+<div style="margin-bottom:20px"><center><h4>{{member.name}}</h4></center></div> </div>
+
+{% endfor %}
+</div>
+{% endfor %}

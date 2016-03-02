@@ -11,7 +11,7 @@ email: srush@seas.harvard.edu
 description: > # this means to ignore newlines until "baseurl:"
   Home of the Harvard SEAS natural-language processing group.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://harvardnlp.github.io" # the base hostname & protocol for your site
+url: "http://nlp.seas.harvard.edu/" # the base hostname & protocol for your site
 twitter_username: harvardnlp
 github_username:  harvardnlp
 
