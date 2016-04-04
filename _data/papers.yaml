@@ -1,25 +1,39 @@
+- title:  Learn
+  authors : 
+  conference : Proceedings of NAACL 2016
+  code : https://github.com/yoonkim/lstm-char-cnn
+  pdf : http://arxiv.org/abs/1508.06615.pdf
+  slides : 
+  image :
+    
 - title: Character-Aware Neural Language Models 
   authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
   conference : Proceedings of AAAI 2016
   code : https://github.com/yoonkim/lstm-char-cnn
   pdf : http://arxiv.org/abs/1508.06615.pdf
-
+  slides :
+  image :
+    
 - title: A Neural Attention Model for Abstractive Sentence Summarization 
   authors : Alexander M. Rush, Sumit Chopra, and Jason Weston
   conference : Proceedings of EMNLP 2015.
   pdf : http://arxiv.org/pdf/1509.00685.pdf
   code : https://github.com/facebook/NAMAS
-
+  slides :
+  image :
+      
 - title: Towards AI-Complete Question Answering A Set of Prerequisite Toy Tasks 
   authors: Jason Weston, Antoine Bordes, Sumit Chopra, Tomas Mikolov, and Alexander M. Rush
   pdf : http://arxiv.org/pdf/1502.05698.pdf
   conference: Arxiv Preprint 
+
 - title: Learning Anaphoricity and Antecedent Ranking Features for Coreference Resolution 
   authors : Sam Wiseman, Alexander M. Rush, Jason Weston, and Stuart M. Shieber
   conference : Proceedings of ACL 2015. 
   pdf : people.seas.harvard.edu/~srush/acl15.pdf
   code : https://github.com/swiseman/nn_coref
-
+  slides :
+    
 - title: A Fast Variational Approach for Learning Markov Random Field Language Models 
   authors: Yacine Jernite, Alexander M. Rush, and David Sontag
   conference : Proceedings of ICML 2015.

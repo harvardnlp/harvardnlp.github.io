@@ -8,12 +8,18 @@ The following are research projects that have developed into open-source librari
 
 <div class ="row"></div>
 
-{% for project in site.data.code %}
 
-<div class="row">
-<p>{{project.abstract}}</p>
-<a href="{{project.link}}">GitHub</a>
+<div style="text-align:center">
+<h3 > Projects </h3>
 </div>
 
-
+<table class="table table-striped table-hover">
+<tr><th> Title</th> <th>Link </th></tr>
+{% for project in site.data.code %}
+<tr><td>{{project.title}} </td><td><a href="{{project.link}}">GitHub</td></tr>
 {% endfor %}
+</table>
+
+
+
+

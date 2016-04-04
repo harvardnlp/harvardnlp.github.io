@@ -25,23 +25,23 @@
       cite: "#cite_DBLP:journals/corr/DaiL15a"
       presenter: Jeffrey
     - date: Mar 23
-      paper: Kai-Wei Chang
+      paper: "Talk: Kai-Wei Chang"
       cite: "http://web.engr.illinois.edu/~kchang10/"
       presenter: Kai-Wei
     - date: Mar 30
-      paper: Tao Lei 
+      paper: "Talk: Tao Lei"
       cite: "http://people.csail.mit.edu/taolei/"
       presenter: Tao
     - date: Apr 6
-      paper: Diverse Decoding (Li and Jurafsky, 2016)
-      cite: "#cite_2016arXiv160100372L"
+      paper: "Talk: Alec Radford"
+      cite: ""
       presenter: Yoon
     - date: Apr 13
-      paper: Donald Sturgeon 
+      paper: "Talk: Donald Sturgeon"
       cite: "http://dsturgeon.net/about/"
       presenter: Donald
     - date: Apr 20
-      paper: Lu Wang 
+      paper: "Talk: Lu Wang"
       cite: "http://www.ccs.neu.edu/home/luwang/" 
       presenter: Lu
     - date: Apr 27
