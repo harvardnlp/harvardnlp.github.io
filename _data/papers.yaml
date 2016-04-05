@@ -3,8 +3,8 @@
   authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
   conference : Proceedings of AAAI 2016
   code : https://github.com/yoonkim/lstm-char-cnn
-  pdf : http://arxiv.org/abs/1508.06615.pdf
-  slides : /aaai16.pdf
+  pdf : https://arxiv.org/pdf/1508.06615v4
+  slides : /slides/aaai16.pdf
   image : /images/charrnn.png
     
 - title: A Neural Attention Model for Abstractive Sentence Summarization 
@@ -12,8 +12,8 @@
   conference : Proceedings of EMNLP 2015.
   pdf : http://arxiv.org/pdf/1509.00685.pdf
   code : https://github.com/facebook/NAMAS
-  slides :
-  image :
+  slides : /slides/emnlp15.pdf
+  image : /images/summary.png
       
 - title: Towards AI-Complete Question Answering A Set of Prerequisite Toy Tasks 
   authors: Jason Weston, Antoine Bordes, Sumit Chopra, Tomas Mikolov, and Alexander M. Rush
@@ -25,18 +25,18 @@
   conference : Proceedings of ACL 2015. 
   pdf : people.seas.harvard.edu/~srush/acl15.pdf
   code : https://github.com/swiseman/nn_coref
-  slides :
+  slides : /slides/acl15_pres.pdf
     
 - title: A Fast Variational Approach for Learning Markov Random Field Language Models 
   authors: Yacine Jernite, Alexander M. Rush, and David Sontag
   conference : Proceedings of ICML 2015.
   code : https://github.com/srush/MRF-LM/
-  slides : people.seas.harvard.edu/~srush/ICMLpresentationFinalNoAnimation.pdf
-  pdf : people.seas.harvard.edu/~srush/icml15.pdf
+  slides : http://people.seas.harvard.edu/~srush/ICMLpresentationFinalNoAnimation.pdf
+  pdf : http://people.seas.harvard.edu/~srush/icml15.pdf
 
 - title: Transforming Dependencies into Phrase Structures 
   authors: Lingpeng Kong, Alexander M. Rush, and Noah A. Smith
   conference: Proceedings of NAACL 2015. 
-  slides: naacl_poster.pdf
-  pdf: naacl15.pdf
+  slides: http://people.seas.harvard.edu/~srush/naacl_poster.pdf
+  pdf: http://people.seas.harvard.edu/~srush/naacl15.pdf
   code :  https://github.com/ikekonglp/PAD
