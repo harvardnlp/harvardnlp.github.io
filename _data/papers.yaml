@@ -1,3 +1,9 @@
+- title: Learning Global Features for Coreference Resolution
+  authors : Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber
+  conference : Proceedings of NAACL 2016
+  code : https://github.com/swiseman/nn_coref
+  pdf : /papers/corefmain.pdf
+  image : /images/cluster_viz.png
 
 - title: Character-Aware Neural Language Models 
   authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
