@@ -23,9 +23,10 @@
 - title: Learning Anaphoricity and Antecedent Ranking Features for Coreference Resolution 
   authors : Sam Wiseman, Alexander M. Rush, Jason Weston, and Stuart M. Shieber
   conference : Proceedings of ACL 2015. 
-  pdf : people.seas.harvard.edu/~srush/acl15.pdf
+  pdf : http://people.seas.harvard.edu/~srush/acl15.pdf
   code : https://github.com/swiseman/nn_coref
   slides : /slides/acl15_pres.pdf
+  image : /images/acl15.png
     
 - title: A Fast Variational Approach for Learning Markov Random Field Language Models 
   authors: Yacine Jernite, Alexander M. Rush, and David Sontag
@@ -41,3 +42,4 @@
   slides: http://people.seas.harvard.edu/~srush/naacl_poster.pdf
   pdf: http://people.seas.harvard.edu/~srush/naacl15.pdf
   code :  https://github.com/ikekonglp/PAD
+  image : /images/pad.png
