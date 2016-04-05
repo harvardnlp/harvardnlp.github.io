@@ -8,8 +8,10 @@ permalink: /papers/
 
 {% for paper in site.data.papers %}
 
+<table>
+  <tr><td>
 {% if paper.image %}<img width="100px" src="{{paper.image}}"> {% endif %}
-
+</td><td>
 <a class="paper" href="{{paper.pdf}}">
 {{paper.title}}
 </a><br>
@@ -21,6 +23,6 @@ permalink: /papers/
 {% if paper.code %} <a class="icon slides label label-success label-warning" href="{{paper.code}}">code</a>{% endif %}
 <br>
 
-
+</td></tr>
 
 {% endfor %}
