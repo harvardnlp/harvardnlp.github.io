@@ -1,18 +1,11 @@
-- title:  Learn
-  authors : 
-  conference : Proceedings of NAACL 2016
-  code : https://github.com/yoonkim/lstm-char-cnn
-  pdf : http://arxiv.org/abs/1508.06615.pdf
-  slides : 
-  image :
-    
+
 - title: Character-Aware Neural Language Models 
   authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
   conference : Proceedings of AAAI 2016
   code : https://github.com/yoonkim/lstm-char-cnn
   pdf : http://arxiv.org/abs/1508.06615.pdf
   slides :
-  image :
+  image : images/charrnn.png
     
 - title: A Neural Attention Model for Abstractive Sentence Summarization 
   authors : Alexander M. Rush, Sumit Chopra, and Jason Weston
