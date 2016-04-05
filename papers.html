@@ -9,9 +9,9 @@ permalink: /papers/
 {% for paper in site.data.papers %}
 
 <table>
-  <tr><td>
+  <tr><td style="padding:10px">
 {% if paper.image %}<img width="100px" src="{{paper.image}}"> {% endif %}
-</td><td>
+</td><td style="padding:10px">
 <a class="paper" href="{{paper.pdf}}">
 {{paper.title}}
 </a><br>
