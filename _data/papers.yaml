@@ -11,6 +11,14 @@
   pdf : /papers/corefmain.pdf
   image : /images/cluster_viz.png
 
+- title: Abstractive Sentence Summarization with Attentive Recurrent Neural Networks
+  authors : Sumit Chopra, Michael Auli, and Alexander M. Rush
+  conference : Proceedings of NAACL 2016
+  code : https://github.com/facebook/NAMAS
+  pdf : /papers/naacl16_summary.pdf
+  image : /images/.png
+
+  
 - title: Character-Aware Neural Language Models 
   authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
   conference : Proceedings of AAAI 2016
