@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Code
+title: Data and Code
 permalink: /code/
 ---
 
