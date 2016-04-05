@@ -19,7 +19,8 @@
   authors: Jason Weston, Antoine Bordes, Sumit Chopra, Tomas Mikolov, and Alexander M. Rush
   pdf : http://arxiv.org/pdf/1502.05698.pdf
   conference: Arxiv Preprint 
-
+  image : /images/babi.png
+  
 - title: Learning Anaphoricity and Antecedent Ranking Features for Coreference Resolution 
   authors : Sam Wiseman, Alexander M. Rush, Jason Weston, and Stuart M. Shieber
   conference : Proceedings of ACL 2015. 
