@@ -3,7 +3,7 @@
     - name : Stuart Shieber
       github: srush
       url: "http://www.eecs.harvard.edu/shieber/"
-      pic: "http://www.eecs.harvard.edu/shieber/Photos/Media/Images/2.jpg"
+      pic: "/images/shieber.png"
       title : Professor
     - name : Alexander<br> Rush
       email : srush@seas.harvard.edu
