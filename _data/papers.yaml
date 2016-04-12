@@ -8,7 +8,7 @@
   authors : Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber
   conference : Proceedings of NAACL 2016
   code : https://github.com/swiseman/nn_coref
-  pdf : /papers/corefmain.pdf
+  pdf : http://arxiv.org/pdf/1604.03035v1.pdf
   image : /images/cluster_viz.png
 
 - title: Abstractive Sentence Summarization with Attentive Recurrent Neural Networks
