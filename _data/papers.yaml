@@ -16,7 +16,7 @@
   conference : Proceedings of NAACL 2016
   code : https://github.com/facebook/NAMAS
   pdf : /papers/naacl16_summary.pdf
-  image : /images/.png
+  image : /images/summary.png
 
   
 - title: Character-Aware Neural Language Models 
