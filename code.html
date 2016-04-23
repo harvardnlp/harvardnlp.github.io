@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Data and Code
+title: Code
 permalink: /code/
 ---
 
@@ -17,6 +17,7 @@ The following are research projects that have developed into open-source librari
 </a><br>
 {{project.authors}}.<br>
 {% if project.link %}<a class="icon pdf label label-info" href="{{project.link}}">github</a> {% endif %}
+{% if project.data %}<a class="icon pdf label label-success" href="{{project.data}}">data</a> {% endif %}
 {% if project.pdf %}<a class="icon pdf label label-info" href="{{project.pdf}}">pdf</a> {% endif %}
 {% if project.slides %}<a class="icon slides label label-success" href="{{project.slides}}">slides</a>{% endif %}
 {% if project.code %} <a class="icon slides label label-success label-warning" href="{{project.code}}">code</a>{% endif %}
