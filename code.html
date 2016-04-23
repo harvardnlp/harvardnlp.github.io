@@ -4,7 +4,18 @@ title: Code
 permalink: /code/
 ---
 
-The following are research projects that have developed into open-source libraries:
+The following are our open-source implementations of popular deep
+learning techniques with applications to NLP. These projects include
+standard baseline methods and our extensions to these
+techniques. While this is research code (and usual caveats apply), it
+has been used in industrial teams outside of our group.
+<br>
+
+Our standard setup is to utilize Python for preprocessing of language
+and the <a href="http://torch.ch/">Torch</a> deep learning framework
+for the main implementation.  Much of the code is optimized for use on
+GPUs.
+
 
 {% for project in site.data.code %}
 
@@ -16,6 +27,7 @@ The following are research projects that have developed into open-source librari
 {{project.title}}
 </a><br>
 {{project.authors}}.<br>
+<iframe src="https://ghbtns.com/github-btn.html?user=harvardnlp&repo=seq2seq-atten&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
 {% if project.link %}<a class="icon pdf label label-info" href="{{project.link}}">github</a> {% endif %}
 {% if project.data %}<a class="icon pdf label label-success" href="{{project.data}}">data</a> {% endif %}
 {% if project.pdf %}<a class="icon pdf label label-info" href="{{project.pdf}}">pdf</a> {% endif %}

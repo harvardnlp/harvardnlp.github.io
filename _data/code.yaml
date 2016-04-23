@@ -3,33 +3,39 @@
   abstract: |
     Torch implementation of convolutional sentence classification.
   image: /images/aesw2016.png
+  authors: Yoon Kim
   
 - link: https://github.com/harvardnlp/sent-conv-torch
   title: CNN for Text Clasification
   image: /images/cnn.png
   abstract: |
     Torch implementation of convolutional sentence classification.
-
+  authors: Jeffrey Ling (based on code by Yoon Kim)
+  
 - link: https://github.com/yoonkim/lstm-char-cnn
   title: LSTM Character-Aware Language Model 
   abstract: |
     Character Aware Language Modeling
   image : /images/charrnn.png
+  authors: Yoon Kim
   
 - link: https://github.com/swiseman/nn_coref
   title: Neural Coreference Resolution
   image : /images/cluster_viz.png
   abstract : |
     Coreference System
-
+  authors: Sam Wiseman
+  
 - link: https://github.com/harvardnlp/NAMAS
   title: "ABS: Abstractive Summarization"
   data: https://github.com/harvardnlp/sent-summary
   image : /images/summary2.png
   abstract: |
     Abstractive Summarization
-    
+  authors: Alexander Rush
+  
 - link: https://github.com/ikekonglp/PAD 
   title : "PAD: Phrase-structure After Dependencies"
   abstract : C++ parser implementation 
   image : /images/naacl14.png
+  authors: Alexander Rush and Lingpeng Kong  

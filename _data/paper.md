@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Recent Papers
+title: Publications
 permalink: /papers/
 ---
 
