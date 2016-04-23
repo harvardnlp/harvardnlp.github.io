@@ -1,7 +1,7 @@
-- title: Data-Driven Sentence-Level Grammatical Error Identification
+- title: Sentence-Level Grammatical Error Identification as Sequence-to-Sequence Correction
   authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, and Stuart M. Shieber
   conference: Workshop Submission for AESW 2016 (Top Performing System)
-  pdf : /papers/
+  pdf : /papers/aesw2016.pdf
   image: /images/aesw2016.png
   
 - title: Learning Global Features for Coreference Resolution
@@ -16,7 +16,7 @@
   conference : Proceedings of NAACL 2016
   code : https://github.com/facebook/NAMAS
   pdf : /papers/naacl16_summary.pdf
-  image : /images/.png
+  image : /images/summary2.png
 
   
 - title: Character-Aware Neural Language Models 
