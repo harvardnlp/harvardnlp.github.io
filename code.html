@@ -24,9 +24,9 @@ GPUs.
 
 <table>
   <tr><td style="padding:10px">
-{% if project.image %}<img width="100px" src="{{project.image}}"> {% endif %}
+{% if project.image %}<a class="paper" href="{{project.link}}"><img width="100px" src="{{project.image}}"> </a>{% endif %}
 </td><td style="padding:10px">
-<a class="paper" href="{{project.pdf}}">
+<a class="paper" href="{{project.link}}">
 {{project.title}}
 </a><br>
 {{project.authors}}.<br>
@@ -54,6 +54,7 @@ class on ML in NLP. These notebooks, prepared by Sam Wiseman and
 Saketh Rama, assume basic familiarity with the core aspects of Torch,
 and move quickly to advanced topics such memory usage, the details of
 the nn module, and recurrent neural networks.
+<br><br>
 
 
 <table class="table table-striped">
