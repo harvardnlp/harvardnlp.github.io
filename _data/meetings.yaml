@@ -24,28 +24,38 @@
       paper: Semi-supervised Sequence Learning (Dai and Le, 2015)
       cite: "#cite_DBLP:journals/corr/DaiL15a"
       presenter: Jeffrey
+    - date: Mar 14
+      paper: Talk: Edward Grefenstette (DeepMind)
+      cite: ""
+      presenter: Jeffrey
+
     - date: Mar 23
-      paper: "Talk: Kai-Wei Chang"
+      paper: "Talk: Kai-Wei Chang (MSR)"
       cite: "http://web.engr.illinois.edu/~kchang10/"
       presenter: Kai-Wei
     - date: Mar 30
-      paper: "Talk: Tao Lei"
+      paper: "Talk: Tao Lei (MIT)"
       cite: "http://people.csail.mit.edu/taolei/"
       presenter: Tao
     - date: Apr 6
-      paper: "Talk: Alec Radford"
+      paper: "Talk: Alec Radford (OpenAI)"
       cite: ""
       presenter: Yoon
     - date: Apr 13
-      paper: "Talk: Donald Sturgeon"
+      paper: "Talk: Donald Sturgeon (Harvard)"
       cite: "http://dsturgeon.net/about/"
       presenter: Donald
     - date: Apr 20
-      paper: "Talk: Lu Wang"
+      paper: "Talk: Lu Wang (Northeastern)"
       cite: "http://www.ccs.neu.edu/home/luwang/" 
       presenter: Lu
     - date: Apr 27
-      paper: Keyon Thesis
+      paper: "Talk: Keyon Vafa (Harvard)"
       link: 
       presenter: Keyon
+    - date: May 11
+      paper: "Talk: Pushpak Bhattacharyya (IIT)"
+      link: 
+      presenter: Dr. Bhattacharyya
 
+      
