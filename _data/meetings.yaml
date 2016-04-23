@@ -25,9 +25,9 @@
       cite: "#cite_DBLP:journals/corr/DaiL15a"
       presenter: Jeffrey
     - date: Mar 14
-      paper: Talk: Edward Grefenstette (DeepMind)
+      paper: "Talk: Edward Grefenstette (DeepMind)"
       cite: ""
-      presenter: Jeffrey
+      presenter: Ed
 
     - date: Mar 23
       paper: "Talk: Kai-Wei Chang (MSR)"
@@ -40,7 +40,7 @@
     - date: Apr 6
       paper: "Talk: Alec Radford (OpenAI)"
       cite: ""
-      presenter: Yoon
+      presenter: Alec
     - date: Apr 13
       paper: "Talk: Donald Sturgeon (Harvard)"
       cite: "http://dsturgeon.net/about/"
