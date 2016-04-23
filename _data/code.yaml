@@ -3,6 +3,8 @@
   abstract: |
     Torch implementation of convolutional sentence classification.
   image: /images/aesw2016.png
+  models: https://drive.google.com/file/d/0BzhmYioWLRn_aEVnd0ZNcWd0Y2c/view
+  data: http://www.statmt.org/wmt15/translation-task.html
   authors: Yoon Kim
   
 - link: https://github.com/harvardnlp/sent-conv-torch
