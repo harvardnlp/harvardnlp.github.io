@@ -43,6 +43,19 @@
       githubid: 4635868
       url: "http://github.com/swiseman"
       title: PhD Student
+- group : Visiting Students
+  people:
+    - name : Mike Zhai
+      email: blank
+      title: Vistor
+      url: https://github.com/mzhai2
+      githubid: 5619828
+    - name : Yuntian Deng
+      email: blank
+      title: Visitor
+      url: https://github.com/da03
+      githubid: 5753959  
+
 - group: Undergraduate Researchers
   people:
     - name : Jeffrey Ling
@@ -50,27 +63,27 @@
       url: https://github.com/jeffreyling
       githubid: 5473863
       title: Undergrad Researcher 
+    - name : Alex Wang
+      email: blank
+      url: https://github.com/W4ngatang
+      githubid: 5520155
+      title: Undergrad Researcher
+    - name : Carl Denton
+      email: blank
+      title: Undergraduate
+      url: https://github.com/cfdenton
+      githubid: 13823589
+
+- group: Alumni
+  people:
     - name : Keyon Vafa
       email: blank
       title: Undergraduate
       url: https://github.com/keyonvafa
       githubid: 10766891
       github: 10766891
-
-    - name : Alex Wang
-      email: blank
-      url: https://github.com/W4ngatang
-      githubid: 5520155
-      title: Undergrad Researcher
-
     - name : Hugh Zabriskie
       email: blank
       title: Undergraduate
       url: https://github.com/glasperfan
       githubid: 6545534
-
-    - name : Mike Zhai
-      email: blank
-      title: Undergraduate
-      url: https://github.com/mzhai2
-      githubid: 5619828

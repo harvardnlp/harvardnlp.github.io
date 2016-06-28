@@ -1,9 +1,9 @@
 - title: Visual Analysis of Hidden State Dynamics in Recurrent Neural Networks
   authors: Hendrik Strobelt, Sebastian Gehrmann, Bernd Huber, Hanspeter Pfister, and Alexander M. Rush
   conference: Arxiv Pre-print
-  pdf : http://arxiv.org/pdf/1606.07461.pdf
+  pdf : http://lstm.seas.harvard.edu/
+  code : http://lstm.seas.harvard.edu/
   image: /images/small_teaser.png
-
 
 - title: Sequence-Level Knowledge Distillation
   authors: Yoon Kim and Alexander M. Rush

@@ -21,14 +21,6 @@
   abstract: |
     Torch implementation of convolutional sentence classification.
   authors: Jeffrey Ling (based on code by Yoon Kim)
-
-- link: https://github.com/harvardnlp/nmt-android
-  title: Android Translation
-  abstract: |
-    Neural machine translation on Android
-  image: /images/transfast.gif
-  models: https://drive.google.com/drive/u/0/folders/0B6N7tANPyVeBWHZXVmY2LUdOMWc
-  authors: Alexander Rush and Yoon Kim
   
 - link: https://github.com/yoonkim/lstm-char-cnn
   title: LSTM Character-Aware Language Model 
@@ -58,3 +50,11 @@
   abstract : C++ parser implementation 
   image : /images/naacl14.png
   authors: Alexander Rush and Lingpeng Kong  
+
+- link: https://github.com/harvardnlp/nmt-android
+  title: Android Translation
+  abstract: |
+    Neural machine translation on Android
+  image: /images/transfast.gif
+  models: https://drive.google.com/drive/u/0/folders/0B6N7tANPyVeBWHZXVmY2LUdOMWc
+  authors: Alexander Rush and Yoon Kim
