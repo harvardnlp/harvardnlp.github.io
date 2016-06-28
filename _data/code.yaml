@@ -1,3 +1,11 @@
+- link: https://github.com/HendrikStrobelt/lstmvis
+  title: LSTMVis
+  abstract: |
+    Visual analysis of recurrent neural network dynamics.
+  image: /images/small_teaser.png
+  models: https://goo.gl/oHF9q5
+  authors: Hendrik Strobelt and Sebastian Gehrmann
+
 - link: https://github.com/harvardnlp/seq2seq-attn
   title: Sequence-to-Sequence with Attention
   abstract: |
@@ -13,6 +21,14 @@
   abstract: |
     Torch implementation of convolutional sentence classification.
   authors: Jeffrey Ling (based on code by Yoon Kim)
+
+- link: https://github.com/harvardnlp/nmt-android
+  title: Android Translation
+  abstract: |
+    Neural machine translation on Android
+  image: /images/transfast.gif
+  models: https://drive.google.com/drive/u/0/folders/0B6N7tANPyVeBWHZXVmY2LUdOMWc
+  authors: Alexander Rush and Yoon Kim
   
 - link: https://github.com/yoonkim/lstm-char-cnn
   title: LSTM Character-Aware Language Model 
@@ -20,6 +36,7 @@
     Character Aware Language Modeling
   image : /images/charrnn.png
   authors: Yoon Kim
+  data: https://bothameister.github.io/
   
 - link: https://github.com/swiseman/nn_coref
   title: Neural Coreference Resolution

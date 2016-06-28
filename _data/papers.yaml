@@ -1,3 +1,22 @@
+- title: Visual Analysis of Hidden State Dynamics in Recurrent Neural Networks
+  authors: Hendrik Strobelt, Sebastian Gehrmann, Bernd Huber, Hanspeter Pfister, and Alexander M. Rush
+  conference: Arxiv Pre-print
+  pdf : http://arxiv.org/pdf/1606.07461.pdf
+  image: /images/small_teaser.png
+
+
+- title: Sequence-Level Knowledge Distillation
+  authors: Yoon Kim and Alexander M. Rush
+  conference: Arxiv Pre-print
+  pdf : http://arxiv.org/pdf/1606.07947v1.pdf
+  image: /images/segknow.png
+
+- title: Sequence-to-Sequence Learning as Beam-Search Opimization
+  authors: Sam Wiseman and Alexander M. Rush
+  conference: Arxiv Pre-print
+  pdf : http://arxiv.org/pdf/1606.02960.pdf
+  image: /images/seqseq.png
+  
 - title: Sentence-Level Grammatical Error Identification as Sequence-to-Sequence Correction
   authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, and Stuart M. Shieber
   conference: Workshop Submission for AESW 2016 (Top Performing System)
