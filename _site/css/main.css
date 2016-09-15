@@ -288,9 +288,14 @@ pre {
   margin-bottom: 30px; }
 
 .post-title {
-  font-size: 42px;
+  font-size: 32px;
   letter-spacing: -1px;
-  line-height: 1; }
+  line-height: 1;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 9px;
+  border-top: 1px solid #eee;
+  padding-top: 9px;
+  text-align: center; }
   @media screen and (max-width: 800px) {
     .post-title {
       font-size: 36px; } }

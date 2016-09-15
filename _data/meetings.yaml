@@ -1,3 +1,43 @@
+- term: Fall 2016 
+  meetings: 
+    - date: Sept 14
+      paper: "Talk: Andrew McCallum UMass-Amherst"
+      cite: 
+      presenter:
+    - date: Sept 19
+      paper: Learning Language Games through Interaction (Wang et al, 2016)
+      cite: "#cite_WangLM16"
+      presenter:
+        
+- term: Summer 2016 (RL)
+  meetings: 
+    - date: Jun 23
+      paper: Reinforcement learning of motor skills with policy gradients<br> (Peters and Schaal, 2008)
+      cite: "#cite_peters2008reinforcement"
+      presenter: Yoon
+    - date: Jun 30
+      paper: On a Connection between Importance Sampling and LRPG <br> (Tang and Abbeel, 2010) 
+      cite: "#cite_jie2010connection"
+      presenter: Group
+    - date: Jul 6
+      paper: Gradient Estimation Using Stochastic Computation Graphs (Schulman et al, 2015)
+      cite: "#cite_jie2010connection"
+      presenter: Group
+
+    - date: Jul 13
+      paper: Hierarchical Deep RL (Kulkarni et al, 2016)
+      cite: "#cite_jie2010connection"
+      presenter: Group
+    - date: Jul 20
+      paper: Trust Region Policy Optimization (Schulman et al, 2016) 
+      cite: "#cite_jie2010connection"
+      presenter: Group
+    - date: Jul 27
+      paper: An Actor-Critic Algorithm for Sequence Prediction (Bahdanau et al, 2016) 
+      cite: "#cite_jie2010connection"
+      presenter: Group
+
+
 - term: Spring 2016
   meetings: 
     - date: Feb 3
