@@ -1,13 +1,31 @@
 - term: Fall 2016 
   meetings: 
     - date: Sept 14
-      paper: "Talk: Andrew McCallum UMass-Amherst"
+      paper: "Talk: Andrew McCallum (UMass-Amherst)"
       cite: 
       presenter:
     - date: Sept 19
       paper: Learning Language Games through Interaction (Wang et al, 2016)
       cite: "#cite_WangLM16"
       presenter:
+    - date: Sept 26
+      paper: 
+      cite: 
+      presenter:
+
+    - date: Oct 3
+      paper: "Talk: David Belanger (UMass)"
+      presenter:
+    - date: Oct 10
+      paper: "Talk: Yoon Kim (Harvard)"
+      presenter:
+    - date: Oct 17
+      paper: "Talk: Karthik Narasimhan (MIT)"
+      presenter:
+    - date: Oct 24
+      paper: "Talk: Sam Wiseman (Harvard)"
+      presenter:
+
         
 - term: Summer 2016 (RL)
   meetings: 
