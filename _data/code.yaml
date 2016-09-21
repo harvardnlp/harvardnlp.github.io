@@ -1,60 +1,69 @@
-- link: https://github.com/HendrikStrobelt/lstmvis
-  title: LSTMVis
-  abstract: |
-    Visual analysis of recurrent neural network dynamics.
-  image: /images/small_teaser.png
-  models: https://goo.gl/oHF9q5
-  authors: Hendrik Strobelt and Sebastian Gehrmann
+code:
+    - link: https://github.com/harvardnlp/seq2seq-attn
+      title: Sequence-to-Sequence with Attention
+      abstract: |
+        General-purpose meural machine translation system. 
+      image: /images/aesw2016.png
+      models: https://drive.google.com/file/d/0BzhmYioWLRn_aEVnd0ZNcWd0Y2c/view
+      data: http://www.statmt.org/wmt15/translation-task.html
+      authors: Yoon Kim
+      
+    - link: https://github.com/HendrikStrobelt/lstmvis
+      title: LSTMVis
+      abstract: |
+        Visual analysis of recurrent neural network dynamics.
+      image: /images/small_teaser.png
+      models: https://goo.gl/oHF9q5
+      authors: Hendrik Strobelt and Sebastian Gehrmann
+      
+    - link: https://github.com/harvardnlp/sent-conv-torch
+      title: CNN for Text Clasification
+      image: /images/cnn.png
+      abstract: |
+        Implementation of convolutional sentence classification.
+      authors: Jeffrey Ling (based on code by Yoon Kim)
 
-- link: https://github.com/harvardnlp/seq2seq-attn
-  title: Sequence-to-Sequence with Attention
-  abstract: |
-    Torch implementation of convolutional sentence classification.
-  image: /images/aesw2016.png
-  models: https://drive.google.com/file/d/0BzhmYioWLRn_aEVnd0ZNcWd0Y2c/view
-  data: http://www.statmt.org/wmt15/translation-task.html
-  authors: Yoon Kim
-  
-- link: https://github.com/harvardnlp/sent-conv-torch
-  title: CNN for Text Clasification
-  image: /images/cnn.png
-  abstract: |
-    Torch implementation of convolutional sentence classification.
-  authors: Jeffrey Ling (based on code by Yoon Kim)
-  
-- link: https://github.com/yoonkim/lstm-char-cnn
-  title: LSTM Character-Aware Language Model 
-  abstract: |
-    Character Aware Language Modeling
-  image : /images/charrnn.png
-  authors: Yoon Kim
-  data: https://bothameister.github.io/
-  
-- link: https://github.com/swiseman/nn_coref
-  title: Neural Coreference Resolution
-  image : /images/cluster_viz.png
-  abstract : |
-    Coreference System
-  authors: Sam Wiseman
-  
-- link: https://github.com/harvardnlp/NAMAS
-  title: "ABS: Abstractive Summarization"
-  data: https://github.com/harvardnlp/sent-summary
-  image : /images/summary2.png
-  abstract: |
-    Abstractive Summarization
-  authors: Alexander Rush
-  
-- link: https://github.com/ikekonglp/PAD 
-  title : "PAD: Phrase-structure After Dependencies"
-  abstract : C++ parser implementation 
-  image : /images/naacl14.png
-  authors: Alexander Rush and Lingpeng Kong  
+    - link: https://github.com/harvardnlp/im2markup
+      title: Im2Markup
+      image: /images/cnn.png
+      abstract: |
+        A neural image-to-markup system.
+      authors: Yuntian Deng
 
-- link: https://github.com/harvardnlp/nmt-android
-  title: Android Translation
-  abstract: |
-    Neural machine translation on Android
-  image: /images/transfast.gif
-  models: https://drive.google.com/drive/u/0/folders/0B6N7tANPyVeBWHZXVmY2LUdOMWc
-  authors: Alexander Rush and Yoon Kim
+      
+    - link: https://github.com/harvardnlp/NAMAS
+      title: "ABS: Abstractive Summarization"
+      data: https://github.com/harvardnlp/sent-summary
+      image : /images/summary2.png
+      abstract: |
+        Abstractive Summarization
+      authors: Alexander Rush
+
+    - link: https://github.com/yoonkim/lstm-char-cnn
+      title: LSTM Character-Aware Language Model 
+      abstract: |
+        Character-Aware Language Modeling
+      image : /images/charrnn.png
+      authors: Yoon Kim
+      data: https://bothameister.github.io/
+
+    - link: https://github.com/swiseman/nn_coref
+      title: Neural Coreference Resolution
+      image : /images/cluster_viz.png
+      abstract : |
+        Coreference System
+      authors: Sam Wiseman
+
+    - link: https://github.com/ikekonglp/PAD 
+      title : "PAD: Phrase-structure After Dependencies"
+      abstract : C++ parser implementation 
+      image : /images/naacl14.png
+      authors: Alexander Rush and Lingpeng Kong  
+
+    - link: https://github.com/harvardnlp/nmt-android
+      title: Android Translation
+      abstract: |
+        Neural machine translation on Android
+      image: /images/transfast.gif
+      models: https://drive.google.com/drive/u/0/folders/0B6N7tANPyVeBWHZXVmY2LUdOMWc
+      authors: Alexander Rush and Yoon Kim
