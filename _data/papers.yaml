@@ -5,14 +5,14 @@ papers:
       pdf : http://lstm.seas.harvard.edu/latex/
       code : http://lstm.seas.harvard.edu/latex/
       image: https://camo.githubusercontent.com/5a6350632dd43b69fff7f41928f27b8c8eb9a7d9/687474703a2f2f6c73746d2e736561732e686172766172642e6564752f6c617465782f6d61746865782e706e67
-
+      
     - title: Visual Analysis of Hidden State Dynamics in Recurrent Neural Networks
       authors: Hendrik Strobelt, Sebastian Gehrmann, Bernd Huber, Hanspeter Pfister, and Alexander M. Rush
       conference: Arxiv Pre-print
       pdf : http://lstm.seas.harvard.edu/
       code : http://lstm.seas.harvard.edu/
-      image: /images/small_teaser.png
-
+      image: /images/small_teaser.png      
+      
     - title: Sequence-Level Knowledge Distillation
       authors: Yoon Kim and Alexander M. Rush
       conference: Proceedings of EMNLP 2016
@@ -24,6 +24,12 @@ papers:
       conference: Proceedings of EMNLP 2016
       pdf : http://arxiv.org/pdf/1606.02960.pdf
       image: /images/seqseq.png
+      
+    - title: Word Ordering Without Syntax
+      authors: Allen Schmaltz, Alexander M. Rush, and Stuart M. Shieber
+      conference: Proceedings of EMNLP 2016
+      pdf : https://arxiv.org/abs/1604.08633
+      image: /images/wordorder.png
 
     - title: Sentence-Level Grammatical Error Identification as Sequence-to-Sequence Correction
       authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, and Stuart M. Shieber

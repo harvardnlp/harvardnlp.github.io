@@ -7,11 +7,11 @@
     - date: Sept 19
       paper: Learning Language Games through Interaction (Wang et al, 2016)
       cite: "#cite_WangLM16"
-      presenter:
+      presenter: srush
     - date: Sept 26
-      paper: 
-      cite: 
-      presenter:
+      paper: Matching Networks for One Shot Learning (Vinyals et al, 2016)
+      cite: "#cite_VinyalsBLKW16"
+      presenter: group
 
     - date: Oct 3
       paper: "Talk: David Belanger (UMass)"
