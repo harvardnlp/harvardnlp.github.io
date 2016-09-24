@@ -12,7 +12,7 @@
       url: "http://rush.seas.harvard.edu/"
       githubid: 35882
       title : Assistant Professor
-- group : Graduate Students
+- group : Graduate Students and Visitors
   people :
     - name: Sebastian Gehrmann
       githubid: 2212304
@@ -53,8 +53,6 @@
       githubid: 4635868
       url: "http://github.com/swiseman"
       title: PhD Student
-- group : Visiting Students
-  people:
     - name : Yuntian Deng
       email: blank
       title: Visitor
@@ -80,8 +78,8 @@
       title: Undergrad Researcher
     - name : Aidi Zhang 
       email: blank
-      url: 
-      githubid: 
+      url: http://github.com/aidizhang
+      githubid: 8845416
       title: Undergrad Researcher
     - name : Kevin Yang
       email: blank
