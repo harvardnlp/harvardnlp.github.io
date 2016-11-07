@@ -17,7 +17,7 @@
       paper: "Talk: David Belanger (UMass)"
       presenter:
     - date: Oct 10
-      paper: "Talk: Yoon Kim (Harvard)"
+      paper: "No group (Columbus)"
       presenter:
     - date: Oct 17
       paper: "Talk: Karthik Narasimhan (MIT)"
@@ -25,8 +25,19 @@
     - date: Oct 24
       paper: "Talk: Sam Wiseman (Harvard)"
       presenter:
+    - date: Oct 31
+      paper: "Talk: Yoon Kim and Allen Schmaltz (Harvard)"
     - date: Nov 7
       paper: "Talk: Henry Lin (Harvard Physics)"
+      presenter:
+    - date: Nov 14
+      paper: "Talk: Sasha on Yejin Choi"
+      presenter:
+    - date: Nov 21
+      paper: "Talk: Squad QA (IBM)  "
+      presenter:
+    - date: Dec 5
+      paper: "Talk: Kevin Kwok (MIT)"
       presenter:
 
         

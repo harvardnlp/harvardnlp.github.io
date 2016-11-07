@@ -175,18 +175,20 @@ colorlinks=true,
 
 \medskip       
 
+
 \marginhead{Appointment}
 \noindent\emph{Harvard University School of Engineering and Applied Sciences \vspace{0.01in}}\\
-\ind 2015-.  Assistant Professor of Computer Science\\
+\ind 2015-.  Assistant Professor of Computer Science
 
-
-
-\marginhead{Education}
+\medskip       
 \noindent\emph{Facebook Artificial Intelligence Research Lab \vspace{0.01in}}\\
 \ind 2015.  Post-Doctoral Fellowship\\
 \ind Advisor: Yann LeCunn
 
-\medskip
+\bigskip
+
+\marginhead{Education}
+
  
 \noindent\emph{Massachusetts Institute of Technology \vspace{0.01in}}\\
 \ind 2009-2014.  Ph.D, Computer Science.\\
@@ -210,56 +212,26 @@ colorlinks=true,
 \medskip
 
 \hspace{-1cm} \begin{tabular}{lp{11.5cm}}
-2016 & Google Faculty Research Award. \\
 2012 & Best Paper Award, North American Association of Computational Linguistics. \\
 2010 & Best Paper Award, Empirical Methods in Natural Language Processing. \\
 2009 & Graduate Research Fellow, National Science Foundation.  \\
 2006 & Outstanding Undergraduate Award Finalist, Computing Research Association. \\
   
 \end{tabular}
-% Best Paper Award, NAACL, 2012 \\
-% Best Paper Award, EMNLP, 2010 \\
-% National Science Foundation Graduate Research Fellow, Computing Research Association, 2009 \\
-% Outstanding Undergraduate Award Finalist, Computing Research Association, 2006 \\
-% Member ACM Team, Harvard University, 2005-2006 \\
-% Summer Research Fellowship, Harvard University, 2005 \\
 \bigskip
 
-\marginhead{ {\vskip 0.3em}Publications}
+\marginhead{ {\vskip 0.3em} Recent Publications}
 \medskip
-\noindent\emph{Conference Papers \vspace{0.01in}}
 
 {% for paper in papers %}
+{% if loop.index <= 10 %}
 \ind {{paper.authors}}. \emph{\href{ {{paper.pdf}} }{ {{paper.title}}.} }\emph{ {{paper.conference}} }
 
 \medskip
-
+{% endif %}
 {% endfor %}
 
 
-\ind Yin-Wen Chang, Alexander M. Rush, John DeNero, and Michael Collins. 
-\emph{\href{http://people.csail.mit.edu/srush/}{A Lagrangian Relaxation Algorithm for Bilingual Word Alignment}}.
-Proceedings of ACL 2014.
-
-\medskip
-
-\ind Alexander M. Rush, Yin-Wen Chang, and Michael Collins. 
-\emph{\href{http://people.csail.mit.edu/srush/}{Optimal Beam Search for Machine Translation}}.
-Proceedings of EMNLP 2013.
-
-\medskip
-
-\ind Karl Stratos, Alexander M. Rush, Shay B. Cohen, and Michael Collins. 
-\emph{\href{http://www.cs.columbia.edu/~stratos/research/conll13rhmm.pdf}{Spectral Learning of Refinement HMMs}}.
-Proceedings of CoNLL 2013.
-
-\medskip
-
-\ind Alexander M. Rush, Roi Reichert, Michael Collins, and Amir Globerson.
-\emph{\href{http://people.csail.mit.edu/srush/emnlp2012.pdf.pdf}{Improved Parsing and POS Tagging Using Inter-Sentence Consistency Constraints}}, 
-Proceedings of EMNLP 2012. 
-
-\medskip
 
 \ind Alexander M. Rush and Slav Petrov, \emph{\href{http://people.csail.mit.edu/srush/vine-paper.pdf}{Vine Pruning for Efficient Multi-Pass Dependency Parsing}}. Proceedings of NAACL 2012. [Best Paper Award]
 
@@ -267,222 +239,47 @@ Proceedings of EMNLP 2012.
 
 \medskip
 
-\ind Alexander M. Rush and Michael Collins. \emph{\href{http://people.csail.mit.edu/srush/exdecmt.pdf}{Exact Decoding of Syntactic Translation Models through Lagrangian Relaxation}}. Proceedings of ACL 2011.
-
-\medskip
 
 \ind Terry Koo, Alexander M. Rush, Michael Collins, Tommi Jaakkola, and David Sontag. \emph{\href{http://people.csail.mit.edu/maestro/papers/koo10mstdd.pdf}{Dual Decomposition for Parsing with Non-Projective Head Automata}}. Proceedings of EMNLP 2010. [Best Paper Award]
 
+
+\vspace{0.1in}
+
+\noindent\emph{Patents \vspace{0.01in}}
+
+% \medskip
+
+\ind Techniques for discriminative dependency parsing (Google). Slav Petrov, Alexander M. Rush, 2015.
 \medskip
-%\textbf{Received Best Paper Award}
 
-\ind Alexander M. Rush, David Sontag, Michael Collins, and Tommi Jaakkola \emph{\href{http://people.csail.mit.edu/dsontag/papers/RusSonColJaa_emnlp10.pdf}{On Dual Decomposition and Linear Programming Relaxations for Natural Language Processing}}. Proceedings of EMNLP 2010.
-
+\ind Efficient parsing with structured prediction cascades (Google). Slav Petrov, Alexander M. Rush, 2013
 \medskip
-\ind Rebecca Nesson, Stuart M. Shieber, and Alexander M. Rush. \emph{\href{http://www.eecs.harvard.edu/~shieber/Biblio/Papers/Nesson-2006-IPS.pdf}{Induction of probabilistic synchronous tree-insertion grammars for machine translation}}. Proceedings of AMTA 2006.
-
-\vspace{0.3in}
-
-\noindent\emph{Journal Papers \vspace{0.01in}}
-
-\ind Alexander M. Rush and Michael Collins. \emph{\href{http://www.cs.columbia.edu/~mcollins/acltutorial.pdf}{A Tutorial on Dual Decomposition and Lagrangian Relaxation for Inference in Natural Language Processing}}. Journal of Artificial Intelligence Research 2012.
-
-% %\end{revnumerate}
- \bigskip
-
 
 %% Publications
+\ind  Determining user affinity towards applications on a social networking website (Facebook., Thomas S. Whitnah, Alexander M. Rush, Ding Zhou, Ruchi Sangvhi, 2010.
 
-
-%% Publications
-
-\marginhead{ {\vskip 0.4em}Academic \newline Internships}
-
-\bigskip
-
-\ind Research Intern, {\sl Google Research}, 2011 -- 2013 , New York, NY.  Advisor: Slav Petrov.
-
-
-
-\ind Research Intern, {\sl USC/ISI },  Summer 2010, Marina Del Rey, CA. Advisor: Liang Huang.
-
-\bigskip
-
-%% Publications
 
 \marginhead{ {\vskip 0.4em}Industry }
-
-\medskip
-\ind  Lead Engineer (Platform Team), {\sl Facebook}, 2007 -- 2009, Palo Alto, CA.
-% \begin{itemize} \itemsep -2pt % 
-% \item Helped develop optimized C++ parser and interpreter for FBML, a domain-specific markup language for applications.
-
-% \medskip
-
-% \item Built and designed a distributed system for tracking resource constraints of third-party applications. Awarded patent.
-% \medskip
-
-% \item Contributor on Internationalization project which utilizes crowd-sourcing to translate Facebook into 70+ languages.  
-% \end{itemize}
-
-% \ind Technical Associate (Intern), {\sl Bridgewater Associates}  June -- September 2006,
-%  Westport, CT. Implemented trade scheduling and equity analysis algorithms.
-% \begin{itemize} \itemsep -2pt % Reduce space between items
-% \item Designed and implemented large-scale trade scheduling and equity analysis algorithms.
-% \end{itemize}
-
-
+ 
 \bigskip
 
-\marginhead{ {\vskip 0.3em}Teaching}
-
-\hspace{-1cm} \begin{tabular}{lp{11.5cm}}
-2017 & \ind  Instructor (Upcoming), Machine Learning , Harvard University, Spring. \\
-2016 & \ind  Instructor, Machine Learning for NLP , Harvard University, Spring. \\
-2015 & \ind  Instructor, Artificial Intelligence, Harvard University, Fall. \\
-2013 & \ind  Instructor with Michael Collins, Natural Language Processing, Columbia University, Fall. \\
-& \ind Head Teaching Assistant, Natural Language Processing , Michael Collins, Columbia University, Spring (taught on Coursera, 30,000+ registered students). \\
-2012 & \ind Head Teaching Assistant, Natural Language Processing, Michael Collins, Columbia University, Fall.\\
-\end{tabular}
-
-\bigskip
-
-%% Presentations
-\marginhead{ {\vskip 0.4em}Patents}
-
-\medskip
-
-%% Publications
-\ind  Determining user affinity towards applications on a social networking website, Thomas S. Whitnah, Alexander M. Rush, Ding Zhou, Ruchi Sangvhi, 2010.
-
-\medskip
-
-
-\ind Multiple patents pending.
+\ind  Lead Engineer (Platform Team), {\sl Facebook}, June 2007 -- August 2009, Palo Alto, CA.
 
 \bigskip
 
 %% Publications
 
-\marginhead{ {\vskip 0.4em}Libraries}
-\bigskip
 
-(Selected widely used open-source research libraries)
+\marginhead{ {\vskip 0.4em}Open-Source}
+\bigskip
 
 {% for proj in code %}
-{% if loop.index <= 5 %}
-\medskip \ind \href{ {{proj.link}} }{ {{proj.title}} } 
-\begin{itemize}
-\item  {{proj.abstract}}
-\end{itemize}
+{% if loop.index <= 4 %}
+\medskip \ind \href{ {{proj.link}} }{ {{proj.title}} } - {{proj.abstract}}
+% \begin{itemize}
+% \item  
+% \end{itemize}
 {% endif %}
 {% endfor %}
-
-
-% \medskip \ind \href{http://www.pydecode.org}{PyDecode} (http://www.pydecode.org) 
-% \begin{itemize}
-% \item  An optimized toolkit for designing inference algorithms for NLP. 
-% \end{itemize}
-
-% \ind  \href{http://www.declassification-engine.org}{The Declassification Engine} (http://www.declassification-engine.org)
-% \begin{itemize}
-% \item  Computational social science project analyzing the process of official secrecy.
-% \item Awarded a Magic grant from Brown Institute for Media Innovation. 
-% \end{itemize}
-% \medskip
-
-\marginhead{ {\vskip 0.4em}Invited Talks \newline}
-\medskip
-
-%\vspace{15pt} % Gap between title and text
-
-\hspace{-1cm} \begin{tabular}{lp{11.5cm}}
- 2016 
- & \ind   Colloquium (upcoming), CMU, Fall. \\
- & \ind   Invited Talk, Stanford NLP, Summer. \\
- & \ind   Invited Talk, Oracle Labs, Summer. \\
- & \ind   Invited Talk, Twitter, Summer. \\
- & \ind   Colloquium, John Hopkins University, Spring. \\
- & \ind   Colloquium, Rakuten, Spring. \\
- 2014 
-
- & \ind   Colloquium, University of Washington, Spring. \\
-
- & \ind   Colloquium, NYU, Spring. \\
-
- & \ind   Colloquium, CMU, Spring. \\
-
- & \ind   Colloquium, MIT, Spring. \\
-
- & \ind   Colloquium, Harvard, Spring. \\
-
- & \ind   Colloquium, TTIC, Spring. \\
-
- & \ind   Colloquium, University of Maryland, Spring. \\
-\end{tabular}
-\hspace{-1cm} \begin{tabular}{lp{11.5cm}}
- 2013 
- & \ind   Invited Tutorial, UMBC, October. \\
-
- & \ind   Invited Talk, CS and Social Science Seminar, UMass Amherst, October. \\
-
- & \ind   Talk, NLP Seminar, Columbia University, October. \\
- & \ind   Invited Talk, ML Seminar, UMass Amherst, October. \\
-
-  & \ind  Invited Talk, Johnson Research Labs, NY, August. \\
-
-  &  \ind Invited Talk, Society for Historians of American Foreign Relations, Arlington, June. \\
-
-  & \ind  Invited Talk, Columbia University, Spring. \\
-
-  &  \ind    Invited Talk, NLP Seminar, City University of New York, Spring. \\
- 2012 & \ind   Invited Tutorial, Neural Information Processing Systems (NIPS), December. \\
- 2011 & \ind  Invited Tutorial, Google Research, Mountain View, August. \\
-  &  \ind Tutorial. Association of Computational Linguistic (ACL), June. \\
-  & \ind  Invited Talk, ML Seminar, University of Massachusetts, Amherst, Spring. \\
- & \ind   ML Tea, MIT, January. \\
-  2010 & \ind  NLP Seminar, USC/ISI, Summer. \\
- 2006 &  \ind  Invited Talk, Computational Linguistics Seminar, University of Pennsylvania, November. \\
-\end{tabular}
-%\end{revnumerate}
-
-\bigskip
-
-\marginhead{ {\vskip 0.4em}Service}
-\medskip
-
-
-\bigskip
-
-\ind Tutorial Chair: NAACL 2016, Area Chair: NAACL 2016, ICLR 2017
-
-\medskip
-\ind Reviewer:
-
-\ind EMNLP, NAACL, ACL, EACL, (Natural Language Processing).
-
-\ind
-UAI, NIPS, ICML, AAAI, ICLR (Machine Learning and Artificial Intelligence).
-
-
-%\newpage
-
-
-\bigskip
-
-%% Publications
-
-\marginhead{ {\vskip 0.4em}Misc}
-\medskip
-
-\ind General Manager of Harvard Radio Broadcasting (WHRB).
-
-\medskip
-
-\ind Member ACM Programming Team, Harvard University.
-
-\medskip
-
-\ind Experienced in C/C++, Python, Javascript, Lua/Torch, Haskell, Java, PHP, OCaml, LaTeX, HTML/CSS.
 
 \end{document}

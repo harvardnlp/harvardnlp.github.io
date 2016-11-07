@@ -2,7 +2,7 @@ code:
     - link: https://github.com/harvardnlp/seq2seq-attn
       title: Sequence-to-Sequence with Attention
       abstract: |
-        General-purpose meural machine translation system. 
+        Neural machine translation system. 
       image: /images/aesw2016.png
       models: https://drive.google.com/file/d/0BzhmYioWLRn_aEVnd0ZNcWd0Y2c/view
       data: http://www.statmt.org/wmt15/translation-task.html
@@ -20,7 +20,7 @@ code:
       title: CNN for Text Clasification
       image: /images/cnn.png
       abstract: |
-        Implementation of convolutional sentence classification.
+         Convolutional sentence classification.
       authors: Jeffrey Ling (based on code by Yoon Kim)
 
     - link: https://github.com/harvardnlp/im2markup
