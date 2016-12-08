@@ -27,6 +27,11 @@ papers:
       image: /images/seqseq.png
       slides : /slides/emnl16_bso.pdf
       
+    - title:  An Embedding Model for Predicting Roll-Call Votes
+      authors: Peter Kraft, Hirsh Jain, and Alexander M. Rush
+      conference: Proceedings of EMNLP 2016
+      pdf: https://www.aclweb.org/anthology/D/D16/D16-1221.pdf
+
     - title: Word Ordering Without Syntax
       authors: Allen Schmaltz, Alexander M. Rush, and Stuart M. Shieber
       conference: Proceedings of EMNLP 2016
