@@ -1,4 +1,10 @@
 papers:
+    - title "Interpreting, Training, and Distilling Seq2Seq Models" 
+      authors: Alexander Rush
+      conference: Recent Overview Talk
+      slides: https://harvardnlp.github.io/seq2seq-talk/slidescmu.pdf
+      image: /images/overview.png      
+
     - title: "What You Get Is What You See: A Visual Markup Decompiler"
       authors: Yuntian Deng, Anssi Kanervisto, and Alexander M. Rush
       conference: Arxiv Pre-print
@@ -18,14 +24,14 @@ papers:
       conference: Proceedings of EMNLP 2016
       pdf : http://arxiv.org/pdf/1606.07947v1.pdf
       image: /images/segknow.png
-      slides : /slides/emnl16_seqkd.pdf
+      slides : /slides/emnlp16_seqkd.pdf
 
     - title: Sequence-to-Sequence Learning as Beam-Search Opimization
       authors: Sam Wiseman and Alexander M. Rush
       conference: Proceedings of EMNLP 2016
       pdf : http://arxiv.org/pdf/1606.02960.pdf
       image: /images/seqseq.png
-      slides : /slides/emnl16_bso.pdf
+      slides : /slides/emnlp16_bso.pdf
       
     - title:  An Embedding Model for Predicting Roll-Call Votes
       authors: Peter Kraft, Hirsh Jain, and Alexander M. Rush
