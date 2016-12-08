@@ -1,6 +1,6 @@
 code:
     - link: https://opennmt.github.io
-      title: OpenNMT (alpha)
+      title: OpenNMT (alpha pre-release)
       abstract: Open-source neural machine translation system.         
       image: /images/aesw2016.png
       data: http://www.statmt.org/wmt15/translation-task.html
