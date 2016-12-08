@@ -38,18 +38,21 @@ papers:
       conference: Proceedings of EMNLP 2016
       image: /images/poliemb.png
       pdf: https://www.aclweb.org/anthology/D/D16/D16-1221.pdf
-
+      slides : /slides/emnlp16_poli.pdf
+      
     - title: Word Ordering Without Syntax
       authors: Allen Schmaltz, Alexander M. Rush, and Stuart M. Shieber
       conference: Proceedings of EMNLP 2016
       pdf : https://arxiv.org/abs/1604.08633
       image: /images/wordorder.png
+      slides : /slides/emnlp16_order.pdf
 
     - title: Sentence-Level Grammatical Error Identification as Sequence-to-Sequence Correction
       authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, and Stuart M. Shieber
       conference: Workshop Submission for AESW 2016 (Top Performing System)
       pdf : /papers/aesw2016.pdf
       image: /images/aesw2016.png
+      slides: /slides/naacl16_grammar.pdf
 
     - title: Learning Global Features for Coreference Resolution
       authors : Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber
