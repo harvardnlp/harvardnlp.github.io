@@ -18,12 +18,14 @@ papers:
       conference: Proceedings of EMNLP 2016
       pdf : http://arxiv.org/pdf/1606.07947v1.pdf
       image: /images/segknow.png
+      slides : /slides/emnl16_seqkd.pdf
 
     - title: Sequence-to-Sequence Learning as Beam-Search Opimization
       authors: Sam Wiseman and Alexander M. Rush
       conference: Proceedings of EMNLP 2016
       pdf : http://arxiv.org/pdf/1606.02960.pdf
       image: /images/seqseq.png
+      slides : /slides/emnl16_bso.pdf
       
     - title: Word Ordering Without Syntax
       authors: Allen Schmaltz, Alexander M. Rush, and Stuart M. Shieber
