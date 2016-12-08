@@ -1,12 +1,10 @@
 code:
-    - link: https://github.com/harvardnlp/seq2seq-attn
-      title: Sequence-to-Sequence with Attention
-      abstract: |
-        Neural machine translation system. 
+    - link: https://opennmt.github.io
+      title: OpenNMT (alpha)
+      abstract: Open-source neural machine translation system.         
       image: /images/aesw2016.png
-      models: https://drive.google.com/file/d/0BzhmYioWLRn_aEVnd0ZNcWd0Y2c/view
       data: http://www.statmt.org/wmt15/translation-task.html
-      authors: Yoon Kim
+      authors: HarvardNLP + Systran 
       
     - link: https://github.com/HendrikStrobelt/lstmvis
       title: LSTMVis
@@ -15,6 +13,16 @@ code:
       image: /images/small_teaser.png
       models: https://goo.gl/oHF9q5
       authors: Hendrik Strobelt and Sebastian Gehrmann
+
+    - link: https://github.com/harvardnlp/seq2seq-attn
+      title: Sequence-to-Sequence with Attention
+      abstract: |
+        General-purpose sequence-to-sequence model . 
+      image: /images/aesw2016.png
+      models: https://drive.google.com/file/d/0BzhmYioWLRn_aEVnd0ZNcWd0Y2c/view
+      data: http://www.statmt.org/wmt15/translation-task.html
+      authors: Yoon Kim
+
       
     - link: https://github.com/harvardnlp/sent-conv-torch
       title: CNN for Text Clasification
