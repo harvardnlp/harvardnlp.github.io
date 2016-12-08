@@ -30,6 +30,7 @@ papers:
     - title:  An Embedding Model for Predicting Roll-Call Votes
       authors: Peter Kraft, Hirsh Jain, and Alexander M. Rush
       conference: Proceedings of EMNLP 2016
+      image: /images/poliemb.png
       pdf: https://www.aclweb.org/anthology/D/D16/D16-1221.pdf
 
     - title: Word Ordering Without Syntax
