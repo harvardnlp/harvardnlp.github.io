@@ -25,7 +25,8 @@ papers:
       pdf : http://arxiv.org/pdf/1606.07947v1.pdf
       image: /images/segknow.png
       slides : /slides/emnlp16_seqkd.pdf
-
+      code: https://github.com/harvardnlp/seq2seq-attn
+        
     - title: Sequence-to-Sequence Learning as Beam-Search Opimization
       authors: Sam Wiseman and Alexander M. Rush
       conference: Proceedings of EMNLP 2016
@@ -46,14 +47,15 @@ papers:
       pdf : https://arxiv.org/abs/1604.08633
       image: /images/wordorder.png
       slides : /slides/emnlp16_order.pdf
-
+      code: https://github.com/allenschmaltz/word_ordering/
+      
     - title: Sentence-Level Grammatical Error Identification as Sequence-to-Sequence Correction
       authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, and Stuart M. Shieber
       conference: Workshop Submission for AESW 2016 (Top Performing System)
       pdf : /papers/aesw2016.pdf
       image: /images/aesw2016.png
       slides: /slides/naacl16_grammar.pdf
-
+      
     - title: Learning Global Features for Coreference Resolution
       authors : Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber
       conference : Proceedings of NAACL 2016
