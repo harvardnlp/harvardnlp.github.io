@@ -6,7 +6,7 @@ permalink: /meetings/
 
 
 <ul>
-<li>Time: Mon. 4-5</li>
+<li>Time: Wed. 4-5</li>
 <li>Room: Pierce Hall 320</li>
 <li>Open to any interested party who reads the paper</li>
 </ul>
