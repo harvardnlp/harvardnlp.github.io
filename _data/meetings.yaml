@@ -1,9 +1,21 @@
 - term: Spring 2017
   meetings:
-    - date: Jan 30
+    - date: Jan 30 (3-4pm)
       paper: "Talk: Jacob Andreas (Berkeley)"
-      cite:
-      presenter:
+    - date: Mar 1
+      paper: "Talk: Tomas Reimers"
+    - date: Mar 22
+      paper: "Talk: Yu Zhang"
+    - date: Mar 29
+      paper: "Talk: Greg He"
+    - date: Apr 5
+      paper: "Talk: Yoon Kim"
+    - date: Apr 12
+      paper: "Thesis talks"
+    - date: Apr 19
+      paper: "Thesis talks"
+    - date: (tbd)
+      paper: "Talk: Espen Bernton"
 
 - term: Fall 2016 
   meetings: 

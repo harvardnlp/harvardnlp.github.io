@@ -7,7 +7,7 @@ permalink: /meetings/
 
 <ul>
 <li>Time: Wed. 4-5</li>
-<li>Room: Pierce Hall 320</li>
+<li>Room: Maxwell Dworkin 221</li>
 <li>Open to any interested party who reads the paper</li>
 </ul>
 
@@ -15,16 +15,26 @@ permalink: /meetings/
 <div class ="row">
 
 <div style="text-align:center">
-<h3 > {{term.term}} </h3>
+<h3>{{term.term}}</h3>
 </div>
 </div>
-
-
 
 <table class="table table-striped table-hover">
-<tr><th> Date</th> <th> Paper</th> <th>Presenter </th></tr>
+<tr>
+	<th> Date</th> <th> Paper</th> <th>Presenter </th>
+</tr>
 {% for paper in term.meetings %}
-<tr><td> {{ paper.date }}  </td> <td><a href="{{paper.cite}}"> {{paper.paper}}</a> </td><td> {{paper.presenter}} </td></tr>
+	<tr>
+		<td> {{ paper.date }}  </td>
+		<td>
+			{% if paper.cite %}
+			<a href="{{paper.cite}}">{{paper.paper}}</a>
+			{% else %}
+			{{paper.paper}}
+			{% endif %}
+		</td>
+		<td> {{paper.presenter}} </td>
+	</tr>
 {% endfor %}
 </table>
 {% endfor %}
