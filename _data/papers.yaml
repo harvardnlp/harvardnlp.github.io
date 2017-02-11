@@ -1,4 +1,20 @@
 papers:
+    - title: "Structured Attention Networks" 
+      authors: Yoon Kim, Carl Denton, Luong Hoang, and Alexander M. Rush
+      conference: ICLR 2017
+      pdf : https://arxiv.org/abs/1702.00887
+      code : http://github.com/harvardnlp/struct-attn
+      image: /images/struct.jpg            
+      slides: 
+
+    - title: "Lie-Access Neural Turing Machines" 
+      authors: Greg Yang and Alexander M. Rush
+      conference: ICLR 2017
+      pdf : https://arxiv.org/abs/1611.02854
+      code : 
+      image: /images/lantm.png            
+      slides: 
+
     - title: "Interpreting, Training, and Distilling Seq2Seq Models" 
       authors: Alexander Rush
       conference: Recent Overview Talk
