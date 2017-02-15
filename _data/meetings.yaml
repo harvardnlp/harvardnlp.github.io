@@ -7,20 +7,23 @@
       cite: "#cite_lazaridou2016multi"
     - date: Feb 15
       paper: "Talk: Michael Chang (MIT)"
+    - date: Feb 22
+      paper: Combining Natural Logic and Shallow Reasoning for Question Answering
+      cite: "#cite_angeli2016combining"
     - date: Mar 1
       paper: "Talk: Tomas Reimers"
+    - date: Mar 8
+      paper: "Talk: Espen Bernton"
     - date: Mar 22
-      paper: "Talk: Yu Zhang"
+      paper: "Talk: Yu Zhang (MIT)"
     - date: Mar 29
       paper: "Talk: Greg He"
     - date: Apr 5
       paper: "Talk: Yoon Kim"
     - date: Apr 12
       paper: "Thesis talks"
-    - date: Apr 19
-      paper: "Thesis talks"
-    - date: (tbd)
-      paper: "Talk: Espen Bernton"
+    - date: Apr 20
+      paper: "Talk: Arvind Neelakantan (UMass)"
 
 - term: Fall 2016 
   meetings: 
