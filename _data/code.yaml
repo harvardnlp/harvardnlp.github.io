@@ -1,5 +1,5 @@
 code:
-    - link: https://opennmt.net
+    - link: http://opennmt.net
       title: OpenNMT 
       abstract: Open-source neural machine translation system.         
       image: /images/aesw2016.png
