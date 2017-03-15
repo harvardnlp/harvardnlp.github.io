@@ -11,7 +11,7 @@ papers:
       authors: Greg Yang and Alexander M. Rush
       conference: ICLR 2017
       pdf : https://arxiv.org/abs/1611.02854
-      code : 
+      code : https://github.com/harvardnlp/lie-access-memory
       image: /images/lantm.png            
       slides: 
 
