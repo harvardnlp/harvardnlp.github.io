@@ -76,15 +76,14 @@
 %%\usepackage{revnum} % for reverse-numbered publications (revnumerate environment) if needed.
 
 %% needed for xelatex to work
-\usepackage{fontspec}
-\usepackage{xunicode}
+% \usepackage{fontspec}
+% \usepackage{xunicode}
 
 %% color for the links 
 \usepackage[usenames,dvipsnames]{xcolor}
-
+\usepackage{palatino}
 %% hyperlinks
 \usepackage[ 
-xetex,
 colorlinks=true,
 	urlcolor=BlueViolet,
 	plainpages=false,
@@ -106,9 +105,9 @@ colorlinks=true,
 %% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
 %% and is worth every penny. Any good monospace font will work fine, though.
 %% Consolas or inconsolata are good alternatives.
-\setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Minion Pro} 
-\setsansfont[Mapping=tex-text,Colour=AA0000]{Myriad Pro}
-\setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata} 
+% \setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{arial} 
+% \setsansfont[Mapping=tex-text,Colour=AA0000]{Myriad Pro}
+% \setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata} 
 
 
 %%%------------------------------------------------------------------------
@@ -170,7 +169,7 @@ colorlinks=true,
 \medskip
 
 %% Name 
-\noindent{\Large {\textsc{alexander m. rush}}}
+\noindent{\Large {Alexander M. Rush}}
 \reversemarginpar
 
 
@@ -342,13 +341,13 @@ Proceedings of EMNLP 2012.
 2017 & \ind  Instructor, Machine Learning , Harvard University, Spring. \\
 2016 & \ind  Instructor, Machine Learning for NLP , Harvard University, Spring. \\
 2015 & \ind  Instructor, Artificial Intelligence, Harvard University, Fall. \\
-2013 & \ind  Instructor with Michael Collins, Natural Language Processing, Columbia University, Fall. \\
+2013 & \ind  Instructor (with Michael Collins), Natural Language Processing, Columbia University, Fall. \\
 & \ind Head Teaching Assistant, Natural Language Processing , Michael Collins, Columbia University, Spring (taught on Coursera, 30,000+ registered students). \\
 2012 & \ind Head Teaching Assistant, Natural Language Processing, Michael Collins, Columbia University, Fall.\\
 \end{tabular}
 
  \bigskip
-\noindent\emph{Patents \vspace{0.01in}}
+\marginhead{ {\vskip 0.3em}Patents}
 
 % \medskip
 
@@ -370,7 +369,6 @@ Proceedings of EMNLP 2012.
 \marginhead{ {\vskip 0.4em}Libraries}
 \bigskip
 
-(Selected widely used open-source research libraries)
 
 {% for proj in code %}
 {% if loop.index <= 5 %}
@@ -401,7 +399,11 @@ Proceedings of EMNLP 2012.
 
 \hspace{-1cm} \begin{tabular}{lp{11.5cm}}
  2017
+ & \ind   Invited Talk, Google Faculty Day, Spring. \\
+ & \ind   Invited Talk, New England Machine Learning Day, Spring. \\
+ & \ind   Invited Talk, Google, Spring. \\
  & \ind   Invited Talk, Berkeley CS, Spring. \\
+ & \ind   Invited Talk, Notre Dame, Spring. \\
  & \ind   Colloquium, TTI-Chicago, Spring. \\
  & \ind   Colloquium, Apple, Siri Team, Spring. \\
  2016 
@@ -416,6 +418,9 @@ Proceedings of EMNLP 2012.
  & \ind   Invited Talk, Twitter, Summer. \\
  & \ind   Colloquium, John Hopkins University, Spring. \\
  & \ind   Colloquium, Rakuten, Spring. \\
+\end{tabular}
+\begin{tabular}{lp{11.5cm}}
+
  2014 
 
  & \ind   Colloquium, University of Washington, Spring. \\
@@ -466,7 +471,9 @@ Proceedings of EMNLP 2012.
 
 \bigskip
 
-\ind Tutorial Chair: NAACL 2016, Area Chair: NAACL 2016, ICLR 2017
+\ind Area Chair: NAACL (Machine Learning) 2016, ICLR (NLP) 2017, EMNLP (Generation/Summaration) 2017, ACL (Parsing and Tagging) 2017
+
+\ind Tutorial Chair: NAACL 2016
 
 \medskip
 \ind Reviewer:
