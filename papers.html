@@ -2,15 +2,16 @@
 layout: page
 title: Publications
 permalink: /papers/
+weight: 4
 ---
 
 
-
+<table>
 {% for paper in site.data.papers.papers %}
 
-<table>
+
   <tr><td style="padding:10px">
-{% if paper.image %}<img width="100px" src="{{paper.image}}"> {% endif %}
+{% if paper.image %}<img width="250px" src="{{paper.image}}"> {% endif %}
 </td><td style="padding:10px">
 <a class="paper" href="{{paper.pdf}}">
 {{paper.title}}

@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Reading Group
+title: Meetings
 permalink: /meetings/
+weight: 5
 ---
 
 

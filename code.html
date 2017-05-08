@@ -1,23 +1,24 @@
 ---
 layout: page
 title: Code
+weight: 2
 permalink: /code/
 ---
 
-Open-source implementations of popular deep learning techniques with
-applications to NLP. While this is research code (and usual caveats
-apply), it has been used in industrial teams outside of our group, and
-licenses are included in the repos.
-<br> <br>
+<!-- Open-source implementations of popular deep learning techniques with -->
+<!-- applications to NLP. While this is research code (and usual caveats -->
+<!-- apply), it has been used in industrial teams outside of our group, and -->
+<!-- licenses are included in the repos. -->
+<!-- <br> <br> -->
 
 
-<h3>Projects</h3>
+<!-- <h3>Projects</h3> -->
 
 {% for project in site.data.code.code %}
 
 <table>
   <tr><td style="padding:10px">
-{% if project.image %}<a class="paper" href="{{project.link}}"><img width="100px" src="{{project.image}}"> </a>{% endif %}
+{% if project.image %}<a class="paper" href="{{project.link}}"><img width="200px" src="{{project.image}}"> </a>{% endif %}
 </td><td style="padding:10px">
 <a class="paper" href="{{project.link}}">
 {{project.title}}
