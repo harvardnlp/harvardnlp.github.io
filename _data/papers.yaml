@@ -10,8 +10,8 @@ papers:
     - title: "Lie-Access Neural Turing Machines" 
       authors: Greg Yang and Alexander M. Rush
       conference: ICLR 2017
-      pdf : https://arxiv.org/abs/1611.02854
-      code : https://github.com/harvardnlp/lie-access-memory
+      pdf : http://lstm.seas.harvard.edu/lantm/
+      code : http://lstm.seas.harvard.edu/lantm/
       image: /images/lantm.png            
       slides: 
 
