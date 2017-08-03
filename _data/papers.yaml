@@ -1,40 +1,53 @@
 papers:
-    - title: "Structured Attention Networks" 
-      authors: Yoon Kim, Carl Denton, Luong Hoang, and Alexander M. Rush
-      conference: ICLR 2017
-      pdf : https://arxiv.org/abs/1702.00887
-      code : http://github.com/harvardnlp/struct-attn
-      image: /images/struct.jpg            
-      slides: /slides/iclr17.pdf
-
-    - title: "Lie-Access Neural Turing Machines" 
-      authors: Greg Yang and Alexander M. Rush
-      conference: ICLR 2017
-      pdf : http://lstm.seas.harvard.edu/lantm/
-      code : http://lstm.seas.harvard.edu/lantm/
-      image: /images/lantm.png            
-      slides: 
-
-    - title: "Interpreting, Training, and Distilling Seq2Seq Models" 
-      authors: Alexander Rush
-      conference: Recent Overview Talk
-      slides: "https://harvardnlp.github.io/seq2seq-talk/slidescmu.pdf"
-      image: /images/overview.png      
-
-    - title: "What You Get Is What You See: A Visual Markup Decompiler"
-      authors: Yuntian Deng, Anssi Kanervisto, and Alexander M. Rush
+    - title: "Challenges in Data-to-Document Generation"
+      authors: Sam Wiseman, Stuart M Shieber Alexander M. Rush
+      conference: EMNLP 2017
+      pdf : https://arxiv.org/abs/1707.08052
+      code : http://lstm.seas.harvard.edu/docgen
+      image: /images/docgen.jpg
+      slides:
+    - title: "Adapting Sequence Models for Sentence Correction"
+      authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, Stuart M. Shieber
+      conference: EMNLP 2017
+      pdf : https://arxiv.org/abs/1707.09067
+      image: /images/aesw2016.png
+      slides:
+    - title: "Image-to-Markup Generation with Coarse-to-Fine Attention"
+      authors: Yuntian Deng, Anssi Kanervisto, Jeffrey Ling, and Alexander M. Rush
       conference: Arxiv Pre-print
       pdf : http://lstm.seas.harvard.edu/latex/
       code : http://lstm.seas.harvard.edu/latex/
       image: https://camo.githubusercontent.com/5a6350632dd43b69fff7f41928f27b8c8eb9a7d9/687474703a2f2f6c73746d2e736561732e686172766172642e6564752f6c617465782f6d61746865782e706e67
-      
-    - title: Visual Analysis of Hidden State Dynamics in Recurrent Neural Networks
-      authors: Hendrik Strobelt, Sebastian Gehrmann, Bernd Huber, Hanspeter Pfister, and Alexander M. Rush
-      conference: Arxiv Pre-print
+
+    - title: "LSTMVis: A Tool for Visual Analysis of Hidden State Dynamics in Recurrent Neural Networks"
+      authors: Hendrik Strobelt, Sebastian Gehrmann, Hanspeter Pfister, and Alexander M. Rush
+      conference: InfoVis 2017
       pdf : http://lstm.seas.harvard.edu/
       code : http://lstm.seas.harvard.edu/
-      image: /images/small_teaser.png      
-      
+      image: /images/small_teaser.png
+
+    - title: "Structured Attention Networks"
+      authors: Yoon Kim, Carl Denton, Luong Hoang, and Alexander M. Rush
+      conference: ICLR 2017
+      pdf : https://arxiv.org/abs/1702.00887
+      code : http://github.com/harvardnlp/struct-attn
+      image: /images/struct.jpg
+      slides: /slides/iclr17.pdf
+
+    - title: "Lie-Access Neural Turing Machines"
+      authors: Greg Yang and Alexander M. Rush
+      conference: ICLR 2017
+      pdf : http://lstm.seas.harvard.edu/lantm/
+      code : http://lstm.seas.harvard.edu/lantm/
+      image: /images/lantm.png
+      slides:
+
+    - title: "Interpreting, Training, and Distilling Seq2Seq Models"
+      authors: Alexander Rush
+      conference: Recent Overview Talk
+      slides: "https://harvardnlp.github.io/seq2seq-talk/slidescmu.pdf"
+      image: /images/overview.png
+
     - title: Sequence-Level Knowledge Distillation
       authors: Yoon Kim and Alexander M. Rush
       conference: Proceedings of EMNLP 2016
@@ -42,21 +55,21 @@ papers:
       image: /images/segknow.png
       slides : /slides/emnlp16_seqkd.pdf
       code: https://github.com/harvardnlp/seq2seq-attn
-        
+
     - title: Sequence-to-Sequence Learning as Beam-Search Opimization
       authors: Sam Wiseman and Alexander M. Rush
       conference: Proceedings of EMNLP 2016
       pdf : http://arxiv.org/pdf/1606.02960.pdf
       image: /images/seqseq.png
       slides : /slides/emnlp16_bso.pdf
-      
+
     - title:  An Embedding Model for Predicting Roll-Call Votes
       authors: Peter Kraft, Hirsh Jain, and Alexander M. Rush
       conference: Proceedings of EMNLP 2016
       image: /images/poliemb.png
       pdf: https://www.aclweb.org/anthology/D/D16/D16-1221.pdf
       slides : /slides/emnlp16_poli.pdf
-      
+
     - title: Word Ordering Without Syntax
       authors: Allen Schmaltz, Alexander M. Rush, and Stuart M. Shieber
       conference: Proceedings of EMNLP 2016
@@ -64,14 +77,14 @@ papers:
       image: /images/wordorder.png
       slides : /slides/emnlp16_order.pdf
       code: https://github.com/allenschmaltz/word_ordering/
-      
+
     - title: Sentence-Level Grammatical Error Identification as Sequence-to-Sequence Correction
       authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, and Stuart M. Shieber
       conference: Workshop Submission for AESW 2016 (Top Performing System)
       pdf : /papers/aesw2016.pdf
       image: /images/aesw2016.png
       slides: /slides/naacl16_grammar.pdf
-      
+
     - title: Learning Global Features for Coreference Resolution
       authors : Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber
       conference : Proceedings of NAACL 2016
@@ -86,7 +99,7 @@ papers:
       pdf : /papers/naacl16_summary.pdf
       image : /images/summary2.png
 
-    - title: Character-Aware Neural Language Models 
+    - title: Character-Aware Neural Language Models
       authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
       conference : Proceedings of AAAI 2016
       code : https://github.com/yoonkim/lstm-char-cnn
@@ -94,7 +107,7 @@ papers:
       slides : /slides/aaai16.pdf
       image : /images/charrnn.png
 
-    - title: A Neural Attention Model for Abstractive Sentence Summarization 
+    - title: A Neural Attention Model for Abstractive Sentence Summarization
       authors : Alexander M. Rush, Sumit Chopra, and Jason Weston
       conference : Proceedings of EMNLP 2015.
       pdf : http://arxiv.org/pdf/1509.00685.pdf
@@ -102,21 +115,21 @@ papers:
       slides : /slides/emnlp15.pdf
       image : /images/summary.png
 
-    - title: Towards AI-Complete Question Answering A Set of Prerequisite Toy Tasks 
+    - title: Towards AI-Complete Question Answering A Set of Prerequisite Toy Tasks
       authors: Jason Weston, Antoine Bordes, Sumit Chopra, Tomas Mikolov, and Alexander M. Rush
       pdf : http://arxiv.org/pdf/1502.05698.pdf
-      conference: Arxiv Preprint 
+      conference: Arxiv Preprint
       image : /images/babi.png
 
-    - title: Learning Anaphoricity and Antecedent Ranking Features for Coreference Resolution 
+    - title: Learning Anaphoricity and Antecedent Ranking Features for Coreference Resolution
       authors : Sam Wiseman, Alexander M. Rush, Jason Weston, and Stuart M. Shieber
-      conference : Proceedings of ACL 2015. 
+      conference : Proceedings of ACL 2015.
       pdf : http://people.seas.harvard.edu/~srush/acl15.pdf
       code : https://github.com/swiseman/nn_coref
       slides : /slides/acl15_pres.pdf
       image : /images/acl15.png
 
-    - title: A Fast Variational Approach for Learning Markov Random Field Language Models 
+    - title: A Fast Variational Approach for Learning Markov Random Field Language Models
       authors: Yacine Jernite, Alexander M. Rush, and David Sontag
       conference : Proceedings of ICML 2015.
       code : https://github.com/srush/MRF-LM/
@@ -124,9 +137,9 @@ papers:
       pdf : http://people.seas.harvard.edu/~srush/icml15.pdf
       image : /images/icml15.png
 
-    - title: Transforming Dependencies into Phrase Structures 
+    - title: Transforming Dependencies into Phrase Structures
       authors: Lingpeng Kong, Alexander M. Rush, and Noah A. Smith
-      conference: Proceedings of NAACL 2015. 
+      conference: Proceedings of NAACL 2015.
       slides: http://people.seas.harvard.edu/~srush/naacl_poster.pdf
       pdf: http://people.seas.harvard.edu/~srush/naacl15.pdf
       code :  https://github.com/ikekonglp/PAD

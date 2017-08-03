@@ -7,7 +7,7 @@ weight: 5
 
 
 <ul>
-<li>Time: Wed. 4-5</li>
+<li>Time: Fall term Time TBD</li>
 <li>Room: Maxwell Dworkin 221</li>
 <li>Open to any interested party who reads the paper</li>
 </ul>
@@ -52,6 +52,3 @@ $(function(){
 bibtexify("reading.bib", "pubTable", {"visualization":false});}
 );
 </script>
-
-
-

@@ -1,3 +1,6 @@
+- term: Fall 2017
+  meetings:
+
 - term: Spring 2017
   meetings:
     - date: Jan 30 (3-4pm)
@@ -25,11 +28,11 @@
     - date: Apr 20
       paper: "Talk: Arvind Neelakantan (UMass)"
 
-- term: Fall 2016 
-  meetings: 
+- term: Fall 2016
+  meetings:
     - date: Sept 14
       paper: "Talk: Andrew McCallum (UMass-Amherst)"
-      cite: 
+      cite:
       presenter:
     - date: Sept 19
       paper: Learning Language Games through Interaction (Wang et al, 2016)
@@ -71,15 +74,15 @@
       paper: "Talk: Kevin Kwok (MIT)"
       presenter:
 
-        
+
 - term: Summer 2016 (RL)
-  meetings: 
+  meetings:
     - date: Jun 23
       paper: Reinforcement learning of motor skills with policy gradients<br> (Peters and Schaal, 2008)
       cite: "#cite_peters2008reinforcement"
       presenter: Yoon
     - date: Jun 30
-      paper: On a Connection between Importance Sampling and LRPG <br> (Tang and Abbeel, 2010) 
+      paper: On a Connection between Importance Sampling and LRPG <br> (Tang and Abbeel, 2010)
       cite: "#cite_jie2010connection"
       presenter: Group
     - date: Jul 6
@@ -92,23 +95,23 @@
       cite: "#cite_jie2010connection"
       presenter: Group
     - date: Jul 20
-      paper: Trust Region Policy Optimization (Schulman et al, 2016) 
+      paper: Trust Region Policy Optimization (Schulman et al, 2016)
       cite: "#cite_jie2010connection"
       presenter: Group
     - date: Jul 27
-      paper: An Actor-Critic Algorithm for Sequence Prediction (Bahdanau et al, 2016) 
+      paper: An Actor-Critic Algorithm for Sequence Prediction (Bahdanau et al, 2016)
       cite: "#cite_jie2010connection"
       presenter: Group
 
 
 - term: Spring 2016
-  meetings: 
+  meetings:
     - date: Feb 3
       paper: Character-Aware Language Modeling (Kim et. al, 2016)
       cite: "#cite_DBLP:journals/corr/KimJSR15"
       presenter: Yoon
     - date: Feb 10
-      paper: Compressing LSTMs into CNNs (Geras et al, 2015), 
+      paper: Compressing LSTMs into CNNs (Geras et al, 2015),
       cite: "#cite_compresscnn"
       presenter: Sam
     - date: Feb 17
@@ -150,13 +153,13 @@
       presenter: Donald
     - date: Apr 20
       paper: "Talk: Lu Wang (Northeastern)"
-      cite: "http://www.ccs.neu.edu/home/luwang/" 
+      cite: "http://www.ccs.neu.edu/home/luwang/"
       presenter: Lu
     - date: Apr 27
       paper: "Talk: Keyon Vafa (Harvard)"
-      link: 
+      link:
       presenter: Keyon
     - date: May 11
       paper: "Talk: Pushpak Bhattacharyya (IIT)"
-      link: 
+      link:
       presenter: Dr. Bhattacharyya
