@@ -1,6 +1,6 @@
 - group : Faculty
   people :
-    - 
+    -
     - name : Stuart Shieber
       github: srush
       url: "http://www.eecs.harvard.edu/shieber/"
@@ -14,23 +14,30 @@
       title : Assistant Professor
 - group : Graduate Students and Visitors
   people :
+    - name : Justin Chiu
+      email : yoonkim@seas.harvard.edu
+      url : "http://github.com/justinchiu/"
+      github: justinchiu
+      githubid: 2389353
+      title : PhD Student
+
     - name: Sebastian Gehrmann
       githubid: 2212304
       github: sebastianGehrmann
       url: "http://scholar.harvard.edu/gehrmann"
       title: PhD Student
- 
+
     - name : Yoon Kim
       email : yoonkim@seas.harvard.edu
       url : "http://www.people.fas.harvard.edu/~yoonkim/"
       github: yoonkim
-      githubid: 5378003 
+      githubid: 5378003
       title : PhD Student
     # - name : Won Lee
     #   email : wil896@g.harvard.edu
     #   url : "http://github.com/won1k"
     #   github: won1k
-    #   githubid: 1541186 
+    #   githubid: 1541186
     #   title : PhD Student
 
     # - name : Saketh Rama
@@ -46,7 +53,7 @@
       url: "http://github.com/allenschmaltz"
       title: PhD Student
 
-      
+
     - name : Sam Wiseman
       email : swiseman@seas.harvard.edu
       title : PhD Student
@@ -57,7 +64,7 @@
       email: blank
       title: PhD Student
       url: https://github.com/da03
-      githubid: 5753959  
+      githubid: 5753959
 
 - group: Undergraduate Researchers
   people:
@@ -74,41 +81,41 @@
 
 - group: Alumni
   people:
-    - name : Keyon Vafa
+    - name : Keyon Vafa (Columbia)
       email: blank
       title: Undergraduate
       url: https://github.com/keyonvafa
       githubid: 10766891
       github: 10766891
-    - name : Hugh Zabriskie
+    - name : Hugh Zabriskie (Microsoft)
       email: blank
       title: Undergraduate
       url: https://github.com/glasperfan
       githubid: 6545534
-    - name: Victoria Krakovna
+    - name: Victoria Krakovna (Deep Mind)
       githubid: 13193139
       url: "http://github.com/vkrakovna"
-    - name : Mike Zhai
+    - name : Mike Zhai (JHU)
       email: blank
       title: Vistor
       url: https://github.com/mzhai2
       githubid: 5619828
-    - name : Jeffrey Ling
+    - name : Jeffrey Ling (Vicarious)
       email: blank
       url: https://github.com/jeffreyling
       githubid: 5473863
-      title: Undergrad Researcher 
-    - name : Alex Wang
+      title: Undergrad Researcher
+    - name : Alex Wang (NYU)
       email: blank
       url: https://github.com/W4ngatang
       githubid: 5520155
       title: Undergrad Researcher
-    - name : Ankit Gupta
+    - name : Ankit Gupta (Vicarious)
       email: blank
       url: https://github.com/ankitvgupta
       githubid: 5473865
       title: Undergrad Researcher
-    - name : Aidi Zhang 
+    - name : Aidi Zhang
       email: blank
       url: http://github.com/aidizhang
       githubid: 8845416
@@ -118,9 +125,8 @@
       url: https://github.com/kyang01
       githubid: 6758464
       title: Undergrad Researcher
-    - name : Hirsh Jain
+    - name : Hirsh Jain (Reverie Labs)
       email: blank
       url: https://github.com/hirshjain32
       githubid: 3827097
       title: Undergrad Researcher
-

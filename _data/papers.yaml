@@ -4,8 +4,8 @@ papers:
       conference: EMNLP 2017
       pdf : https://arxiv.org/abs/1707.08052
       code : http://lstm.seas.harvard.edu/docgen
-      image: /images/docgen.jpg
-      slides:
+      image: /images/docgen.png
+      slides: /slides/nmt17.pdf
     - title: "Adapting Sequence Models for Sentence Correction"
       authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, Stuart M. Shieber
       conference: EMNLP 2017
@@ -14,7 +14,7 @@ papers:
       slides:
     - title: "Image-to-Markup Generation with Coarse-to-Fine Attention"
       authors: Yuntian Deng, Anssi Kanervisto, Jeffrey Ling, and Alexander M. Rush
-      conference: Arxiv Pre-print
+      conference: ICML 2017
       pdf : http://lstm.seas.harvard.edu/latex/
       code : http://lstm.seas.harvard.edu/latex/
       image: https://camo.githubusercontent.com/5a6350632dd43b69fff7f41928f27b8c8eb9a7d9/687474703a2f2f6c73746d2e736561732e686172766172642e6564752f6c617465782f6d61746865782e706e67
