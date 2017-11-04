@@ -18,6 +18,7 @@ papers:
       pdf : http://lstm.seas.harvard.edu/latex/
       code : http://lstm.seas.harvard.edu/latex/
       image: https://camo.githubusercontent.com/5a6350632dd43b69fff7f41928f27b8c8eb9a7d9/687474703a2f2f6c73746d2e736561732e686172766172642e6564752f6c617465782f6d61746865782e706e67
+      slides: /slides/icml17.pdf
 
     - title: "LSTMVis: A Tool for Visual Analysis of Hidden State Dynamics in Recurrent Neural Networks"
       authors: Hendrik Strobelt, Sebastian Gehrmann, Hanspeter Pfister, and Alexander M. Rush
