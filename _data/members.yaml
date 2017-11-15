@@ -49,7 +49,7 @@
     - name : Allen<br> Schmaltz
       github: allenschmaltz
       githubid: 2748209
-      email : blank
+      email : schmaltz@seas.harvard.edu
       url: "http://github.com/allenschmaltz"
       title: PhD Student
 
@@ -61,7 +61,7 @@
       url: "http://github.com/swiseman"
       title: PhD Student
     - name : Yuntian Deng
-      email: blank
+      email: dengyuntian@seas.harvard.edu
       title: PhD Student
       url: https://github.com/da03
       githubid: 5753959
@@ -78,6 +78,22 @@
       title: Undergraduate
       url: https://github.com/cfdenton
       githubid: 13823589
+    - name : Demi Guo
+      email: blank
+      title: Undergraduate
+      url: https://github.com/demiguo
+      githubid: 7954176
+    - name : Raghu Dhara
+      email: blank
+      title: Undergraduate
+      url: https://github.com/rdhara
+      githubid: 12704053
+      - name : Emily Wang
+      email: blank
+      title: Undergraduate
+      url: https://github.com/emilysw
+      githubid: 9683395
+      
 
 - group: Alumni
   people:
