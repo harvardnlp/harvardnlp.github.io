@@ -106,21 +106,21 @@ papers:
 
     - title: Learning Global Features for Coreference Resolution
       authors : Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber
-      conference : Proceedings of NAACL 2016
+      conference :  NAACL 2016
       code : https://github.com/swiseman/nn_coref
       pdf : /papers/corefmain.pdf
       image : /images/cluster_viz.png
 
     - title: Abstractive Sentence Summarization with Attentive Recurrent Neural Networks
       authors : Sumit Chopra, Michael Auli, and Alexander M. Rush
-      conference : Proceedings of NAACL 2016
+      conference :  NAACL 2016
       code : https://github.com/facebook/NAMAS
       pdf : /papers/naacl16_summary.pdf
       image : /images/summary2.png
 
     - title: Character-Aware Neural Language Models
       authors : Yoon Kim, Yacine Jernite, David Sontag, and Alexander M. Rush
-      conference : Proceedings of AAAI 2016
+      conference :  AAAI 2016
       code : https://github.com/yoonkim/lstm-char-cnn
       pdf : https://arxiv.org/pdf/1508.06615v4
       slides : /slides/aaai16.pdf
@@ -128,7 +128,7 @@ papers:
 
     - title: A Neural Attention Model for Abstractive Sentence Summarization
       authors : Alexander M. Rush, Sumit Chopra, and Jason Weston
-      conference : Proceedings of EMNLP 2015.
+      conference :  EMNLP 2015.
       pdf : http://arxiv.org/pdf/1509.00685.pdf
       code : https://github.com/facebook/NAMAS
       slides : /slides/emnlp15.pdf
@@ -142,7 +142,7 @@ papers:
 
     - title: Learning Anaphoricity and Antecedent Ranking Features for Coreference Resolution
       authors : Sam Wiseman, Alexander M. Rush, Jason Weston, and Stuart M. Shieber
-      conference : Proceedings of ACL 2015.
+      conference : ACL 2015.
       pdf : http://people.seas.harvard.edu/~srush/acl15.pdf
       code : https://github.com/swiseman/nn_coref
       slides : /slides/acl15_pres.pdf
@@ -150,7 +150,7 @@ papers:
 
     - title: A Fast Variational Approach for Learning Markov Random Field Language Models
       authors: Yacine Jernite, Alexander M. Rush, and David Sontag
-      conference : Proceedings of ICML 2015.
+      conference :  ICML 2015.
       code : https://github.com/srush/MRF-LM/
       slides : http://people.seas.harvard.edu/~srush/ICMLpresentationFinalNoAnimation.pdf
       pdf : http://people.seas.harvard.edu/~srush/icml15.pdf
@@ -158,7 +158,7 @@ papers:
 
     - title: Transforming Dependencies into Phrase Structures
       authors: Lingpeng Kong, Alexander M. Rush, and Noah A. Smith
-      conference: Proceedings of NAACL 2015.
+      conference:  NAACL 2015.
       slides: http://people.seas.harvard.edu/~srush/naacl_poster.pdf
       pdf: http://people.seas.harvard.edu/~srush/naacl15.pdf
       code :  https://github.com/ikekonglp/PAD
