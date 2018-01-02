@@ -20,13 +20,13 @@ papers:
       slides:
     - title: "OpenNMT: Open-Source Toolkit for Neural Machine Translation"
       authors: Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, Alexander M. Rush
-      conference: ACL Demo 2017
+      conference: ACL Demo 2017 (Best Demo Runner-up)
       pdf : https://arxiv.org/abs/1701.02810
-      image: /images/aesw2016.png
+      image: /images/overview.png
       slides:
     - title: "Dilated Convolutions for Modeling Long-Distance Genomic Dependencies"
       authors: Ankit Gupta, Alexander M. Rush
-      conference: ICML CompBio 2017
+      conference: ICML CompBio 2017 (Best Poster)
       pdf : https://arxiv.org/abs/1710.01278
       image: /images/ankit.png
 
@@ -69,7 +69,7 @@ papers:
 
     - title: Sequence-Level Knowledge Distillation
       authors: Yoon Kim and Alexander M. Rush
-      conference: Proceedings of EMNLP 2016
+      conference: EMNLP 2016
       pdf : http://arxiv.org/pdf/1606.07947v1.pdf
       image: /images/segknow.png
       slides : /slides/emnlp16_seqkd.pdf
@@ -77,7 +77,7 @@ papers:
 
     - title: Sequence-to-Sequence Learning as Beam-Search Opimization
       authors: Sam Wiseman and Alexander M. Rush
-      conference: Proceedings of EMNLP 2016
+      conference: EMNLP 2016 (Best Paper Runner-Up)
       pdf : http://arxiv.org/pdf/1606.02960.pdf
       image: /images/seqseq.png
       slides : /slides/emnlp16_bso.pdf
@@ -91,7 +91,7 @@ papers:
 
     - title: Word Ordering Without Syntax
       authors: Allen Schmaltz, Alexander M. Rush, and Stuart M. Shieber
-      conference: Proceedings of EMNLP 2016
+      conference: EMNLP 2016
       pdf : https://arxiv.org/abs/1604.08633
       image: /images/wordorder.png
       slides : /slides/emnlp16_order.pdf
