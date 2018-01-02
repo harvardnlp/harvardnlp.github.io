@@ -1,4 +1,10 @@
 papers:
+    - title: "Adversarially Regularized Autoencoders"
+      authors: Junbo Zhao, Yoon Kim, Kelly Zhang, Alexander M. Rush, Yann LeCun
+      conference: In submission
+      pdf : https://arxiv.org/abs/1706.04223
+      code : https://github.com/jakezhaojb/ARAE
+      image: /images/arae.png
     - title: "Challenges in Data-to-Document Generation"
       authors: Sam Wiseman, Stuart M Shieber Alexander M. Rush
       conference: EMNLP 2017

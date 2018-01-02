@@ -24,9 +24,9 @@
 %%% ------------------------------------------------------------------------
 %%% Note
 %%%------------------------------------------------------------------------
-%%% Because this is a hand-tweaked file, be on the look out for \medksip, 
+%%% Because this is a hand-tweaked file, be on the look out for \medksip,
 %%% \bigskip and \newpage commands here and there, which are used to balance
-%%% the layout or avoid widows & orphans, etc. You should of course add or 
+%%% the layout or avoid widows & orphans, etc. You should of course add or
 %%% remove these as needed.
 %%%------------------------------------------------------------------------
 
@@ -37,7 +37,7 @@
 %%% Metadata
 %%%------------------------------------------------------------------------
 
-%% Change as needed. Or just add me as a coauthor. Only some of these are 
+%% Change as needed. Or just add me as a coauthor. Only some of these are
 %% used below in the hyperref declaration and address banner section.
 \def\myauthor{Alexander Rush}
 \def\mytitle{Vita}
@@ -61,8 +61,8 @@
 \date{} % not used (revision control instead)
 \def\mykeywords{Rush, Alexander, Alexander Rush, Vita, CV, Resume, Computer Science}
 
-%%%------------------------------------------------------------------------  
-%%% Git version tracking 
+%%%------------------------------------------------------------------------
+%%% Git version tracking
 %%%------------------------------------------------------------------------
 
 %% If you don't use git or the vc package (from CTAN), comment this out.
@@ -79,11 +79,11 @@
 % \usepackage{fontspec}
 % \usepackage{xunicode}
 
-%% color for the links 
+%% color for the links
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{palatino}
 %% hyperlinks
-\usepackage[ 
+\usepackage[
 colorlinks=true,
 	urlcolor=BlueViolet,
 	plainpages=false,
@@ -101,13 +101,13 @@ colorlinks=true,
 \begin{document}
 
 %% Choose fonts for use with xelatex
-%% Minion and Myriad are widely available, from Adobe. 
+%% Minion and Myriad are widely available, from Adobe.
 %% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
 %% and is worth every penny. Any good monospace font will work fine, though.
 %% Consolas or inconsolata are good alternatives.
-% \setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{arial} 
+% \setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{arial}
 % \setsansfont[Mapping=tex-text,Colour=AA0000]{Myriad Pro}
-% \setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata} 
+% \setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata}
 
 
 %%%------------------------------------------------------------------------
@@ -116,8 +116,8 @@ colorlinks=true,
 
 %% Marginal header
 %% Note: as the document goes on you may need to introduce a (gradually increasing)
-%% \vspace element to keep the marginal header pleasingly aligned with the first 
-%% item in the body text. Like this: \marginhead{ {\vskip 0.4em}Grants}, or 
+%% \vspace element to keep the marginal header pleasingly aligned with the first
+%% item in the body text. Like this: \marginhead{ {\vskip 0.4em}Grants}, or
 %% \marginhead{ {\vskip 0.8em}Service}. Experiment as needed.
 \newcommand{\marginhead}[1]{\marginpar{\textsf{ {\footnotesize\vspace{-1em}\flushright #1}}}}
 
@@ -126,7 +126,7 @@ colorlinks=true,
 \newcommand{\amper}{ {\fontspec[Scale=.95,Colour=AA0000]{Minion Pro Medium}\selectfont\&\,}}
 
 %% No bullets on labels
-\renewcommand{\labelitemi}{~} 
+\renewcommand{\labelitemi}{~}
 
 %% Custom hanging indent for vita items
 \def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
@@ -143,23 +143,23 @@ colorlinks=true,
 \fancyfoot{}
 \rhead{ {\scriptsize\thepage}}
 
-%% git revision control footer 
+%% git revision control footer
 %\rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
 
 %%%------------------------------------------------------------------------
 %%% Address and contact block
 %%%------------------------------------------------------------------------
 \begin{minipage}[t]{2.95in}
- \flushright {\footnotesize \href{http://seas.harvard.edu}{School of Engineering and Applied Science} \\ Harvard University, \\ \vspace{-0.05in} Cambridge, MA }  
-  
+ \flushright {\footnotesize \href{http://seas.harvard.edu}{School of Engineering and Applied Science} \\ Harvard University, \\ \vspace{-0.05in} Cambridge, MA }
+
 \end{minipage}
-\hfill     
+\hfill
 %\begin{minipage}[t]{0.0in}
 % dummy (needed here)
 %\end{minipage}
 \hfill
 \begin{minipage}[t]{1.7in}
-  \flushright \footnotesize Phone: \myphone \\ 
+  \flushright \footnotesize Phone: \myphone \\
   {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}}} \\
   {\scriptsize  \texttt{\href{\myweb}{\myweb}}} \\
   {\scriptsize  \texttt{\href{http://twitter.com/\myfax}{@\myfax}}} \\
@@ -168,7 +168,7 @@ colorlinks=true,
 
 \medskip
 
-%% Name 
+%% Name
 \noindent{\Large {Alexander M. Rush}}
 \reversemarginpar
 
@@ -178,7 +178,7 @@ colorlinks=true,
 \noindent\emph{Harvard University School of Engineering and Applied Sciences \vspace{0.01in}}\\
 \ind 2015-.  Assistant Professor of Computer Science
 
-\medskip       
+\medskip
 \noindent\emph{Facebook Artificial Intelligence Research Lab \vspace{0.01in}}\\
 \ind 2015.  Post-Doctoral Fellowship\\
 \ind Advisor: Yann LeCunn
@@ -186,11 +186,11 @@ colorlinks=true,
 \bigskip
 
 \marginhead{Education}
- 
+
 \noindent\emph{Massachusetts Institute of Technology \vspace{0.01in}}\\
 \ind 2009-2014.  Ph.D, Computer Science.\\
 \ind Advisor: Michael Collins\\
-\ind Dissertation: \emph{Relaxation Methods for Natural Language Decoding}. %\vspace{-0.1in}  
+\ind Dissertation: \emph{Relaxation Methods for Natural Language Decoding}. %\vspace{-0.1in}
 
 \medskip
 \noindent\emph{Columbia University\vspace{0.02in}}\\
@@ -199,24 +199,22 @@ colorlinks=true,
 
 \medskip
 \noindent\emph{Harvard University\vspace{0.02in}}\\
-\ind 2007. B.A., Computer Science. (Magna Cum Laude With Highest Honors.) 
+\ind 2007. B.A., Computer Science. (Magna Cum Laude With Highest Honors.)
 
 \bigskip
- 
+
 %% Publications
 
 \marginhead{ {\vskip 0.4em}Grants and \newline Awards}
 \medskip
 
 \hspace{-1cm} \begin{tabular}{lp{11.5cm}}
+2017 & Best Demo Runner-up, Association of Computational Linguistics. \\
 2017 & Early Career Spotlight, International Joint Conference of Artificial Intelligence . \\
 2016 & Best Paper Honorable Mention Award, Empirical Methods in Natural Language Processing. \\
-2016 & Google Faculty Research Award. \\
 2012 & Best Paper Award, North American Association of Computational Linguistics. \\
 2010 & Best Paper Award, Empirical Methods in Natural Language Processing. \\
-2009 & Graduate Research Fellow, National Science Foundation.  \\
-2006 & Outstanding Undergraduate Award Finalist, Computing Research Association. \\
-  
+
 \end{tabular}
 % Best Paper Award, NAACL, 2012 \\
 % Best Paper Award, EMNLP, 2010 \\
@@ -238,27 +236,27 @@ colorlinks=true,
 {% endfor %}
 
 
-\ind Yin-Wen Chang, Alexander M. Rush, John DeNero, and Michael Collins. 
+\ind Yin-Wen Chang, Alexander M. Rush, John DeNero, and Michael Collins.
 \emph{\href{http://people.csail.mit.edu/srush/}{A Lagrangian Relaxation Algorithm for Bilingual Word Alignment}}.
 Proceedings of ACL 2014.
 
 \medskip
 
-\ind Alexander M. Rush, Yin-Wen Chang, and Michael Collins. 
+\ind Alexander M. Rush, Yin-Wen Chang, and Michael Collins.
 \emph{\href{http://people.csail.mit.edu/srush/}{Optimal Beam Search for Machine Translation}}.
 Proceedings of EMNLP 2013.
 
 \medskip
 
-\ind Karl Stratos, Alexander M. Rush, Shay B. Cohen, and Michael Collins. 
+\ind Karl Stratos, Alexander M. Rush, Shay B. Cohen, and Michael Collins.
 \emph{\href{http://www.cs.columbia.edu/~stratos/research/conll13rhmm.pdf}{Spectral Learning of Refinement HMMs}}.
 Proceedings of CoNLL 2013.
 
 \medskip
 
 \ind Alexander M. Rush, Roi Reichert, Michael Collins, and Amir Globerson.
-\emph{\href{http://people.csail.mit.edu/srush/emnlp2012.pdf.pdf}{Improved Parsing and POS Tagging Using Inter-Sentence Consistency Constraints}}, 
-Proceedings of EMNLP 2012. 
+\emph{\href{http://people.csail.mit.edu/srush/emnlp2012.pdf.pdf}{Improved Parsing and POS Tagging Using Inter-Sentence Consistency Constraints}},
+Proceedings of EMNLP 2012.
 
 \medskip
 
@@ -315,7 +313,7 @@ Proceedings of EMNLP 2012.
 
 \medskip
 \ind  Lead Engineer (Platform Team), {\sl Facebook}, 2007 -- 2009, Palo Alto, CA.
-% \begin{itemize} \itemsep -2pt % 
+% \begin{itemize} \itemsep -2pt %
 % \item Helped develop optimized C++ parser and interpreter for FBML, a domain-specific markup language for applications.
 
 % \medskip
@@ -323,7 +321,7 @@ Proceedings of EMNLP 2012.
 % \item Built and designed a distributed system for tracking resource constraints of third-party applications. Awarded patent.
 % \medskip
 
-% \item Contributor on Internationalization project which utilizes crowd-sourcing to translate Facebook into 70+ languages.  
+% \item Contributor on Internationalization project which utilizes crowd-sourcing to translate Facebook into 70+ languages.
 % \end{itemize}
 
 % \ind Technical Associate (Intern), {\sl Bridgewater Associates}  June -- September 2006,
@@ -372,7 +370,7 @@ Proceedings of EMNLP 2012.
 
 {% for proj in code %}
 {% if loop.index <= 5 %}
-\medskip \ind \href{ {{proj.link}} }{ {{proj.title}} } 
+\medskip \ind \href{ {{proj.link}} }{ {{proj.title}} }
 \begin{itemize}
 \item  {{proj.abstract}}
 \end{itemize}
@@ -380,15 +378,15 @@ Proceedings of EMNLP 2012.
 {% endfor %}
 
 
-% \medskip \ind \href{http://www.pydecode.org}{PyDecode} (http://www.pydecode.org) 
+% \medskip \ind \href{http://www.pydecode.org}{PyDecode} (http://www.pydecode.org)
 % \begin{itemize}
-% \item  An optimized toolkit for designing inference algorithms for NLP. 
+% \item  An optimized toolkit for designing inference algorithms for NLP.
 % \end{itemize}
 
 % \ind  \href{http://www.declassification-engine.org}{The Declassification Engine} (http://www.declassification-engine.org)
 % \begin{itemize}
 % \item  Computational social science project analyzing the process of official secrecy.
-% \item Awarded a Magic grant from Brown Institute for Media Innovation. 
+% \item Awarded a Magic grant from Brown Institute for Media Innovation.
 % \end{itemize}
 % \medskip
 
@@ -406,7 +404,7 @@ Proceedings of EMNLP 2012.
  & \ind   Invited Talk, Notre Dame, Spring. \\
  & \ind   Colloquium, TTI-Chicago, Spring. \\
  & \ind   Colloquium, Apple, Siri Team, Spring. \\
- 2016 
+ 2016
  & \ind   Invited Talk, NYU, Fall. \\
  & \ind   Invited Talk, BBN Research, Fall. \\
  & \ind   Invited Talk, Bloomberg, Fall. \\
@@ -421,7 +419,7 @@ Proceedings of EMNLP 2012.
 \end{tabular}
 \begin{tabular}{lp{11.5cm}}
 
- 2014 
+ 2014
 
  & \ind   Colloquium, University of Washington, Spring. \\
 
@@ -438,7 +436,7 @@ Proceedings of EMNLP 2012.
  & \ind   Colloquium, University of Maryland, Spring. \\
 \end{tabular}
 \hspace{-1cm} \begin{tabular}{lp{11.5cm}}
- 2013 
+ 2013
  & \ind   Invited Tutorial, UMBC, October. \\
 
  & \ind   Invited Talk, CS and Social Science Seminar, UMass Amherst, October. \\
@@ -491,17 +489,17 @@ UAI, NIPS, ICML, AAAI, ICLR (Machine Learning and Artificial Intelligence).
 
 %% Publications
 
-\marginhead{ {\vskip 0.4em}Misc}
-\medskip
+% \marginhead{ {\vskip 0.4em}Misc}
+% \medskip
 
-\ind General Manager of Harvard Radio Broadcasting (WHRB).
+% \ind General Manager of Harvard Radio Broadcasting (WHRB).
 
-\medskip
+% \medskip
 
-\ind Member ACM Programming Team, Harvard University.
+% \ind Member ACM Programming Team, Harvard University.
 
-\medskip
+% \medskip
 
-\ind Experienced in C/C++, Python, Javascript, Lua/Torch, Haskell, Java, PHP, OCaml, LaTeX, HTML/CSS.
+% \ind Experienced in C/C++, Python, Javascript, Lua/Torch, Haskell, Java, PHP, OCaml, LaTeX, HTML/CSS.
 
 \end{document}
