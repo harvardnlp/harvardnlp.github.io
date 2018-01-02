@@ -18,6 +18,18 @@ papers:
       pdf : https://arxiv.org/abs/1707.09067
       image: /images/aesw2016.png
       slides:
+    - title: "OpenNMT: Open-Source Toolkit for Neural Machine Translation"
+      authors: Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, Alexander M. Rush
+      conference: ACL Demo 2017
+      pdf : https://arxiv.org/abs/1701.02810
+      image: /images/aesw2016.png
+      slides:
+    - title: "Dilated Convolutions for Modeling Long-Distance Genomic Dependencies"
+      authors: Ankit Gupta, Alexander M. Rush
+      conference: ICML CompBio 2017
+      pdf : https://arxiv.org/abs/1710.01278
+      image: /images/ankit.png
+
     - title: "Image-to-Markup Generation with Coarse-to-Fine Attention"
       authors: Yuntian Deng, Anssi Kanervisto, Jeffrey Ling, and Alexander M. Rush
       conference: ICML 2017
