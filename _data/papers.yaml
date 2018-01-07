@@ -61,12 +61,6 @@ papers:
       image: /images/lantm.png
       slides:
 
-    - title: "Interpreting, Training, and Distilling Seq2Seq Models"
-      authors: Alexander Rush
-      conference: Recent Overview Talk
-      slides: "https://harvardnlp.github.io/seq2seq-talk/slidescmu.pdf"
-      image: /images/overview.png
-
     - title: Sequence-Level Knowledge Distillation
       authors: Yoon Kim and Alexander M. Rush
       conference: EMNLP 2016
