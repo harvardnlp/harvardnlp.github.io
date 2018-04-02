@@ -21,8 +21,7 @@ document itself is a working notebook, and should be a completely usable and
 efficient implementation in about 400 LoC. To follow along you will first need
 to install [PyTorch](http://pytorch.org/) and
 [torchtext](https://github.com/pytorch/text). The complete notebook is available
-on [github](https://github.com/harvardnlp/annotated-transformer) or on Google [C
-olab](https://drive.google.com/file/d/1xQXSv6mtAOLXxEMi8RvaW8TW-7bvYBDF/view?usp
+on [github](https://github.com/harvardnlp/annotated-transformer) or on Google [Colab](https://drive.google.com/file/d/1xQXSv6mtAOLXxEMi8RvaW8TW-7bvYBDF/view?usp
 =sharing).
 >- Alexander Rush ([@harvardnlp](https://twitter.com/harvardnlp))
  
@@ -696,7 +695,8 @@ class NoamOpt:
         
 def get_std_opt(model):
     return NoamOpt(model.src_embed[0].d_model, 2, 4000,
-            torch.optim.Adam(model.parameters(), lr=0, betas=(0.9, 0.98), eps=1e-9))
+    torch.optim.Adam(model.parameters(),
+        lr=0, betas=(0.9, 0.98), eps=1e-9))
 {% endhighlight %}
 
 
