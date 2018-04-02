@@ -7,10 +7,10 @@ tags:
 --- 
 ![/images/]({{ BASE_PATH }}/images/aiayn.png) 
  
-> The recent Transformer architecture from the paper ["Attention is All You
+> The recent Transformer architecture from ["Attention is All You
 Need"](https://arxiv.org/abs/1706.03762) @ NIPS 2017 has been instantly
-impactful paper as a new method for machine translation. It also may potentially
-be a new standard architecture for many other NLP tasks. The paper itself is
+impactful as a new method for machine translation. It also offers
+a new general architecture for many NLP tasks. The paper itself is
 very clearly written, but the conventional wisdom has been that it is quite
 difficult to implement correctly.
 >
