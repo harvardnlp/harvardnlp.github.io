@@ -11,7 +11,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 18px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -37,6 +37,10 @@ img {
   max-width: 100%;
   vertical-align: middle; }
 
+.post img {
+  display: block;
+  margin: 0 auto; }
+
 /**
  * Figures
  */
@@ -44,7 +48,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 15.75px; }
+  font-size: 14px; }
 
 /**
  * Lists
@@ -278,7 +282,7 @@ pre {
     margin-bottom: 30px; }
 
 .post-meta {
-  font-size: 15.75px;
+  font-size: 14px;
   color: #828282; }
 
 .post-link {
