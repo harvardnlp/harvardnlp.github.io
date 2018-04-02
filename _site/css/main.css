@@ -153,6 +153,9 @@ pre {
 /**
  * Site header
  */
+pre code {
+  white-space: unset; }
+
 .site-header {
   border-top: 5px solid #424242;
   border-bottom: 1px solid #e8e8e8;
