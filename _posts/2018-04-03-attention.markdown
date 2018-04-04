@@ -19,11 +19,11 @@ Image(filename='images/aiayn.png')
 
  
 The Transformer from ["Attention is All You
-Need"](https://arxiv.org/abs/1706.03762) has been on a lot of people's mind over
-the last year. Besides producing major improvements in translation quality, it
-provides a new architecture for many other NLP tasks. The paper itself is very
-clearly written, but the conventional wisdom has been that it is quite difficult
-to implement correctly.
+Need"](https://arxiv.org/abs/1706.03762) has been on a lot of people's minds
+over the last year. Besides producing major improvements in translation quality,
+it provides a new architecture for many other NLP tasks. The paper itself is
+very clearly written, but the conventional wisdom has been that it is quite
+difficult to implement correctly.
 
 In this post I present an "annotated" version of the paper in the form of a
 line-by-line implementation. I have reordered and deleted some sections from the
@@ -1240,6 +1240,11 @@ V100s, this runs at ~27,000 tokens per second with a batch size of 12,000
 
 
 {% highlight python %}
+#!wget https://s3.amazonaws.com/opennmt-models/iwslt.pt
+{% endhighlight %}
+
+
+{% highlight python %}
 if False:
     model_opt = NoamOpt(model.src_embed[0].d_model, 1, 2000,
             torch.optim.Adam(model.parameters(), lr=0, betas=(0.9, 0.98), eps=1e-9))
@@ -1366,7 +1371,7 @@ Image(filename="images/results.png")
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_112_0.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_113_0.png) 
 
 
  
@@ -1377,6 +1382,11 @@ Models)](http://opennmt.net/Models-py/).
 > With the addtional extensions in the last section, the OpenNMT-py replication
 gets to 26.9 on EN-DE WMT. Here I have loaded in those parameters to our
 reimplemenation. 
+
+
+{% highlight python %}
+!wget https://s3.amazonaws.com/opennmt-models/en-de-model.pt
+{% endhighlight %}
 
 
 {% highlight python %}
@@ -1445,63 +1455,63 @@ for layer in range(1, 6, 2):
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_1.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_1.png) 
 
 
     Encoder Layer 4
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_3.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_3.png) 
 
 
     Encoder Layer 6
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_5.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_5.png) 
 
 
     Decoder Self Layer 2
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_7.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_7.png) 
 
 
     Decoder Src Layer 2
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_9.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_9.png) 
 
 
     Decoder Self Layer 4
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_11.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_11.png) 
 
 
     Decoder Src Layer 4
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_13.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_13.png) 
 
 
     Decoder Self Layer 6
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_15.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_15.png) 
 
 
     Decoder Src Layer 6
 
 
  
-![png]({{ BASE_PATH }}/images/the-annotated-transformer_117_17.png) 
+![png]({{ BASE_PATH }}/images/the-annotated-transformer_119_17.png) 
 
  
 # Conclusion
