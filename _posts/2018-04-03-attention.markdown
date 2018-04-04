@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Annotated Transformer"
+excerpt: "The Annotated Transformer"
 tags:
     - python
     - notebook
