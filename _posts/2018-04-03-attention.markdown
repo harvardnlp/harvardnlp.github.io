@@ -48,8 +48,7 @@ implementations of the model check-out
 [Sockeye](https://github.com/awslabs/sockeye) (mxnet).
 
 - Alexander Rush ([@harvardnlp](https://twitter.com/harvardnlp) or
-srush@seas.harvard.edu)
- 
+srush@seas.harvard.edu), with help from Vincent Nguyen and Guillaume Klein
  
 # Prelims 
 
