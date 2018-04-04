@@ -32,11 +32,13 @@ original paper and added comments throughout. This document itself is a working
 notebook, and should be a completely usable implementation. In total there are
 400 lines of library code which can process 27,000 tokens per second on 4 GPUs.
 
-To follow along you will first need to install [PyTorch](http://pytorch.org/).
-The complete notebook is also available on
-[github](https://github.com/harvardnlp/annotated-transformer) or on Google [Cola
-b](https://drive.google.com/file/d/1xQXSv6mtAOLXxEMi8RvaW8TW-7bvYBDF/view?usp=sh
-aring).
+To follow along you will first need to install
+[PyTorch](http://pytorch.org/).  The complete notebook is also
+available on
+[github](https://github.com/harvardnlp/annotated-transformer) or on
+Google
+[Colab](https://drive.google.com/file/d/1xQXSv6mtAOLXxEMi8RvaW8TW-7bvYBDF/view?usp=sh
+aring) with free GPUs.
 
 Note this is merely a starting point for researchers and interested developers.
 The code here is based heavily on our [OpenNMT](http://opennmt.net) packages.
