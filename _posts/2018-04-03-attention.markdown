@@ -633,7 +633,7 @@ the ones encountered during training.
  
 ## Full Model
 
-> Here we define a function from hyperparameters to a full model. 
+> Here we define a function that takes in hyperparameters and produces a full model. 
 
 
 {% highlight python %}
@@ -885,7 +885,7 @@ on confidence.
 
 
 {% highlight python %}
-#Example of label smoothing.
+# Example of label smoothing.
 crit = LabelSmoothing(5, 0, 0.4)
 predict = torch.FloatTensor([[0, 0.2, 0.7, 0.1, 0],
                              [0, 0.2, 0.7, 0.1, 0], 
@@ -1293,7 +1293,7 @@ for i, batch in enumerate(valid_iter):
 {% endhighlight %}
 
     Translation:	<unk> <unk> . In my language , that means , thank you very much . 
-    Target:	<unk> <unk> . It means in my language , thank you very much . 
+    Gold:	<unk> <unk> . It means in my language , thank you very much . 
 
  
 # Additional Components: BPE, Search, Averaging 
