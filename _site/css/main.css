@@ -401,7 +401,7 @@ pre code {
   .highlight .m {
     color: #099; }
   .highlight .s {
-    color: #998; }
+    color: #000; }
   .highlight .na {
     color: #008080; }
   .highlight .nb {
@@ -460,7 +460,7 @@ pre code {
   .highlight .ss {
     color: #990073; }
   .highlight .bp {
-    color: #999; }
+    color: #000; }
   .highlight .vc {
     color: #008080; }
   .highlight .vg {
