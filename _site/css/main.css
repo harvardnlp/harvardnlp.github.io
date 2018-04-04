@@ -84,10 +84,10 @@ a.inline {
  * Blockquotes
  */
 blockquote {
-  color: #828282;
+  color: darkorange;
   border-left: 4px solid #e8e8e8;
   padding-left: 15px;
-  font-size: 18px;
+  font-size: 17.5px;
   letter-spacing: -1px;
   font-style: italic; }
   blockquote > :last-child {
@@ -118,16 +118,16 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
-  max-width: calc(800px - (30px * 2));
+  max-width: -webkit-calc(900px - (30px * 2));
+  max-width: calc(900px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     .wrapper {
-      max-width: -webkit-calc(800px - (30px));
-      max-width: calc(800px - (30px));
+      max-width: -webkit-calc(900px - (30px));
+      max-width: calc(900px - (30px));
       padding-right: 15px;
       padding-left: 15px; } }
 
@@ -182,7 +182,7 @@ pre code {
     line-height: 1.5; }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     .site-nav {
       position: absolute;
       top: 9px;
@@ -255,7 +255,7 @@ pre code {
   width: -webkit-calc(45% - (30px / 2));
   width: calc(45% - (30px / 2)); }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
@@ -264,7 +264,7 @@ pre code {
   .footer-col-3 {
     width: -webkit-calc(100% - (30px / 2));
     width: calc(100% - (30px / 2)); } }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .footer-col {
     float: none;
     width: -webkit-calc(100% - (30px / 2));
@@ -307,7 +307,7 @@ pre code {
   border-top: 1px solid #eee;
   padding-top: 9px;
   text-align: center; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 900px) {
     .post-title {
       font-size: 36px; } }
 
@@ -315,17 +315,17 @@ pre code {
   margin-bottom: 30px; }
   .post-content h2 {
     font-size: 32px; }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 900px) {
       .post-content h2 {
         font-size: 28px; } }
   .post-content h3 {
     font-size: 26px; }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 900px) {
       .post-content h3 {
         font-size: 22px; } }
   .post-content h4 {
     font-size: 20px; }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 900px) {
       .post-content h4 {
         font-size: 18px; } }
 
@@ -401,7 +401,7 @@ pre code {
   .highlight .m {
     color: #099; }
   .highlight .s {
-    color: #d14; }
+    color: #998; }
   .highlight .na {
     color: #008080; }
   .highlight .nb {
