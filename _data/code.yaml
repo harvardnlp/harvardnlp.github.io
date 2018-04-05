@@ -1,10 +1,17 @@
 code:
+
     - link: http://opennmt.net
       title: OpenNMT 
       abstract: Open-source neural machine translation system.         
       image: /images/aesw2016.png
       data: http://www.statmt.org/wmt15/translation-task.html
-      authors: HarvardNLP + Systran 
+      authors: HarvardNLP + Systran
+      
+    - link: http://opennmt.net
+      title: The Annotated Transformer 
+      abstract: Line-by-Line PyTorch implementation of the Transformer
+      image: /images/trans.png
+      authors: Alexander Rush
       
     - link: https://github.com/HendrikStrobelt/lstmvis
       title: LSTMVis
