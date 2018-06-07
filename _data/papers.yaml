@@ -10,6 +10,7 @@ papers:
       conference: ICML 2018
       pdf : https://arxiv.org/abs/1802.02550
       code : https://github.com/harvardnlp/sa-vae
+      image: /images/savae.png
     - title: "Compressing Deep Neural Networks with Probabilistic Data Structures"
       authors: Brandon Reagen, Udit Gupta, Robert Adolf, Michael M. Mitzenmacher, Alexander M. Rush, Gu-Yeon Wei, David Brooks
       conference: SysML 2018
