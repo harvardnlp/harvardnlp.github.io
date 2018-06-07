@@ -1,10 +1,25 @@
 papers:
-    - title: "Adversarially Regularized Autoencoders"
-      authors: Junbo Zhao, Yoon Kim, Kelly Zhang, Alexander M. Rush, Yann LeCun
+    - title: "Seq2Seq-Vis: A Visual Debugging Tool for Sequence-to-Sequence Models "
+      authors:   Hendrik Strobelt, Sebastian Gehrmann, Michael Behrisch, Adam Perer, Hanspeter Pfister, Alexander M. Rush
       conference: In submission
-      pdf : https://arxiv.org/abs/1706.04223
-      code : https://github.com/jakezhaojb/ARAE
-      image: /images/arae.png
+      pdf : https://arxiv.org/abs/1804.09299
+      code : https://github.com/HendrikStrobelt/Seq2Seq-Vis
+      image: /images/s2s_dates_01.png
+    - title: "Semi-Amortized Variational Autoencoders"
+      authors:  Yoon Kim, Sam Wiseman, Andrew C. Miller, David Sontag, Alexander M. Rush
+      conference: ICML 2018
+      pdf : https://arxiv.org/abs/1802.02550
+      code : https://github.com/harvardnlp/sa-vae
+    - title: "Compressing Deep Neural Networks with Probabilistic Data Structures"
+      authors: Brandon Reagen, Udit Gupta, Robert Adolf, Michael M. Mitzenmacher, Alexander M. Rush, Gu-Yeon Wei, David Brooks
+      conference: SysML 2018
+      pdf : https://www.sysml.cc/doc/68.pdf
+    - title: "Adapting Sequence Models for Sentence Correction"
+      authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, Stuart M. Shieber
+      conference: EMNLP 2017
+      pdf : https://arxiv.org/abs/1707.09067
+      image: /images/aesw2016.png
+      slides:
     - title: "Challenges in Data-to-Document Generation"
       authors: Sam Wiseman, Stuart M Shieber Alexander M. Rush
       conference: EMNLP 2017
@@ -12,12 +27,12 @@ papers:
       code : http://lstm.seas.harvard.edu/docgen
       image: /images/docgen.png
       slides: /slides/nmt17.pdf
-    - title: "Adapting Sequence Models for Sentence Correction"
-      authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, Stuart M. Shieber
-      conference: EMNLP 2017
-      pdf : https://arxiv.org/abs/1707.09067
-      image: /images/aesw2016.png
-      slides:
+    - title: "Adversarially Regularized Autoencoders"
+      authors: Junbo Zhao, Yoon Kim, Kelly Zhang, Alexander M. Rush, Yann LeCun
+      conference: NIPS 2017 Workshop
+      pdf : https://arxiv.org/abs/1706.04223
+      code : https://github.com/jakezhaojb/ARAE
+      image: /images/arae.png
     - title: "OpenNMT: Open-Source Toolkit for Neural Machine Translation"
       authors: Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, Alexander M. Rush
       conference: ACL Demo 2017 (Best Demo Runner-up)
