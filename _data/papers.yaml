@@ -15,6 +15,7 @@ papers:
       authors: Brandon Reagen, Udit Gupta, Robert Adolf, Michael M. Mitzenmacher, Alexander M. Rush, Gu-Yeon Wei, David Brooks
       conference: SysML 2018
       pdf : https://www.sysml.cc/doc/68.pdf
+      image: /images/bloomier.png
     - title: "Adapting Sequence Models for Sentence Correction"
       authors: Allen Schmaltz, Yoon Kim, Alexander M. Rush, Stuart M. Shieber
       conference: EMNLP 2017
