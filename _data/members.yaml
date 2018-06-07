@@ -20,7 +20,11 @@
       github: justinchiu
       githubid: 2389353
       title : PhD Student
-
+    - name : Yuntian Deng
+      email: dengyuntian@seas.harvard.edu
+      title: PhD Student
+      url: https://github.com/da03
+      githubid: 5753959
     - name: Sebastian Gehrmann
       githubid: 2212304
       github: sebastianGehrmann
@@ -75,19 +79,11 @@
       title: PhD Student
       url: https://github.com/zeiglerz1
       githubid: 8727634
-    - name : Yuntian Deng
-      email: dengyuntian@seas.harvard.edu
-      title: PhD Student
-      url: https://github.com/da03
-      githubid: 5753959
+
 
 - group: Undergraduate Researchers
   people:
-    - name : Rachit Singh
-      email: blank
-      url: https://github.com/rachtsingh
-      githubid: 1606892
-      title: Undergrad Researcher
+
     - name : Carl Denton
       email: blank
       title: Undergraduate
@@ -123,6 +119,11 @@
 
 - group: Alumni
   people:
+    - name : Rachit Singh (DE Shaw)
+      email: blank
+      url: https://github.com/rachtsingh
+      githubid: 1606892
+      title: Undergrad Researcher
     - name : Keyon Vafa (Columbia)
       email: blank
       title: Undergraduate
