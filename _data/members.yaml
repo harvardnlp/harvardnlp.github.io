@@ -60,11 +60,21 @@
       githubid: 4635868
       url: "https://swiseman.github.io/"
       title: PhD Student
+    - name : Kelly Zhang
+      email: kz918@nyu.edu
+      title: PhD Student
+      url: https://github.com/kellywzhang
+      githubid: 14792301
     - name : Jiawei Zhou
       email: jzhou02@g.harvard.edu
       title: PhD Student
       url: https://github.com/jzhou316
       githubid: 31744226
+    - name : Zachary Ziegler
+      email: zachary.ziegler@featurex.ai
+      title: PhD Student
+      url: https://github.com/zeiglerz1
+      githubid: 8727634
     - name : Yuntian Deng
       email: dengyuntian@seas.harvard.edu
       title: PhD Student
