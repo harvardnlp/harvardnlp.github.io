@@ -1,5 +1,10 @@
 code:
-
+    - link: http://seq2seq-vis.io/
+      title: Seq2Seq Vis
+      abstract: Interaction with seq2seq translation dynamics.
+      image: /images/s2s_dates_01.png
+      authors: Hendrik Strobelt and Sebastian Gehrmann
+      
     - link: http://opennmt.net
       title: OpenNMT 
       abstract: Open-source neural machine translation system.         
@@ -45,6 +50,7 @@ code:
       abstract: |
         A neural image-to-markup system.
       authors: Yuntian Deng
+      data: http://lstm.seas.harvard.edu/latex/data/
 
       
     - link: https://github.com/harvardnlp/NAMAS
