@@ -13,7 +13,7 @@ papers:
       image: /images/savae.png
     - title: "Compressing Deep Neural Networks with Probabilistic Data Structures"
       authors: Brandon Reagen, Udit Gupta, Robert Adolf, Michael M. Mitzenmacher, Alexander M. Rush, Gu-Yeon Wei, David Brooks
-      conference: SysML 2018
+      conference: ICML 2018, SysML 2018
       pdf : https://www.sysml.cc/doc/68.pdf
       image: /images/bloomier.png
     - title: "Adapting Sequence Models for Sentence Correction"
@@ -31,7 +31,7 @@ papers:
       slides: /slides/nmt17.pdf
     - title: "Adversarially Regularized Autoencoders"
       authors: Junbo Zhao, Yoon Kim, Kelly Zhang, Alexander M. Rush, Yann LeCun
-      conference: NIPS 2017 Workshop
+      conference: ICLM 2018, NIPS 2017 Workshop
       pdf : https://arxiv.org/abs/1706.04223
       code : https://github.com/jakezhaojb/ARAE
       image: /images/arae.png
