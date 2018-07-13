@@ -1,7 +1,29 @@
 papers:
-    - title: "Seq2Seq-Vis: A Visual Debugging Tool for Sequence-to-Sequence Models "
-      authors:   Hendrik Strobelt, Sebastian Gehrmann, Michael Behrisch, Adam Perer, Hanspeter Pfister, Alexander M. Rush
+    - title: "Latent Alignment and Variational Attention"
+      authors: Yuntian Deng∗, Yoon Kim∗, Justin Chiu, Demi Guo, Alexander M. Rush
       conference: In submission
+      pdf : https://arxiv.org/pdf/1807.03756.pdf
+      code: https://github.com/harvardnlp/var-attn
+      image: /images/VariationalAttention.png
+    - title: "Avoiding Latent Variable Collapse with Generative Skip Models"
+      authors: Adji Bousso Dieng, Yoon Kim, Alexander Rush, David Blei
+      conference: ICML TADGM 2018
+      pdf :
+      image: /images/SKIP-VAE.png
+    - title: "The Annotated Transformer"
+      authors: Alexander M. Rush
+      conference: ACL NLP-OSS 2018
+      pdf : http://aclweb.org/anthology/W18-2509
+      code: https://github.com/harvardnlp/annotated-transformer/blob/master/The%20Annotated%20Transformer.ipynb
+      image: /images/the-annotated-transformer_14_0.png
+    - title: "OpenNMT System Description for WNMT 2018: 800 words/sec on a single-core CPU"
+      authors: Jean Senellart, Dakun Zhang, Bo Wang, Guillaume Klein, J.P. Ramatchandirin, Josep Crego, Alexander M. Rush
+      conference: WNMT 2018
+      pdf : http://aclweb.org/anthology/W18-2715
+      image: /images/WNMT18_OpenNMT.png
+    - title: "Seq2Seq-Vis: A Visual Debugging Tool for Sequence-to-Sequence Models "
+      authors: Hendrik Strobelt, Sebastian Gehrmann, Michael Behrisch, Adam Perer, Hanspeter Pfister, Alexander M. Rush
+      conference: VAST 2018
       pdf : https://arxiv.org/abs/1804.09299
       code : https://github.com/HendrikStrobelt/Seq2Seq-Vis
       image: /images/s2s_dates_01.png
