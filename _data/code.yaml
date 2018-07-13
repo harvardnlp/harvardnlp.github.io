@@ -1,4 +1,10 @@
 code:
+    - link: https://github.com/harvardnlp/var-attn
+      title: Variational Attention
+      abstract: fast training for latent var. attention (e.g. hard attention) with accuracy like soft attention
+      image: /images/VariationalAttention.png
+      authors: Yuntian Deng∗, Yoon Kim∗, Justin Chiu, Demi Guo, Alexander M. Rush
+      
     - link: http://seq2seq-vis.io/
       title: Seq2Seq Vis
       abstract: Interaction with seq2seq translation dynamics.
