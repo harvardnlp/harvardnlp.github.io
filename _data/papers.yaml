@@ -8,7 +8,7 @@ papers:
     - title: "Avoiding Latent Variable Collapse with Generative Skip Models"
       authors: Adji Bousso Dieng, Yoon Kim, Alexander Rush, David Blei
       conference: ICML TADGM 2018
-      pdf :
+      pdf : https://arxiv.org/pdf/1807.04863.pdf
       image: /images/SKIP-VAE.png
     - title: "The Annotated Transformer"
       authors: Alexander M. Rush
