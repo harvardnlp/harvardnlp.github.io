@@ -3,27 +3,27 @@ code:
       title: Variational Attention
       abstract: fast training for latent var. attention (e.g. hard attention) with accuracy like soft attention
       image: /images/VariationalAttention.png
-      authors: Yuntian Deng∗, Yoon Kim∗, Justin Chiu, Demi Guo, Alexander M. Rush
-      
+      authors: Yuntian Deng*, Yoon Kim*, Justin Chiu, Demi Guo, Alexander M. Rush
+
     - link: http://seq2seq-vis.io/
       title: Seq2Seq Vis
       abstract: Interaction with seq2seq translation dynamics.
       image: /images/s2s_dates_01.png
       authors: Hendrik Strobelt and Sebastian Gehrmann
-      
+
     - link: http://opennmt.net
-      title: OpenNMT 
-      abstract: Open-source neural machine translation system.         
+      title: OpenNMT
+      abstract: Open-source neural machine translation system.
       image: /images/aesw2016.png
       data: http://www.statmt.org/wmt15/translation-task.html
       authors: HarvardNLP + Systran
-      
+
     - link: http://nlp.seas.harvard.edu/2018/04/03/attention.html
-      title: The Annotated Transformer 
+      title: The Annotated Transformer
       abstract: Line-by-Line PyTorch implementation of the Transformer
       image: /images/trans.png
       authors: Alexander Rush
-      
+
     - link: https://github.com/HendrikStrobelt/lstmvis
       title: LSTMVis
       abstract: |
@@ -32,17 +32,17 @@ code:
       models: https://goo.gl/oHF9q5
       authors: Hendrik Strobelt and Sebastian Gehrmann
 
-      
+
     - link: https://github.com/harvardnlp/seq2seq-attn
       title: Sequence-to-Sequence with Attention
       abstract: |
-        General-purpose sequence-to-sequence model . 
+        General-purpose sequence-to-sequence model .
       image: /images/aesw2016.png
       models: https://drive.google.com/file/d/0BzhmYioWLRn_aEVnd0ZNcWd0Y2c/view
       data: http://www.statmt.org/wmt15/translation-task.html
       authors: Yoon Kim
 
-      
+
     - link: https://github.com/harvardnlp/sent-conv-torch
       title: CNN for Text Clasification
       image: /images/cnn.png
@@ -58,7 +58,7 @@ code:
       authors: Yuntian Deng
       data: http://lstm.seas.harvard.edu/latex/data/
 
-      
+
     - link: https://github.com/harvardnlp/NAMAS
       title: "ABS: Abstractive Summarization"
       data: https://github.com/harvardnlp/sent-summary
@@ -68,7 +68,7 @@ code:
       authors: Alexander Rush
 
     - link: https://github.com/yoonkim/lstm-char-cnn
-      title: LSTM Character-Aware Language Model 
+      title: LSTM Character-Aware Language Model
       abstract: |
         Character-Aware Language Modeling
       image : /images/charrnn.png
@@ -82,11 +82,11 @@ code:
         Coreference System
       authors: Sam Wiseman
 
-    - link: https://github.com/ikekonglp/PAD 
+    - link: https://github.com/ikekonglp/PAD
       title : "PAD: Phrase-structure After Dependencies"
-      abstract : C++ parser implementation 
+      abstract : C++ parser implementation
       image : /images/naacl14.png
-      authors: Alexander Rush and Lingpeng Kong  
+      authors: Alexander Rush and Lingpeng Kong
 
     - link: https://github.com/harvardnlp/nmt-android
       title: Android Translation

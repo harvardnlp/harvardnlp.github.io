@@ -30,39 +30,17 @@
       github: sebastianGehrmann
       url: "http://scholar.harvard.edu/gehrmann"
       title: PhD Student
-
     - name : Yoon Kim
       email : yoonkim@seas.harvard.edu
       url : "http://www.people.fas.harvard.edu/~yoonkim/"
       github: yoonkim
       githubid: 5378003
       title : PhD Student
-    # - name : Won Lee
-    #   email : wil896@g.harvard.edu
-    #   url : "http://github.com/won1k"
-    #   github: won1k
-    #   githubid: 1541186
-    #   title : PhD Student
-
-    # - name : Saketh Rama
-    #   email : rama@seas.harvard.edu
-    #   url : "http://github.com/saketh/"
-    #   github: saketh
-    #   githubid:  332660
-    #   title : PhD Student
     - name : Allen<br> Schmaltz
       github: allenschmaltz
       githubid: 2748209
       email : schmaltz@seas.harvard.edu
       url: "http://github.com/allenschmaltz"
-      title: PhD Student
-
-
-    - name : Sam Wiseman
-      email : swiseman@seas.harvard.edu
-      title : PhD Student
-      githubid: 4635868
-      url: "https://swiseman.github.io/"
       title: PhD Student
     - name : Kelly Zhang
       email: kz918@nyu.edu
@@ -80,44 +58,29 @@
       url: https://github.com/zackziegler95
       githubid: 22876306
 
-
 - group: Undergraduate Researchers
   people:
-
-    - name : Carl Denton
-      email: blank
-      title: Undergraduate
-      url: https://github.com/cfdenton
-      githubid: 13823589
     - name : Demi Guo
       email: blank
       title: Undergraduate
       url: https://github.com/demiguo
       githubid: 7954176
-    - name : Raghu Dhara
+    - name : Carl Denton
       email: blank
       title: Undergraduate
-      url: https://github.com/rdhara
-      githubid: 12704053
-    - name : Emily Wang
-      email: blank
-      title: Undergraduate
-      url: https://github.com/emilysw
-      githubid: 9683395
-    - name : Katherine Scott
-      email: blank
-      title: Undergraduate
-      url: https://github.com/katherinescott
-      githubid: 11066166
-    - name : Artidoro Pagnoni
-      email: blank
-      title: Undergraduate
-      url: https://github.com/artidoro
-      githubid: 11949572
-      
-      
+      url: https://github.com/cfdenton
+      githubid: 13823589
 
-- group: Alumni
+- group: Grad Alumni
+  people:
+    - name : Sam Wiseman (TTIC)
+      email : swiseman@seas.harvard.edu
+      title :
+      githubid: 4635868
+      url: "https://swiseman.github.io/"
+      title: PhD Student
+
+- group: Undergrad Alumni
   people:
     - name : Rachit Singh (DE Shaw)
       email: blank
@@ -153,7 +116,7 @@
       url: https://github.com/W4ngatang
       githubid: 5520155
       title: Undergrad Researcher
-    - name : Ankit Gupta (Vicarious)
+    - name : Ankit Gupta (Reverie)
       email: blank
       url: http://ankitg.me/
       githubid: 5473865
@@ -168,8 +131,28 @@
       url: https://github.com/kyang01
       githubid: 6758464
       title: Undergrad Researcher
-    - name : Hirsh Jain (Reverie Labs)
+    - name : Hirsh Jain
       email: blank
       url: https://github.com/hirshjain32
       githubid: 3827097
       title: Undergrad Researcher
+    - name : Raghu Dhara
+      email: blank
+      title: Undergraduate
+      url: https://github.com/rdhara
+      githubid: 12704053
+    - name : Emily Wang
+      email: blank
+      title: Undergraduate
+      url: https://github.com/emilysw
+      githubid: 9683395
+    - name : Katherine Scott
+      email: blank
+      title: Undergraduate
+      url: https://github.com/katherinescott
+      githubid: 11066166
+    - name : Artidoro Pagnoni
+      email: blank
+      title: Undergraduate
+      url: https://github.com/artidoro
+      githubid: 11949572
