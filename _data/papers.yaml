@@ -8,7 +8,7 @@ papers:
     - title: "Learning Neural Templates for Text Generation"
       authors: Sam Wiseman, Alexander Rush
       conference: EMNLP 2018
-      pdf :
+      pdf : https://arxiv.org/abs/1808.10122
       image: /images/template.png
 
     - title: "Bottom-Up Abstractive Summarization"
