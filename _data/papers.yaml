@@ -14,7 +14,7 @@ papers:
     - title: "Bottom-Up Abstractive Summarization"
       authors: Sebastian Gehrmann, Yuntian Deng, Alexander Rush
       conference: EMNLP 2018
-      pdf :
+      pdf : https://arxiv.org/abs/1808.10792
       image: /images/bottomup.png
 
     - title: "Training for Diversity in Image Paragraph Captioning"
