@@ -1,7 +1,7 @@
 papers:
     - title: "Latent Alignment and Variational Attention"
       authors: Yuntian Deng*, Yoon Kim*, Justin Chiu, Demi Guo, Alexander M. Rush
-      conference: In submission
+      conference: NIPS 2018
       pdf : https://arxiv.org/pdf/1807.03756.pdf
       code: https://github.com/harvardnlp/var-attn
       image: /images/VariationalAttention.png
