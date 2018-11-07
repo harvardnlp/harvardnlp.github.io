@@ -1,4 +1,10 @@
 papers:
+    - title: "Deep Latent-Variable Models for Natural Language"
+      authors: Yoon Kim, Sam Wiseman, Alexander M. Rush
+      conference: EMNLP 2018 tutorial
+      pdf: https://github.com/harvardnlp/DeepLatentNLP/raw/master/tutorial_deep_latent.pdf
+      code: https://colab.research.google.com/drive/1b522fQGUdFI8Wl840D_XsevYYdbIAlrl
+      image: nlp.seas.harvard.edu/images/vae.png
     - title: "Latent Alignment and Variational Attention"
       authors: Yuntian Deng*, Yoon Kim*, Justin Chiu, Demi Guo, Alexander M. Rush
       conference: NIPS 2018
