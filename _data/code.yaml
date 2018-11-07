@@ -1,5 +1,5 @@
 code:
-    - link: http://nlp.seas.harvard.edu/latent-nlp-tutorial.html
+    - link: https://github.com/harvardnlp/DeepLatentNLP/
       title: Deep Latent-Variable Models for Natural Language
       abstract: Inference in deep latent variable models.
       image: http://nlp.seas.harvard.edu/images/vae.png
