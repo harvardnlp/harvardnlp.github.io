@@ -1,4 +1,10 @@
 code:
+    - link: http://nlp.seas.harvard.edu/latent-nlp-tutorial.html
+      title: Deep Latent-Variable Models for Natural Language
+      abstract: Inference in deep latent variable models.
+      image: http://nlp.seas.harvard.edu/images/vae.png
+      authors: Yoon Kim, Sam Wiseman, Alexander M. Rush
+      
     - link: https://github.com/harvardnlp/var-attn
       title: Variational Attention
       abstract: fast training for latent var. attention (e.g. hard attention) with accuracy like soft attention
