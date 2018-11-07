@@ -1,7 +1,7 @@
 papers:
     - title: "Deep Latent-Variable Models for Natural Language"
       authors: Yoon Kim, Sam Wiseman, Alexander M. Rush
-      conference: EMNLP 2018 tutorial
+      conference: EMNLP 2018 (Tutorial)
       pdf: https://github.com/harvardnlp/DeepLatentNLP/raw/master/tutorial_deep_latent.pdf
       code: http://nlp.seas.harvard.edu/latent-nlp-tutorial.html
       image: http://nlp.seas.harvard.edu/images/vae.png
