@@ -1,6 +1,5 @@
 - group : Faculty
   people :
-    -
     - name : Stuart Shieber
       github: srush
       url: "http://www.eecs.harvard.edu/shieber/"
@@ -12,6 +11,7 @@
       url: "http://rush.seas.harvard.edu/"
       githubid: 35882
       title : Assistant Professor
+      
 - group : Graduate Students and Visitors
   people :
     - name : Justin Chiu
@@ -36,7 +36,7 @@
       github: yoonkim
       githubid: 5378003
       title : PhD Student
-    - name : Allen<br> Schmaltz
+    - name : Allen Schmaltz
       github: allenschmaltz
       githubid: 2748209
       email : schmaltz@seas.harvard.edu
