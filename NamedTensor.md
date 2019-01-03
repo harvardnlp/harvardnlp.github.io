@@ -266,15 +266,15 @@ Based on these issues, I think deep learning code should move to a better
 central object. There are several of these proposed. Here for fun, I will
 develop a new prototype. I have the following goals.
 
-*1) Dimensions with have human-readable names.*
+*1) Dimensions should have human-readable names.*
 
-*2) No function should have dim argument.*
+*2) No function should have a dim argument.*
 
-*3) Broadcast by dimension names.*
+*3) Broadcast should be by name matching.*
 
 *4) Transposition should be explicit.*
 
-*5) Avoid dimension indexing.*
+*5) Ban dimension based indexing.*
 
 *6) Private dimensions should be protected.*
 
