@@ -5,10 +5,8 @@ excerpt: "A proposal for a new way of writing deep learning code."
 ---
 *Alexander Rush* - @harvardnlp
 
-<a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/ma
-ster/NamedTensor.ipynb" target="_parent">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg"
-alt="Open In Colab"/>
+<a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/master/NamedTensor.ipynb" target="_parent">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
 <i>
