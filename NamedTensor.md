@@ -941,6 +941,10 @@ annotations, so that we know how they change inputs?
 -conditions so that dimensions are automatically checked.
 
 
+
+
+*Sorry if there are tacky ads down here :(. Disqus seems to do it automatically.*
+
 {::options parse_block_html="true" /}
 <div id="disqus_thread"></div>
 <script>
