@@ -16,7 +16,7 @@
       <div class="trigger">
         {% assign sorted_pages = site.pages | sort:"weight" %}
         {% for my_page in sorted_pages %}
-          {% if my_page.title %}
+          {% if my_page.show %}
           <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
           {% endif %}
         {% endfor %}

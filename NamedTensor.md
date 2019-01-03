@@ -1,53 +1,59 @@
 ---
 layout: page
+title: "Tensor Considered Harmful"
 ---
-<a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/ma
-ster/NamedTensor.ipynb" target="_parent"><img
-src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In
-Colab"/></a>
-
-# Tensor Considered Harmful
-
 *Alexander Rush* - @harvardnlp
 
+<a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/ma
+ster/NamedTensor.ipynb" target="_parent">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg"
+alt="Open In Colab"/>
+</a>
+
 <i>
-TL;DR: Despite its ubiquity in modern frameworks, the Tensor object is broken .
-It fails at encapsulation, is inconsistent at broadcasting,  and forces
-checkable properties into the documentation.  Its main benefit, perceived
-closeness to mathematical notation, falls apart in large code bases. This post
-presents a proof-of-concept of a simple alternative approach **named tensors**
-that forces all dimensions of a tensor to have a human-readable name. While this
-seems like a small change, I show that it eliminates the need for indexing,
-dim/axis arguments, and tricks like einsum. Furthermore, it opens up the ability
-for a range of dynamic error checking. The beta PyTorch library accompanying
-this blog post is available at
-[harvardnlp/namedtensor](https://github.com/harvardnlp/NamedTensor).
+TL;DR: Despite its ubiquity in deep learning, Tensor is broken. It forces bad
+habits such as exposing private dimensions, broadcasting based on absolute
+position,  and keeping type information in documentation.  This post presents a
+proof-of-concept of an alternative approach, **named tensors**, with named
+dimensions. This change eliminates the need for indexing, dim arguments, einsum-
+style unpacking, and documentation-based coding. The prototype **PyTorch
+library** accompanying this blog post is available as
+[namedtensor](https://github.com/harvardnlp/NamedTensor).
 </i>
 
 * Table of Contents
 {:toc}
 
+*Changelog and Notes:*
+
+*  Jon Malmaud points out that the [xarray](http://xarray.pydata.org/en/stable/)
+project has very similar goals as this note with the addition of extensive
+Pandas and scientific computing support.
+
 
 {% highlight python %}
+#@title Setup
 !rm -fr NamedTensor/; git clone -q https://github.com/harvardnlp/NamedTensor.git
-!cd NamedTensor; pip install -q .  
-!pip install -q torch numpy opt_einsum
+!cd NamedTensor; pip install -q .; pip install -q torch numpy opt_einsum
 {% endhighlight %}
 
 
 {% highlight python %}
+
 import numpy 
 import torch
-import namedtensor as nt
-from namedtensor import NamedTensor
-nt._im_init()
+from namedtensor import NamedTensor, ntorch
+from namedtensor import _im_init
+_im_init()
 {% endhighlight %}
 
-##  Tensor Traps
+#  Tensor Traps
 
-The central object of mathematical frameworks like numpy, pytorch, chainer, and
-tensorflow is of course the tensor, a multi-dimensional array object. Let's look
-at a visual example of tensor.
+
+This post is about the tensor class, a multi-dimensional array object that is
+the central object of deep learning frameworks such as Torch, TensorFlow and
+Chainer, as well as numpy. Tensors carry around a blob of storage and expose a
+tuple of dimension information to users.
 
 
 {% highlight python %}
@@ -58,12 +64,14 @@ ims.shape
 
 
 
-    torch.Size([6, 96, 96, 3])
+{:.output_data_text}
+```
+torch.Size([6, 96, 96, 3])
+```
 
 
 
-So what is this object? Tensors carry around an implied tuple of their
-dimensions. Here there are 4, corresponding to *batch_size*, *height*, *width*,
+Here there are 4 dimensions, corresponding to *batch_size*, *height*, *width*,
 and *channels*. Most of the time you can figure this out by some comment in the
 code that looks like this:
 
@@ -76,20 +84,19 @@ ims[0]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_9_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_10_0.png)
 
 
 
-These objects are concise, mathy, and very efficient internally. They are at the
-center of every modern machine learning system. However in this post I will
-argue that they are inherently broken.
+This approch is concise and pseudo-mathy. However from a programming point of
+view it is not a great way to build complex software.
 
 
-### Trap 1: Convention instead of Encapsulation
+## Trap 1: Private by Convention instead of Encapsulation
 
-Code that manipulates tensors does so by indexing these dimensions. So if you
-want to rotate the image you read the comment, decide what needs to get changed
-and alter it.
+Code that manipulates tensors does so by dimension identifiers in the tuple. If
+you want to rotate the image you read the comment, decide what dimensions need
+to be changed and alter them.
 
 
 {% highlight python %}
@@ -105,17 +112,17 @@ rotate(ims)[0]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_12_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_13_0.png)
 
 
 
+This code is simple and in theory well documented. However, it does not reflect
+the semantics of the target function. The property of rotation is independent of
+the batch, or for that matter, the channels. The function should not have to
+account for these dimensions in determining the dimensions to alter.
 
-
-If we are honest about the semantics of this object, the *batch* dimension is
-private. The property of rotation is independent of the batch, or for that
-matter, any other private dimensions that the tensor might have. It's quite
-worrisome that if we pass in a singleton image this function runs fine but
-fails.
+This leads to two problems. FIrst, it's quite worrisome that if we pass in a
+singleton image this function runs fine but fails to work.
 
 
 {% highlight python %}
@@ -125,14 +132,26 @@ rotate(ims[0]).shape
 
 
 
-    torch.Size([96, 3, 96])
+{:.output_data_text}
+```
+torch.Size([96, 3, 96])
+```
 
 
 
-### Trap 2: Broadcasting instead of Matching
+However, even more worrisome is that the function may actually use the batch
+dimensions by mistake and mix together properties of different images. This can
+lead to nasty bugs that would be easy to avoid if this dimension was hidden from
+the code.
 
-Assume that we want to mask out a part of the image. We can do this using
-*broadcasting* by first creating a mask and then applying it across dimensions.
+## Trap 2: Broadcasting by Alignment instead of Semantics
+
+The most useful aspect of Tensors is that they can quickly do array operations
+without directly requiring for loops. For this to work dimensions need to be
+directly aligned so that they can be broadcasts. Again this is done by
+convention and code documentation that makes it "easy" to line up dimensions.
+For instance, let's assume we want to apply a mask to the above image.
+
 
 
 {% highlight python %}
@@ -144,7 +163,7 @@ mask
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_16_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_18_0.png)
 
 
 
@@ -153,15 +172,24 @@ mask
 try:
     ims.masked_fill(mask, 0)
 except RuntimeError:
-    print("Broadcasing fail", mask.shape, ims.shape)
+    error = "Broadcasting fail %s %s"%(mask.shape, ims.shape)
+error
 {% endhighlight %}
 
-    Broadcasing fail torch.Size([96, 96]) torch.Size([6, 96, 96, 3])
+
+
+
+{:.output_data_text}
+```
+'Broadcasting fail torch.Size([96, 96]) torch.Size([6, 96, 96, 3])'
+```
+
 
 
 This fails because even though we knew that we were building a *height* and
 *width* shaped mask, the rules of broadcasting do not have the correct
-semantics. To make this work, you have to use either `view` or `squeeze`.
+semantics. To make this work, you are encouraged to use either `view` or
+`squeeze` my least favorite functions.
 
 
 {% highlight python %}
@@ -177,22 +205,22 @@ ims.masked_fill(mask, 1)[0]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_19_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_21_0.png)
 
 
 
-This code is slightly better at encapsulation since it hides the leftmost
-dimensions. However reading through real code, dozens of `view`s and `squeeze`s
-become completely unreadable.
+Note we do not need to do this for the left-most dimensions so there is a bit of
+abstraction here.  However reading through real code, dozens of right side
+`view`s and `squeeze`s become completely unreadable.
 
-### Trap 3: Comments instead of Checks
+## Trap 3: Access by Comments instead of Names
 
 
 
 It is possible that you look at the top two issues and think that as long as you
 are careful, these issues will be caught by run time errors.
-However, combination of broadcasting and indexing can lead to problems that are
-very tough to catch.
+However, even well used the combination of broadcasting and indexing can lead to
+problems that are very tough to catch.
 
 
 {% highlight python %}
@@ -217,44 +245,46 @@ b
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_23_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_25_0.png)
 
 
 
 Here we assume that the coder is trying to combine two tensor using both
 reduction operations and dimension indexing. (Honestly at this point I have
-forgetten the dimensions stand for). The main point though is that this code
-will run fine for whatever value `dim` is. The comment is useless here if the
-code doesn't throw a run time error.
+forgetten the dimensions stand for).
 
-## Named Tensor: A Proposal and Prototype
+The main point though is that this code will run fine for whatever value dim is
+given. The comment here might descibe what is happening but the code itself
+doesn't throw a run time error.
 
-My proposal is simple but dogmatic. Tensor is broken, we should use named
-tensors. Ideally:
+# Named Tensor: A Prototype
 
-*1) All dimensions should have a unique human-readable name.*
+Based on these issues, I think deep learning code should move to a better
+central object. There are several of these proposed. Here for fun, I will
+develop a new prototype. I have the following goals.
 
-*2) No function should have an index-based `dim` / `axis` argument. *
+*1) Dimensions with have human-readable names.*
 
-*3) Implicit broadcasting should be replaced with *contraction*. *
+*2) No function should have dim argument.*
+
+*3) Broadcast by dimension names.*
 
 *4) Transposition should be explicit.*
 
-*5) Indexing should be phased out. *
+*5) Avoid dimension indexing.*
 
-*6) Knowing private dimensions should never be necessary.*
-
-
+*6) Private dimensions should be protected.*
 
 
 
-To experiment with these ideas I have built a library known as NamedTensor.
-Currently parts of it are PyTorch specific, but in theory a similar idea could
-be used in other frameworks. The code is available at
-[here](https://github.com/harvardnlp/namedtensor). Let's go through how each of
-these ideas are implemented in practice.
 
-### Proposal 1: Assigning Names
+
+To experiment with these ideas I have built a library known as `NamedTensor`.
+Currently it is PyTorch specific, but in theory a similar idea could be used in
+other frameworks. The code is available at
+[github.com/harvardnlp/namedtensor](https://github.com/harvardnlp/namedtensor).
+
+## Proposal 1: Assigning Names
 
 The core of the library is an object that wraps a tensor and provides names for
 each dimension. Here we simply wrap a given torch tensor with dimension names.
@@ -268,7 +298,10 @@ named_ims.named_shape
 
 
 
-    OrderedDict([('batch', 6), ('height', 96), ('width', 96), ('channels', 3)])
+{:.output_data_text}
+```
+OrderedDict([('batch', 6), ('height', 96), ('width', 96), ('channels', 3)])
+```
 
 
 
@@ -277,14 +310,14 @@ into named tensors.
 
 
 {% highlight python %}
-tensor = nt.randn(dict(height=96, width=96, channels=3))
-tensor
+ex = ntorch.randn(dict(height=96, width=96, channels=3))
+ex
 {% endhighlight %}
 
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_32_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_34_0.png)
 
 
 
@@ -292,36 +325,31 @@ Most simple operations simply keep around the named tensor properties.
 
 
 {% highlight python %}
-tensor.log().named_shape
+ex.log()
+
+# or 
+
+ntorch.log(ex)
+
+None
 {% endhighlight %}
 
+## Proposal 2: Accessors and Reduction
 
-
-
-    OrderedDict([('height', 96), ('width', 96), ('channels', 3)])
-
-
-
-### Proposal 2: Accessors and Reduction
-
-The first benefit of names comes from the ability to replace the need for `dim`
-and `axis` style arguments entirely. For example, lets say we wanted to sort
-each column.
+The first benefit of names comes from the ability to replace the need for dim
+and axis style arguments entirely. For example, lets say we wanted to sort each
+column.
 
 
 {% highlight python %}
-sorted_pic, _ = tensor.sort("width")
-print(sorted_pic.named_shape)
-sorted_pic.tensor
+sortex, _ = ex.sort("width")
+sortex
 {% endhighlight %}
 
-    OrderedDict([('height', 96), ('width', 96), ('channels', 3)])
 
 
 
-
-
-![png]({{ BASE_PATH }}/images/namedtensor_37_1.png)
+![png]({{ BASE_PATH }}/images/namedtensor_39_0.png)
 
 
 
@@ -330,39 +358,29 @@ pooled out.
 
 
 {% highlight python %}
-averaged_images = named_ims.mean("batch")
-print(averaged_images.named_shape)
-averaged_images
+named_ims.mean("batch")
 {% endhighlight %}
 
-    OrderedDict([('height', 96), ('width', 96), ('channels', 3)])
 
 
 
-
-
-![png]({{ BASE_PATH }}/images/namedtensor_39_1.png)
+![png]({{ BASE_PATH }}/images/namedtensor_41_0.png)
 
 
 
 
 {% highlight python %}
-averaged_images = named_ims.mean("batch channels")
-print(averaged_images.named_shape)
-averaged_images
+named_ims.mean("batch channels")
 {% endhighlight %}
 
-    OrderedDict([('height', 96), ('width', 96)])
 
 
 
-
-
-![png]({{ BASE_PATH }}/images/namedtensor_40_1.png)
+![png]({{ BASE_PATH }}/images/namedtensor_42_0.png)
 
 
 
-### Proposal 3: Broadcasting and Contraction
+## Proposal 3: Broadcasting and Contraction
 
 The names that are provided also provide the basis for broadcasting operations.
 When there is a binary operations between two named tensors they first ensure
@@ -373,23 +391,11 @@ broadcasting.
 
 
 {% highlight python %}
+im = NamedTensor(ims[0], "height width channels")
+im2 = NamedTensor(ims[1], "height width channels")
+
 mask = NamedTensor(torch.randint(0, 2, [96, 96]).byte(), "height width")
-named_ims.masked_fill(mask, 1).get("batch", 0)
-{% endhighlight %}
-
-
-
-
-![png]({{ BASE_PATH }}/images/namedtensor_42_0.png)
-
-
-
-Similar operations can be used for standard matrix operations such as addition
-and multiplication.
-
-
-{% highlight python %}
-(named_ims * mask.double()).get("batch", 0)
+im.masked_fill(mask, 1)
 {% endhighlight %}
 
 
@@ -399,66 +405,108 @@ and multiplication.
 
 
 
-Another useful feature is to the `contract` method which applies tensor
-contraction between two name tensors. Tensor contraction, the machinery behind
-`einsum`, is an elegant way of thinking about generalizations of dot-products.
+Similar operations can be used for standard matrix operations such as addition
+and multiplication.
 
 
 {% highlight python %}
-tensor1 = named_ims.get("batch", 0)
-tensor2 = named_ims.get("batch", 0)
+im * mask.double()
+{% endhighlight %}
 
+
+
+
+![png]({{ BASE_PATH }}/images/namedtensor_46_0.png)
+
+
+
+A more general feature is the `contract` method for tensor contraction between
+name tensors. Tensor contraction, the machinery behind `einsum`, is an elegant
+way of thinking about generalizations of dot-products, matrix-vector products,
+matrix-matrix products, etc.
+
+
+{% highlight python %}
 
 # Runs torch.einsum(ijk,ijk->jk, tensor1, tensor2)
-print(tensor1.contract("height", tensor2).named_shape)
-
-# Runs torch.einsum(ijk,ijk->il, tensor1, tensor2)
-print(tensor1.contract("width", tensor2).named_shape)
-
-# Runs torch.einsum(ijk,ijk->l, tensor1, tensor2)
-print(tensor1.contract("height width", tensor2).named_shape)
+im.contract("height", im2).named_shape
 
 {% endhighlight %}
 
-    OrderedDict([('width', 96), ('channels', 3)])
-    OrderedDict([('height', 96), ('channels', 3)])
-    OrderedDict([('channels', 3)])
 
 
-Similar notation can be used for spare indexing. This is useful for embedding
-lookups and other sparse operations.
+
+{:.output_data_text}
+```
+OrderedDict([('width', 96), ('channels', 3)])
+```
+
+
 
 
 {% highlight python %}
-tensor1 = named_ims.get("batch", 0) 
-tensor2, _ = NamedTensor(torch.randint(0, 96, [50]).long(), "lookups") \
+# Runs torch.einsum(ijk,ijk->il, tensor1, tensor2)
+im.contract("width", im2).named_shape
+{% endhighlight %}
+
+
+
+
+{:.output_data_text}
+```
+OrderedDict([('height', 96), ('channels', 3)])
+```
+
+
+
+
+{% highlight python %}
+
+# Runs torch.einsum(ijk,ijk->l, tensor1, tensor2)
+im.contract("height width", im2).named_shape
+
+{% endhighlight %}
+
+
+
+
+{:.output_data_text}
+```
+OrderedDict([('channels', 3)])
+```
+
+
+
+Similar notation can be used for sparse indexing (inspired by the
+[einindex](https://pypi.org/project/einindex/) library). This is useful for
+embedding lookups and other sparse operations.
+
+
+{% highlight python %}
+pick, _ = NamedTensor(torch.randint(0, 96, [50]).long(), "lookups") \
              .sort("lookups")
 
 # Select 50 random rows.
-selected = tensor1.index_select("height", tensor2)
-print(selected.named_shape)
-selected
+im.index_select("height", pick)
 {% endhighlight %}
 
-    OrderedDict([('lookups', 50), ('width', 96), ('channels', 3)])
 
 
 
-
-
-![png]({{ BASE_PATH }}/images/namedtensor_48_1.png)
+![png]({{ BASE_PATH }}/images/namedtensor_52_0.png)
 
 
 
-### Proposal 4: Shifting Dimensions
+## Proposal 4: Shifting Dimensions
 
 Behind the scenes all of the named tensors are acting as tensor objects. As such
 thing like order and stride of dimensions does matter. Operations like
 `transpose` and `view` are crucial for maintaining this, but are unfortunately
 quite error-prone.
-Instead I propose a single method `shift` that borrowsheavily from the Alex
-Rogozhnikov's excellent [einops](https://github.com/arogozhnikov/einops)
-package.
+
+Instead consider a domain specific langauge `shift` that borrows heavily from
+the Alex Rogozhnikov's excellent
+[einops](https://github.com/arogozhnikov/einops) package.
 
 
 
@@ -470,7 +518,7 @@ tensor
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_51_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_55_0.png)
 
 
 
@@ -484,7 +532,7 @@ tensor.shift("w h c")
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_53_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_57_0.png)
 
 
 
@@ -500,7 +548,10 @@ tensor.shift('h -> (height q)', height=8).named_shape
 
 
 
-    OrderedDict([('height', 8), ('q', 12), ('w', 96), ('c', 3)])
+{:.output_data_text}
+```
+OrderedDict([('height', 8), ('q', 12), ('w', 96), ('c', 3)])
+```
 
 
 
@@ -514,7 +565,10 @@ tensor.shift('(b h) -> bh').named_shape
 
 
 
-    OrderedDict([('bh', 576), ('w', 96), ('c', 3)])
+{:.output_data_text}
+```
+OrderedDict([('bh', 576), ('w', 96), ('c', 3)])
+```
 
 
 
@@ -529,7 +583,7 @@ tensor.shift('(b w) -> bw', 'h bw c')
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_58_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_62_0.png)
 
 
 
@@ -538,25 +592,27 @@ notation.
 
 
 {% highlight python %}
-tensor.shift("b -> (b1 b2)", '(b2 h) -> a', '(b1 w) -> d', 'a d c', b1=2)
+tensor.shift("b -> (b1 b2)", '(b2 h) -> a',
+             '(b1 w) -> d', 'a d c', b1=2)
 {% endhighlight %}
 
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_60_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_64_0.png)
 
 
 
 
 {% highlight python %}
-tensor.shift('w -> (w w2)', '(h w2) -> a', '(b w) -> d', 'a d c', w2=2)
+tensor.shift('w -> (w w2)', '(h w2) -> a',
+             '(b w) -> d', 'a d c', w2=2)
 {% endhighlight %}
 
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_61_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_65_0.png)
 
 
 
@@ -568,7 +624,7 @@ tensor.shift('(b w) -> a', 'h a c')
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_62_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_66_0.png)
 
 
 
@@ -580,7 +636,7 @@ tensor.shift('(w b) -> a', 'h a c')
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_63_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_67_0.png)
 
 
 
@@ -593,34 +649,36 @@ tensor.mean('b')
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_64_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_68_0.png)
 
 
 
 
 {% highlight python %}
 tensor = NamedTensor(ims, 'b h w c')
-tensor.shift("h -> (h h2)", "w -> (w w2)", h2=2, w2=2).mean("h2 w2").shift("(b w) -> bw")
+tensor.shift("h -> (h h2)", "w -> (w w2)", h2=2, w2=2)\
+      .mean("h2 w2").shift("(b w) -> bw")
 {% endhighlight %}
 
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_65_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_69_0.png)
 
 
 
 
 {% highlight python %}
 tensor = NamedTensor(ims, 'b h w c')
-tensor.shift("b -> (b1 b2)", b1 = 2).mean('c').shift("(b1 w) -> bw", "(b2 h) -> bh", 'bh bw')
+tensor.shift("b -> (b1 b2)", b1 = 2).mean('c') \
+      .shift("(b1 w) -> bw", "(b2 h) -> bh", 'bh bw')
 
 {% endhighlight %}
 
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_66_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_70_0.png)
 
 
 
@@ -632,15 +690,18 @@ tensor.shift('b -> (b1 b2)', '(h b1) -> h', '(w b2) -> w', b1=2)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_67_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_71_0.png)
 
 
 
-### Proposal 5: Ban Indexing
+## Proposal 5: Ban Indexing
+
 
 Generally indexing is discouraged in this named tensor paradigm. Instead use
-functions like `index_select` above or `unbind`
+functions like `index_select` above.
 
+There are some useful named alternative functions pulled over from torch. For
+example `unbind` pulls apart a dimension to a tuple.
 
 
 
@@ -655,11 +716,11 @@ images[3]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_70_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_74_0.png)
 
 
 
-Another alternative is to use `get` to obtain a single slice.
+The function `get` directly selects a slice of from a named dimension.
 
 
 {% highlight python %}
@@ -671,12 +732,12 @@ images[1]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_72_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_76_0.png)
 
 
 
 Finally `narrow` can be used to replace fancy indexing. However you must give a
-new dim name.
+new dim name (since it can no longer broadcast).
 
 
 {% highlight python %}
@@ -686,22 +747,63 @@ tensor.narrow( "h -> narrowedheight", 30, 50).get("b", 0)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_74_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_78_0.png)
 
 
 
-### Proposal 6: Check Encapsulation
+## Proposal 6: Private Dimensions
+
+Finally named tensor attempts to let you directly hide dimensions that should
+not be accessed by internal functions. The function `mask_to` will keep around a
+left side mask that protects any earlier dimensions from manipulations by
+functions. The simplest example uses a mask to drop the `batch` dimension.
+
+
+{% highlight python %}
+def bad_function(x, y):
+    # Accesses the private batch dimension
+    return x.mean("batch")
+
+x = ntorch.randn(dict(batch=10, height=100, width=100))
+y = ntorch.randn(dict(batch=10, height=100, width=100))
+
+try:
+    bad_function(x.mask_to("batch"), y)
+except RuntimeError as e:
+    error = "Error received: " + str(e)
+error
+{% endhighlight %}
+
+
+
+
+{:.output_data_text}
+```
+'Error received: Dimension batch is masked'
+```
+
+
+
+This is weak dynamic check and can be turned off by internal functions. In
+future versions, perhaps we can add function annotations to lift non-named
+functions to respect these properties.
+
+# Example: Neural Attention
 
 To demonstrate why these choices lead to better encapsulation properties, let's
-consider a real-world deep learning example. This example was proposed by my
-colleague Tim Rocktashel in the blog post describing einsum
-(https://rockt.github.io/2018/04/30/einsum).
+consider a real-world deep learning example.
+
+This example was proposed by my colleague Tim Rocktashel in the blog post
+describing einsum (https://rockt.github.io/2018/04/30/einsum). Tim's code was
+proposed as a better alternative to raw PyTorch. While I agree that einsum is a
+step forward, it still falls into many of the traps described above.
 
 
 
 
 Consider the problem of neural attention, which requires computing,
 
+$$
 \begin{align*}
 \mathbf{M}_t &= \tanh(\mathbf{W}^y\mathbf{Y}+(\mathbf{W}^h\mathbf{h}_t+\mathbf{W
 }^r\mathbf{r}_{t-1})\otimes \mathbf{e}_L) & \mathbf{M}_t &\in\mathbb{R}^{k\times
@@ -710,13 +812,14 @@ L}\\
 \mathbf{r}_t &= \mathbf{Y}\alpha^T_t +
 \tanh(\mathbf{W}^t\mathbf{r}_{t-1})&\mathbf{r}_t&\in\mathbb{R}^k
 \end{align*}
+$$
 
-First let's setup the necessary parameters.
+First we setup the parameters.
 
 
 {% highlight python %}
 def random_ntensors(names, num=1, requires_grad=False):
-    tensors = [nt.build(torch.randn, names, requires_grad=requires_grad)
+    tensors = [ntorch.randn(names, requires_grad=requires_grad)
                for i in range(0, num)]
     return tensors[0] if num == 1 else tensors
 
@@ -726,8 +829,10 @@ class Param:
         self.WY, self.Wh, self.Wr, self.Wt = \
             random_ntensors(dict(inhid=in_hid, outhid=out_hid),
                             num=4, requires_grad=True)
-        self.bM, self.br, self.w = random_ntensors(dict(outhid=out_hid), num=3,
-                                                   requires_grad=True)
+        self.bM, self.br, self.w = \
+            random_ntensors(dict(outhid=out_hid), 
+                            num=3,
+                            requires_grad=True)
         
 {% endhighlight %}
 
@@ -756,71 +861,73 @@ def einsum_attn(params, Y, ht, rt1):
     return rt, at
 {% endhighlight %}
 
-This implementation is a huge improvement over the naive PyTorch implementation.
-It removes many of the
-views and transposes that would be necessary to make this work. However, I would
-argue that it still fails many of
-the tests laid out in the introduction. It uses `squeeze`, it only works with
-one batch dim, and it is littered with comments that
-are not enforced as constraint in the code itself.
+This implementation is an improvement over the naive PyTorch implementation. It
+removes many of the
+views and transposes that would be necessary to make this work. *However, it
+still uses `squeeze`, references the private batch dim, and usees comments that
+are not enforced.*
 
-As an alternative consider the namedtensor version:
+Consider instead the `namedtensor` version:
 
 
 {% highlight python %}
 def namedtensor_attn(params, Y, ht, rt1):
     tmp = ht.contract("inhid", params.Wh) + rt1.contract("inhid", params.Wr)
-    at = (Y.contract("inhid", params.WY) + tmp + params.bM) \
-         .tanh() \
+    at = ntorch.tanh(Y.contract("inhid", params.WY) + tmp + params.bM) \
          .contract("outhid", params.w) \
          .softmax("seqlen")
 
     rt = Y.contract("seqlen", at).shift("inhid -> (outhid)") + \
-         (rt1.contract("inhid", params.Wt) + params.br).tanh()
+         ntorch.tanh(rt1.contract("inhid", params.Wt) + params.br)
     return rt, at
 
 {% endhighlight %}
 
-Note three things:
+This code avoids all three traps.
 
-1) The code never mentions "batch"
+(Trap 1) The code never mentions the `batch` dim.
 
-2) There is no indexing, unpacking of matrices, squeezes, or dim calls
+(Trap 2) All broadcasting is done directly with contractions, there are no
+views.
 
-3) If you understand attention, it is very clear where it is being computed and
-applied based on the `seqlen` name.
+(Trap 3) Operations across dims are explicit. For instance, the softmax is
+clearly over the seqlen.
 
 
 {% highlight python %}
-in_hid = 7
-out_hid = 7
+# Run Einsum
+in_hid = 7; out_hid = 7
 Y = torch.randn(3, 5, in_hid)
-# -- [batch_size x hidden_dimension]
 ht, rt1 = torch.randn(3, in_hid), torch.randn(3, in_hid)
-ea = Param(in_hid, out_hid)
-r, a = einsum_attn(ea, Y, ht, rt1)
-
-Y = NamedTensor(Y, "batch seqlen inhid")
-ht = NamedTensor(ht, "batch inhid")
-rt1 = NamedTensor(rt1, "batch inhid")
-nr, na = namedtensor_attn(ea, Y, ht, rt1)
+params = Param(in_hid, out_hid)
+r, a = einsum_attn(params, Y, ht, rt1)
 {% endhighlight %}
 
-## Call to Action
 
-Tools like NumPy and Torch not only help the community do research, they also
-drive forward what students think is plausible to try out. While it is true a
-lot of current models can be built fine with the tools we have, it seems
-implausible to me that the current programming practices are going to scale to
-new models. For instance, one space we have been working on recently is discrete
-latent variable models which often have many problem specific variables each
-with their own variable dimension. This setting breaks the current tensor
-paradigm almost immediately.
+{% highlight python %}
+# Run Named Tensor (hiding batch)
+Y = NamedTensor(Y, "batch seqlen inhid", mask=1)
+ht = NamedTensor(ht, "batch inhid", mask=1)
+rt1 = NamedTensor(rt1, "batch inhid", mask=1)
+nr, na = namedtensor_attn(params, Y, ht, rt1)
+{% endhighlight %}
 
-That being said, this blog post is just a prototype of where this approach could
-go. If you are interested, I would love contributors to the build out this
-library properly. Some ideas if you want to send a PR to
-[harvardnlp/namedtensor](https://github.com/harvardnlp/NamedTensor).
+# Conclusion / Request for Help
+
+Tools for deep learning help researchers implement standard models, but they
+also impact what researchers try. Current models can be built fine with the
+tools we have, but the programming practices are not going to scale to new
+models.
+
+(For instance, one space we have been working on recently is discrete latent
+variable models which often have many problem specific variables each with their
+own variable dimension. This setting breaks the current tensor paradigm almost
+immediately. )
+
+This blog post is just a prototype of where this approach could go. If you are
+interested, I would love contributors to the build out this library properly.
+Some ideas if you want to send a PR to
+[namedtensor](https://github.com/harvardnlp/NamedTensor). Some ideas:
 
 1) **Extending beyond PyTorch**: Can we generalize this approach in a way that
 supports NumPy and Tensorflow?
@@ -834,3 +941,61 @@ annotations, so that we know how they change inputs?
 -conditions so that dimensions are automatically checked.
 
 
+{::options parse_block_html="true" /}
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO
+INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL
+variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your
+page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://harvard-nlp.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a
+href="https://disqus.com/?ref_noscript">comments powered by
+Disqus.</a></noscript>
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION
+BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's
+canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with
+your page's unique identifier variable
+    };
+    */
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://EXAMPLE.disqus.com/embed.js';  // IMPORTANT: Replace
+EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a
+href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by
+Disqus.</a></noscript>

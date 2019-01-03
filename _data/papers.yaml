@@ -77,7 +77,7 @@ papers:
       slides: /slides/nmt17.pdf
     - title: "Adversarially Regularized Autoencoders"
       authors: Junbo Zhao, Yoon Kim, Kelly Zhang, Alexander M. Rush, Yann LeCun
-      conference: ICLM 2018, NIPS 2017 Workshop
+      conference: ICML 2018, NIPS 2017 Workshop
       pdf : https://arxiv.org/abs/1706.04223
       code : https://github.com/jakezhaojb/ARAE
       image: /images/arae.png

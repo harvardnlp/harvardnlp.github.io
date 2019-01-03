@@ -17,3 +17,4 @@ github_username:  harvardnlp
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
