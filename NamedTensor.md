@@ -1,12 +1,14 @@
 ---
 layout: page
 title: "Tensor Considered Harmful"
-excerpt: "A proposal for a new way of writing deep learning code."
+excerpt: "Named tensors for better deep learning code."
 ---
 *Alexander Rush* - @harvardnlp
 
-<a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/master/NamedTensor.ipynb" target="_parent">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+<a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/ma
+ster/NamedTensor.ipynb" target="_parent">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg"
+alt="Open In Colab"/>
 </a>
 
 <i>
@@ -28,6 +30,8 @@ library** accompanying this blog post is available as
 *  Jon Malmaud points out that the [xarray](http://xarray.pydata.org/en/stable/)
 project has very similar goals as this note with the addition of extensive
 Pandas and scientific computing support.
+* Tongfei Chen's [Nexus](https://github.com/ctongfei/nexus) project proposes
+statically type-safe tensors in Scala.
 
 
 {% highlight python %}
@@ -39,7 +43,7 @@ Pandas and scientific computing support.
 
 {% highlight python %}
 
-import numpy
+import numpy 
 import torch
 from namedtensor import NamedTensor, ntorch
 from namedtensor import _im_init
@@ -102,7 +106,7 @@ to be changed and alter them.
 def rotate(ims):
     # batch_size x height x width x channels
     rotated = ims.transpose(1, 2)
-
+    
     # batch_size x width x height x channels
     return rotated
 rotate(ims)[0]
@@ -192,9 +196,9 @@ semantics. To make this work, you are encouraged to use either `view` or
 
 
 {% highlight python %}
-# either
+# either 
 mask = mask.unsqueeze(-1)
-# or
+# or 
 mask = mask.view(96, 96, 1)
 
 # height x width x channels
@@ -250,7 +254,7 @@ b
 
 Here we assume that the coder is trying to combine two tensor using both
 reduction operations and dimension indexing. (Honestly at this point I have
-forgetten the dimensions stand for).
+forgotten what  the dimensions stand for).
 
 The main point though is that this code will run fine for whatever value dim is
 given. The comment here might descibe what is happening but the code itself
@@ -326,7 +330,7 @@ Most simple operations simply keep around the named tensor properties.
 {% highlight python %}
 ex.log()
 
-# or
+# or 
 
 ntorch.log(ex)
 
@@ -829,10 +833,10 @@ class Param:
             random_ntensors(dict(inhid=in_hid, outhid=out_hid),
                             num=4, requires_grad=True)
         self.bM, self.br, self.w = \
-            random_ntensors(dict(outhid=out_hid),
+            random_ntensors(dict(outhid=out_hid), 
                             num=3,
                             requires_grad=True)
-
+        
 {% endhighlight %}
 
 Now consider the tensor-based einsum implementation of this function.
@@ -853,7 +857,7 @@ def einsum_attn(params, Y, ht, rt1):
 
     # -- [batch_size x hidden_dimension]
     rt = torch.einsum("ijk,ij->ik", [Y, at]) + \
-         torch.tanh(torch.einsum("ij,jk->ik", [rt1, params.Wt.tensor]) +
+         torch.tanh(torch.einsum("ij,jk->ik", [rt1, params.Wt.tensor]) + 
                     params.br.tensor)
 
     # -- [batch_size x hidden_dimension], [batch_size x sequence_dimension]
@@ -1000,5 +1004,4 @@ EXAMPLE with your forum shortname!
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a
-href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by
-Disqus.</a></noscript>
+href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
