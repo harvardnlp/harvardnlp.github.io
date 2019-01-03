@@ -95,7 +95,10 @@ This approch is concise and pseudo-mathy. However from a programming point of
 view it is not a great way to build complex software.
 
 
-## Trap 1: Private by Convention instead of Encapsulation
+## Trap 1: Privacy by Convention
+
+
+
 
 Code that manipulates tensors does so by dimension identifiers in the tuple. If
 you want to rotate the image you read the comment, decide what dimensions need
@@ -115,7 +118,7 @@ rotate(ims)[0]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_13_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_14_0.png)
 
 
 
@@ -147,7 +150,9 @@ dimensions by mistake and mix together properties of different images. This can
 lead to nasty bugs that would be easy to avoid if this dimension was hidden from
 the code.
 
-## Trap 2: Broadcasting by Alignment instead of Semantics
+## Trap 2: Broadcasting by Alignment
+
+
 
 The most useful aspect of Tensors is that they can quickly do array operations
 without directly requiring for loops. For this to work dimensions need to be
@@ -166,7 +171,7 @@ mask
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_18_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_20_0.png)
 
 
 
@@ -208,7 +213,7 @@ ims.masked_fill(mask, 1)[0]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_21_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_23_0.png)
 
 
 
@@ -216,8 +221,7 @@ Note we do not need to do this for the left-most dimensions so there is a bit of
 abstraction here.  However reading through real code, dozens of right side
 `view`s and `squeeze`s become completely unreadable.
 
-## Trap 3: Access by Comments instead of Names
-
+## Trap 3: Access by Comments
 
 
 It is possible that you look at the top two issues and think that as long as you
@@ -248,7 +252,7 @@ b
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_25_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_27_0.png)
 
 
 
@@ -320,7 +324,7 @@ ex
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_34_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_36_0.png)
 
 
 
@@ -352,7 +356,7 @@ sortex
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_39_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_41_0.png)
 
 
 
@@ -367,7 +371,7 @@ named_ims.mean("batch")
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_41_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_43_0.png)
 
 
 
@@ -379,7 +383,7 @@ named_ims.mean("batch channels")
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_42_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_44_0.png)
 
 
 
@@ -404,7 +408,7 @@ im.masked_fill(mask, 1)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_44_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_46_0.png)
 
 
 
@@ -419,7 +423,7 @@ im * mask.double()
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_46_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_48_0.png)
 
 
 
@@ -496,7 +500,7 @@ im.index_select("height", pick)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_52_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_54_0.png)
 
 
 
@@ -521,7 +525,7 @@ tensor
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_55_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_57_0.png)
 
 
 
@@ -535,7 +539,7 @@ tensor.shift("w h c")
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_57_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_59_0.png)
 
 
 
@@ -586,7 +590,7 @@ tensor.shift('(b w) -> bw', 'h bw c')
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_62_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_64_0.png)
 
 
 
@@ -602,7 +606,7 @@ tensor.shift("b -> (b1 b2)", '(b2 h) -> a',
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_64_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_66_0.png)
 
 
 
@@ -615,7 +619,7 @@ tensor.shift('w -> (w w2)', '(h w2) -> a',
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_65_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_67_0.png)
 
 
 
@@ -627,7 +631,7 @@ tensor.shift('(b w) -> a', 'h a c')
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_66_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_68_0.png)
 
 
 
@@ -639,7 +643,7 @@ tensor.shift('(w b) -> a', 'h a c')
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_67_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_69_0.png)
 
 
 
@@ -652,7 +656,7 @@ tensor.mean('b')
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_68_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_70_0.png)
 
 
 
@@ -666,7 +670,7 @@ tensor.shift("h -> (h h2)", "w -> (w w2)", h2=2, w2=2)\
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_69_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_71_0.png)
 
 
 
@@ -681,7 +685,7 @@ tensor.shift("b -> (b1 b2)", b1 = 2).mean('c') \
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_70_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_72_0.png)
 
 
 
@@ -693,7 +697,7 @@ tensor.shift('b -> (b1 b2)', '(h b1) -> h', '(w b2) -> w', b1=2)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_71_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_73_0.png)
 
 
 
@@ -719,7 +723,7 @@ images[3]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_74_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_76_0.png)
 
 
 
@@ -735,7 +739,7 @@ images[1]
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_76_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_78_0.png)
 
 
 
@@ -750,7 +754,7 @@ tensor.narrow( "h -> narrowedheight", 30, 50).get("b", 0)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor_78_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor_80_0.png)
 
 
 
