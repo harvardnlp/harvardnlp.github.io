@@ -132,7 +132,7 @@ papers:
       slides : /slides/emnlp16_seqkd.pdf
       code: https://github.com/harvardnlp/seq2seq-attn
 
-    - title: Sequence-to-Sequence Learning as Beam-Search Opimization
+    - title: Sequence-to-Sequence Learning as Beam-Search Optimization
       authors: Sam Wiseman and Alexander M. Rush
       conference: EMNLP 2016 (Best Paper Runner-Up)
       pdf : http://arxiv.org/pdf/1606.02960.pdf
