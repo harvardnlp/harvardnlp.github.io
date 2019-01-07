@@ -25,6 +25,7 @@ library** accompanying this blog post is available as
 {:toc}
 
 *Changelog*
+* See [Part 2](https://github.com/harvardnlp/NamedTensor) as well.
 * Updated the syntax of the prototype to be a subest of xarray whereever
 possible.
 * Dropped the einops style string DSL notation to be more explicit.
@@ -52,7 +53,7 @@ to define dimension names.
 
 {% highlight python %}
 
-import numpy 
+import numpy
 import torch
 from namedtensor import NamedTensor, ntorch
 from namedtensor import _im_init
@@ -118,7 +119,7 @@ to be changed and alter them.
 def rotate(ims):
     # batch_size x height x width x channels
     rotated = ims.transpose(1, 2)
-    
+
     # batch_size x width x height x channels
     return rotated
 rotate(ims)[0]
@@ -210,9 +211,9 @@ semantics. To make this work, you are encouraged to use either `view` or
 
 
 {% highlight python %}
-# either 
+# either
 mask = mask.unsqueeze(-1)
-# or 
+# or
 mask = mask.view(96, 96, 1)
 
 # height x width x channels
@@ -343,7 +344,7 @@ Most simple operations simply keep around the named tensor properties.
 {% highlight python %}
 ex.log()
 
-# or 
+# or
 
 ntorch.log(ex)
 
@@ -840,10 +841,10 @@ class Param:
             random_ntensors(dict(inhid=in_hid, outhid=out_hid),
                             num=4, requires_grad=True)
         self.bM, self.br, self.w = \
-            random_ntensors(dict(outhid=out_hid), 
+            random_ntensors(dict(outhid=out_hid),
                             num=3,
                             requires_grad=True)
-        
+
 {% endhighlight %}
 
 Now consider the tensor-based einsum implementation of this function.
@@ -864,7 +865,7 @@ def einsum_attn(params, Y, ht, rt1):
 
     # -- [batch_size x hidden_dimension]
     rt = torch.einsum("ijk,ij->ik", [Y, at]) + \
-         torch.tanh(torch.einsum("ij,jk->ik", [rt1, params.Wt.values]) + 
+         torch.tanh(torch.einsum("ij,jk->ik", [rt1, params.Wt.values]) +
                     params.br.values)
 
     # -- [batch_size x hidden_dimension], [batch_size x sequence_dimension]

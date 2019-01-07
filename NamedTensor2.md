@@ -3,16 +3,10 @@ layout: page
 title: "Tensor Considered Harmful"
 excerpt: "Named tensors for better deep learning code."
 ---
-<a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/ma
-ster/notebooks/NamedTensor2.ipynb" target="_parent"><img
-src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In
-Colab"/></a>
+<a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/master/notebooks/NamedTensor2.ipynb" target="_parent"><img
+src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 *-Alexander Rush*
-
-* Table of Contents
-
-{:toc}
 
 *TL;DR: My previous post [Tensor Considered
 Harmful](http://nlp.seas.harvard.edu/NamedTensor) proposed a method for using
@@ -26,7 +20,11 @@ can coexist within the current deep learning ecosystem. The prototype **PyTorch
 library** accompanying this blog post is available as
 [namedtensor](https://github.com/harvardnlp/NamedTensor).*
 
-# The Challenge
+
+* Table of Contents
+{:toc}
+
+# Utilizing Named Tensors
 
 The post  [Tensor Considered Harmful](http://nlp.seas.harvard.edu/NamedTensor)
 proposes that many of the core usability issues of Tensor-based programming for
@@ -51,13 +49,13 @@ so that they preserve the semantics of *named tensors*?
 #@title Setup
 !rm -fr NamedTensor/; git clone -q https://github.com/harvardnlp/NamedTensor.git
 !cd NamedTensor; pip install -q .; pip install -q torch numpy opt_einsum
-!cp NamedTensor/notebooks/test* . 
+!cp NamedTensor/notebooks/test* .
 
 {% endhighlight %}
 
 
 {% highlight python %}
-import numpy 
+import numpy
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -76,7 +74,7 @@ modules that manipulate tensor objects.
 {% highlight python %}
 relu = nn.ReLU()
 linear = nn.Linear(3, 1)
-linear 
+linear
 {% endhighlight %}
 
 
@@ -100,17 +98,17 @@ print("\n".join(relu.__doc__.split("\n")[:13]))
 
     Applies the rectified linear unit function element-wise
         :math:`\text{ReLU}(x)= \max(0, x)`
-    
+
         .. image:: scripts/activation_images/ReLU.png
-    
+
         Args:
             inplace: can optionally do the operation in-place. Default: ``False``
-    
+
         Shape:
             - Input: :math:`(N, *)` where `*` means, any number of additional
               dimensions
             - Output: :math:`(N, *)`, same shape as the input
-    
+
 
 
 On the other hand if we look at the linear object we can see that it takes as
@@ -123,19 +121,19 @@ print("\n".join(linear.__doc__.split("\n")[:14]))
 {% endhighlight %}
 
     Applies a linear transformation to the incoming data: :math:`y = xA^T + b`
-    
+
         Args:
             in_features: size of each input sample
             out_features: size of each output sample
             bias: If set to False, the layer will not learn an additive bias.
                 Default: ``True``
-    
+
         Shape:
             - Input: :math:`(N, *, \text{in\_features})` where :math:`*` means any number of
               additional dimensions
             - Output: :math:`(N, *, \text{out\_features})` where all but the last dimension
               are the same shape as the input.
-    
+
 
 
 Now let's try this out with our trusty images.
@@ -177,7 +175,7 @@ directly.
 {% highlight python %}
 first.sub(0.5).op(lambda x: relu(x)).add(0.5)
 
-# or 
+# or
 
 first.sub(0.5).op(relu).add(0.5)
 {% endhighlight %}
@@ -228,11 +226,11 @@ print("\n".join(conv.__doc__.split("\n")[75:85]))
         Shape:
             - Input: :math:`(N, C_{in}, H_{in}, W_{in})`
             - Output: :math:`(N, C_{out}, H_{out}, W_{out})` where
-    
+
               .. math::
                   H_{out} = \left\lfloor\frac{H_{in}  + 2 \times \text{padding}[0] - \text{dilation}[0]
                             \times (\text{kernel\_size}[0] - 1) - 1}{\text{stride}[0]} + 1\right\rfloor
-    
+
               .. math::
                   W_{out} = \left\lfloor\frac{W_{in}  + 2 \times \text{padding}[1] - \text{dilation}[1]
 
@@ -311,7 +309,7 @@ fun to see what it looks like as a named library.
 import torch.distributions as distributions
 import seaborn
 import matplotlib.pyplot as plt
-from namedtensor import ndistributions 
+from namedtensor import ndistributions
 {% endhighlight %}
 
 First let's make some parameters for a multivariate normal. and make a
@@ -438,7 +436,7 @@ for i in range(10):
 ![png]({{ BASE_PATH }}/images/namedtensor2_48_0.png)
 
 
-# Onward
+# Usability Experiments
 
 The next question becomes whether this approach can actually be applied to real
 deep learning problems, and do we like the result. To test this, I went through
@@ -617,12 +615,12 @@ class NamedCNN(BaseCNN):
                   .max("time")[0]
                  for conv_block in self.conv_blocks]
         out = ntorch.cat(x_list, "filters")
-        
+
         feature_extracted = out
         drop = lambda x: F.dropout(x, p=0.5, training=self.training)
         out = out.op(drop, self.fc, classes="filters") \
-                 .softmax("classes") 
-   
+                 .softmax("classes")
+
         return out, feature_extracted
 {% endhighlight %}
 
@@ -672,7 +670,7 @@ class StandardVAE(V)
     def reparameterize(self, mu, logvar):
         normal = distributions.Normal(mu, logvar.mul(0.5).exp())
         return normal.rsample(torch.Size([self.num_samples])), normal
-        
+
     def decode(self, z):
         h3 = F.relu(self.fc3(z))
         return torch.sigmoid(self.fc4(h3))
