@@ -6,7 +6,7 @@ excerpt: "Named tensors for better deep learning code."
 *Alexander Rush* - @harvardnlp
 
 <a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/ma
-ster/NamedTensor.ipynb" target="_parent">
+ster/notebooks/NamedTensor.ipynb" target="_parent">
     <img src="https://colab.research.google.com/assets/colab-badge.svg"
 alt="Open In Colab"/>
 </a>
@@ -25,19 +25,29 @@ library** accompanying this blog post is available as
 * Table of Contents
 {:toc}
 
-*Changelog and Notes:*
+*Changelog*
+* Updated the syntax of the prototype to be a subest of xarray whereever
+possible.
+* Dropped the einops style string DSL notation to be more explicit.
 
+*Implementations*
 *  Jon Malmaud points out that the [xarray](http://xarray.pydata.org/en/stable/)
 project has very similar goals as this note with the addition of extensive
 Pandas and scientific computing support.
 * Tongfei Chen's [Nexus](https://github.com/ctongfei/nexus) project proposes
 statically type-safe tensors in Scala.
+* Stephan Hoyer and Eric Christiansen have a labeled tensor library for
+Tensorflow that is the same as this appraoch. [Labed Tensor](https://github.com/
+tensorflow/tensorflow/tree/master/tensorflow/contrib/labeled_tensor)
+* Nishant Sinha has a [TSA library](https://towardsdatascience.com/introducing-
+tensor-shape-annotation-library-tsalib-963b5b13c35b) that uses type annotations
+to define dimension names.
 
 
 {% highlight python %}
 #@title Setup
-!rm -fr NamedTensor/; git clone -q https://github.com/harvardnlp/NamedTensor.git
-!cd NamedTensor; pip install -q .; pip install -q torch numpy opt_einsum
+#!rm -fr NamedTensor/; git clone -q https://github.com/harvardnlp/NamedTensor.git
+#!cd NamedTensor; pip install -q .; pip install -q torch numpy opt_einsum
 {% endhighlight %}
 
 
@@ -60,7 +70,7 @@ tuple of dimension information to users.
 
 
 {% highlight python %}
-ims = torch.tensor(numpy.load('NamedTensor/examples/test_images.npy'))
+ims = torch.tensor(numpy.load('test_images.npy'))
 ims.shape
 {% endhighlight %}
 
@@ -298,8 +308,8 @@ each dimension. Here we simply wrap a given torch tensor with dimension names.
 
 
 {% highlight python %}
-named_ims = NamedTensor(ims, "batch height width channels")
-named_ims.named_shape
+named_ims = NamedTensor(ims, ("batch", "height", "width", "channels"))
+named_ims.shape
 {% endhighlight %}
 
 
@@ -377,7 +387,7 @@ named_ims.mean("batch")
 
 
 {% highlight python %}
-named_ims.mean("batch channels")
+named_ims.mean(("batch", "channels"))
 {% endhighlight %}
 
 
@@ -398,10 +408,10 @@ broadcasting.
 
 
 {% highlight python %}
-im = NamedTensor(ims[0], "height width channels")
-im2 = NamedTensor(ims[1], "height width channels")
+im = NamedTensor(ims[0], ("height", "width", "channels"))
+im2 = NamedTensor(ims[1], ("height", "width", "channels"))
 
-mask = NamedTensor(torch.randint(0, 2, [96, 96]).byte(), "height width")
+mask = NamedTensor(torch.randint(0, 2, [96, 96]).byte(), ("height", "width"))
 im.masked_fill(mask, 1)
 {% endhighlight %}
 
@@ -427,17 +437,15 @@ im * mask.double()
 
 
 
-A more general feature is the `contract` method for tensor contraction between
-name tensors. Tensor contraction, the machinery behind `einsum`, is an elegant
-way of thinking about generalizations of dot-products, matrix-vector products,
-matrix-matrix products, etc.
+A more general feature is the `dot` method for tensor contraction between name
+tensors. Tensor contraction, the machinery behind `einsum`, is an elegant way of
+thinking about generalizations of dot-products, matrix-vector products, matrix-
+matrix products, etc.
 
 
 {% highlight python %}
-
 # Runs torch.einsum(ijk,ijk->jk, tensor1, tensor2)
-im.contract("height", im2).named_shape
-
+im.dot("height", im2).shape
 {% endhighlight %}
 
 
@@ -453,7 +461,7 @@ OrderedDict([('width', 96), ('channels', 3)])
 
 {% highlight python %}
 # Runs torch.einsum(ijk,ijk->il, tensor1, tensor2)
-im.contract("width", im2).named_shape
+im.dot("width", im2).shape
 {% endhighlight %}
 
 
@@ -468,10 +476,8 @@ OrderedDict([('height', 96), ('channels', 3)])
 
 
 {% highlight python %}
-
 # Runs torch.einsum(ijk,ijk->l, tensor1, tensor2)
-im.contract("height width", im2).named_shape
-
+im.dot(("height", "width"), im2).shape
 {% endhighlight %}
 
 
@@ -490,7 +496,7 @@ embedding lookups and other sparse operations.
 
 
 {% highlight python %}
-pick, _ = NamedTensor(torch.randint(0, 96, [50]).long(), "lookups") \
+pick, _ = NamedTensor(torch.randint(0, 96, [50]).long(), ("lookups",)) \
              .sort("lookups")
 
 # Select 50 random rows.
@@ -518,7 +524,7 @@ the Alex Rogozhnikov's excellent
 
 
 {% highlight python %}
-tensor = NamedTensor(ims[0], "h w c")
+tensor = NamedTensor(ims[0], ("h", "w", "c"))
 tensor
 {% endhighlight %}
 
@@ -529,11 +535,11 @@ tensor
 
 
 
-Standard calls to shift transpose dimensions.
+Standard calls to transpose dimensions.
 
 
 {% highlight python %}
-tensor.shift("w h c")
+tensor.transpose("w", "h", "c")
 {% endhighlight %}
 
 
@@ -543,13 +549,12 @@ tensor.shift("w h c")
 
 
 
-Calls with of the form "a -> (b c)" split dimensions, whereas "(a b) -> c" merge
-them.
+Calls for splitting and stacking together dimensions.
 
 
 {% highlight python %}
-tensor = NamedTensor(ims[0], "h w c")
-tensor.shift('h -> (height q)', height=8).named_shape
+tensor = NamedTensor(ims[0], ("h", "w", "c"))
+tensor.split(h=("height", "q"), height=8).shape
 {% endhighlight %}
 
 
@@ -564,8 +569,8 @@ OrderedDict([('height', 8), ('q', 12), ('w', 96), ('c', 3)])
 
 
 {% highlight python %}
-tensor = NamedTensor(ims, 'b h w c')
-tensor.shift('(b h) -> bh').named_shape
+tensor = NamedTensor(ims, ('b', 'h', 'w', 'c'))
+tensor.stack(bh = ('b', 'h')).shape
 
 {% endhighlight %}
 
@@ -579,12 +584,11 @@ OrderedDict([('bh', 576), ('w', 96), ('c', 3)])
 
 
 
-Shifts can be chained in the same function.
+Ops can be chained.
 
 
 {% highlight python %}
-tensor.shift('(b w) -> bw', 'h bw c')
-
+tensor.stack(bw=('b', 'w')).transpose('h', 'bw', 'c')
 {% endhighlight %}
 
 
@@ -599,8 +603,8 @@ notation.
 
 
 {% highlight python %}
-tensor.shift("b -> (b1 b2)", '(b2 h) -> a',
-             '(b1 w) -> d', 'a d c', b1=2)
+tensor.split(b=('b1', 'b2'), b1=2).stack(a=('b2', 'h'), d=('b1', 'w'))\
+      .transpose('a', 'd', 'c')
 {% endhighlight %}
 
 
@@ -612,8 +616,8 @@ tensor.shift("b -> (b1 b2)", '(b2 h) -> a',
 
 
 {% highlight python %}
-tensor.shift('w -> (w w2)', '(h w2) -> a',
-             '(b w) -> d', 'a d c', w2=2)
+tensor.split(w=('w1', 'w2'), w2=2).stack(a=('h', 'w2'), d=('b', 'w1'))\
+      .transpose('a', 'd', 'c')
 {% endhighlight %}
 
 
@@ -625,7 +629,7 @@ tensor.shift('w -> (w w2)', '(h w2) -> a',
 
 
 {% highlight python %}
-tensor.shift('(b w) -> a', 'h a c')
+tensor.stack(a=('b', 'w')).transpose('h', 'a', 'c')
 {% endhighlight %}
 
 
@@ -637,7 +641,7 @@ tensor.shift('(b w) -> a', 'h a c')
 
 
 {% highlight python %}
-tensor.shift('(w b) -> a', 'h a c')
+tensor.stack(a=('w', 'b')).transpose('h', 'a', 'c')
 {% endhighlight %}
 
 
@@ -649,7 +653,7 @@ tensor.shift('(w b) -> a', 'h a c')
 
 
 {% highlight python %}
-tensor = NamedTensor(ims, 'b h w c')
+tensor = NamedTensor(ims, ('b', 'h', 'w', 'c'))
 tensor.mean('b')
 {% endhighlight %}
 
@@ -662,9 +666,9 @@ tensor.mean('b')
 
 
 {% highlight python %}
-tensor = NamedTensor(ims, 'b h w c')
-tensor.shift("h -> (h h2)", "w -> (w w2)", h2=2, w2=2)\
-      .mean("h2 w2").shift("(b w) -> bw")
+tensor = NamedTensor(ims, ('b', 'h', 'w', 'c'))
+tensor.split(h = ('h1', 'h2'), h2 =2).split(w = ('w1', 'w2'), w2=2) \
+      .mean(('h2', 'w2')).stack(bw=('b', 'w1'))
 {% endhighlight %}
 
 
@@ -676,9 +680,9 @@ tensor.shift("h -> (h h2)", "w -> (w w2)", h2=2, w2=2)\
 
 
 {% highlight python %}
-tensor = NamedTensor(ims, 'b h w c')
-tensor.shift("b -> (b1 b2)", b1 = 2).mean('c') \
-      .shift("(b1 w) -> bw", "(b2 h) -> bh", 'bh bw')
+tensor = NamedTensor(ims, ('b', 'h', 'w', 'c'))
+tensor.split(b = ('b1', 'b2'), b1 = 2).mean('c') \
+      .stack(bw=("b1", "w"), bh=('b2', 'h')).transpose('bh', 'bw')
 
 {% endhighlight %}
 
@@ -691,7 +695,7 @@ tensor.shift("b -> (b1 b2)", b1 = 2).mean('c') \
 
 
 {% highlight python %}
-tensor.shift('b -> (b1 b2)', '(h b1) -> h', '(w b2) -> w', b1=2)
+tensor.split(b = ('b1', 'b2'), b1=2).stack(h=('h', 'b1'), w=('w', 'b2'))
 {% endhighlight %}
 
 
@@ -713,7 +717,7 @@ example `unbind` pulls apart a dimension to a tuple.
 
 
 {% highlight python %}
-tensor = NamedTensor(ims, 'b h w c')
+tensor = NamedTensor(ims, ('b', 'h', 'w', 'c'))
 
 # Returns a tuple
 images = tensor.unbind("b")
@@ -748,7 +752,7 @@ new dim name (since it can no longer broadcast).
 
 
 {% highlight python %}
-tensor.narrow( "h -> narrowedheight", 30, 50).get("b", 0)
+tensor.narrow( 30, 50, h='narowedheight').get("b", 0)
 {% endhighlight %}
 
 
@@ -851,18 +855,18 @@ Now consider the tensor-based einsum implementation of this function.
 import torch.nn.functional as F
 def einsum_attn(params, Y, ht, rt1):
     # -- [batch_size x hidden_dimension]
-    tmp = torch.einsum("ik,kl->il", [ht, params.Wh.tensor]) + \
-          torch.einsum("ik,kl->il", [rt1, params.Wr.tensor])
+    tmp = torch.einsum("ik,kl->il", [ht, params.Wh.values]) + \
+          torch.einsum("ik,kl->il", [rt1, params.Wr.values])
 
-    Mt = torch.tanh(torch.einsum("ijk,kl->ijl", [Y, params.WY.tensor]) + \
-                tmp.unsqueeze(1).expand_as(Y) + params.bM.tensor)
+    Mt = torch.tanh(torch.einsum("ijk,kl->ijl", [Y, params.WY.values]) + \
+                tmp.unsqueeze(1).expand_as(Y) + params.bM.values)
     # -- [batch_size x sequence_length]
-    at = F.softmax(torch.einsum("ijk,k->ij", [Mt, params.w.tensor]), dim=-1)
+    at = F.softmax(torch.einsum("ijk,k->ij", [Mt, params.w.values]), dim=-1)
 
     # -- [batch_size x hidden_dimension]
     rt = torch.einsum("ijk,ij->ik", [Y, at]) + \
-         torch.tanh(torch.einsum("ij,jk->ik", [rt1, params.Wt.tensor]) + 
-                    params.br.tensor)
+         torch.tanh(torch.einsum("ij,jk->ik", [rt1, params.Wt.values]) + 
+                    params.br.values)
 
     # -- [batch_size x hidden_dimension], [batch_size x sequence_dimension]
     return rt, at
@@ -879,13 +883,13 @@ Consider instead the `namedtensor` version:
 
 {% highlight python %}
 def namedtensor_attn(params, Y, ht, rt1):
-    tmp = ht.contract("inhid", params.Wh) + rt1.contract("inhid", params.Wr)
-    at = ntorch.tanh(Y.contract("inhid", params.WY) + tmp + params.bM) \
-         .contract("outhid", params.w) \
+    tmp = ht.dot("inhid", params.Wh) + rt1.dot("inhid", params.Wr)
+    at = ntorch.tanh(Y.dot("inhid", params.WY) + tmp + params.bM) \
+         .dot("outhid", params.w) \
          .softmax("seqlen")
 
-    rt = Y.contract("seqlen", at).shift("inhid -> (outhid)") + \
-         ntorch.tanh(rt1.contract("inhid", params.Wt) + params.br)
+    rt = Y.dot("seqlen", at).stack(inhid=('outhid',)) + \
+         ntorch.tanh(rt1.dot("inhid", params.Wt) + params.br)
     return rt, at
 
 {% endhighlight %}
@@ -913,9 +917,9 @@ r, a = einsum_attn(params, Y, ht, rt1)
 
 {% highlight python %}
 # Run Named Tensor (hiding batch)
-Y = NamedTensor(Y, "batch seqlen inhid", mask=1)
-ht = NamedTensor(ht, "batch inhid", mask=1)
-rt1 = NamedTensor(rt1, "batch inhid", mask=1)
+Y = NamedTensor(Y, ("batch", "seqlen", "inhid"), mask=1)
+ht = NamedTensor(ht, ("batch", "inhid"), mask=1)
+rt1 = NamedTensor(rt1, ("batch", "inhid"), mask=1)
 nr, na = namedtensor_attn(params, Y, ht, rt1)
 {% endhighlight %}
 
