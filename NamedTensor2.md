@@ -28,10 +28,10 @@ mful_a_polemic_against/) comments.*
 * Table of Contents
 {:toc}
 
-`Changelog`
+*Changelog*
 
-* Stephen Hoyer suggested several useful changes to this post which makes the
-syntax much clearer.
+* Thanks to Stephen Hoyer for suggesting several useful changes to this and the last post
+to simplify the syntax.
 
 # Named Tensors for Deep Learning
 
