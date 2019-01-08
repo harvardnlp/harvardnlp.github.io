@@ -9,7 +9,6 @@ excerpt: "Named tensors for better deep learning code."
 src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In
 Colab"/></a>
 
-
 *TL;DR: The previous post [Tensor Considered
 Harmful](http://nlp.seas.harvard.edu/NamedTensor) called for using **named
 tensors** to remedy some of the issues with the ubiquitous Tensor object. The
@@ -71,7 +70,7 @@ from namedtensor import _im_init
 _im_init()
 {% endhighlight %}
 
-## Method 1: Explicit Annotations
+## Method 1: Name Annotations
 
 In PyTorch, the standard deep learning library lives in the `nn` module. This
 library contains bindings to all the useful functions that make up neural
@@ -452,7 +451,7 @@ for i in range(10):
 ![png]({{ BASE_PATH }}/images/namedtensor2_49_0.png)
 
 
-# Experiments on the Canon
+# Experiments on Canonical Models
 
 Now the question is whether this approach can actually be applied to real deep
 learning problems. To test this, I went through several of the key deep learning
