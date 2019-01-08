@@ -202,15 +202,11 @@ first.sub(0.5).op(relu).add(0.5)
 
 
 Things get more interesting when we apply `linear`. This operation changes the
-size of the last dimension. If we try to do this we get an error. To do it
-right, we need to supply a new name.
+size of the last dimension. When we do this we can either leave it alone or supply a new name.
 
 
 {% highlight python %}
-try:
-    first.op(linear)
-except AssertionError:
-    print("Failed to apply linear op.")
+first.op(linear)
 {% endhighlight %}
 
 
