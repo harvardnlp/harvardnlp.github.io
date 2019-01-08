@@ -25,7 +25,7 @@ library** accompanying this blog post is available as
 {:toc}
 
 *Changelog*
-* See [Part 2](https://github.com/harvardnlp/NamedTensor) as well.
+* See [Part 2](http://nlp.seas.harvard.edu/NamedTensor2) as well.
 * Updated the syntax of the prototype to be a subest of xarray whereever
 possible.
 * Dropped the einops style string DSL notation to be more explicit.
