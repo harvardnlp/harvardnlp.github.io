@@ -1,46 +1,50 @@
 ---
 layout: page
-title: "Tensor Considered Harmful"
+title: "Tensor Considered Harmful Pt. 2"
 excerpt: "Named tensors for better deep learning code."
 ---
+*Alexander Rush @harvardnlp*
+
 <a href="https://colab.research.google.com/github/harvardnlp/namedtensor/blob/master/notebooks/NamedTensor2.ipynb" target="_parent"><img
-src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In
+Colab"/></a>
 
-*-Alexander Rush*
-
-*TL;DR: My previous post [Tensor Considered
-Harmful](http://nlp.seas.harvard.edu/NamedTensor) proposed a method for using
-**named tensors** to remedy some of the usability issues present in the
-ubiquitous Tensor object. The post sparked significant conversation about
-whether this was a useful technique or would simply litter code unnecessary
-annotations. This follow-up post considers the use of these objects in real-
-world deep learning examples. This entry is significantly more pragmatic than
-the previous one, and particularly addresses the question of how named tensors
-can coexist within the current deep learning ecosystem. The prototype **PyTorch
-library** accompanying this blog post is available as
-[namedtensor](https://github.com/harvardnlp/NamedTensor).*
+*TL;DR: The previous post [Tensor Considered
+Harmful](http://nlp.seas.harvard.edu/NamedTensor) called for using **named
+tensors** to remedy some of the issues with the ubiquitous Tensor object. The
+post sparked significant conversation about whether this was a useful technique
+or would simply litter code unnecessary annotations. This follow-up considers
+the use of named tensors in real-world deep learning code. This post takes a
+more pragmatic tack, and examines two methods for integrating named tensors into
+the current deep learning ecosystem. As before all the code is available in the
+**PyTorch library** accompanying this blog post is available as
+[namedtensor](https://github.com/harvardnlp/NamedTensor)* which has been
+significantly upgrading based on comments to the previous post on
+twitter/reddit.*
 
 
 * Table of Contents
 {:toc}
 
-# Utilizing Named Tensors
+# Named Tensors for Deep Learning
 
-The post  [Tensor Considered Harmful](http://nlp.seas.harvard.edu/NamedTensor)
-proposes that many of the core usability issues of Tensor-based programming for
-deep learning came down to difficulties in manipulating and aligning tensor
-objects. The post targets inherent issues in the use of these objects in
-practical experiments. Many of the examples consider direct linear algebra
-manipulation experiments in a constrained environment.
+The previous post  [Tensor Considered
+Harmful](http://nlp.seas.harvard.edu/NamedTensor) proposes that many of the core
+usability issues in deep learning frameworks come from manipulating and aligning
+tensor objects. It shows this by playing aroung with some toy tensor examples.
 
-In practice, though, this was cheating. To actually use *named tensors* we need
-to interact with the world at large. The entire of libraries like PyTorch is
-written with a tuple-based calling convention. If we want to write real software
-in real environments, it is not sufficient to simply show that naming is useful,
-it has be usable with the current functionality.
+However, in hindsight, this was cheating. To actually use *named tensors* we
+need to interact with the ecosystem at large. The entire of richness of PyTorch
+is its libraries, which like it or not, are written with a tuple-based calling
+convention. If we want to write real software in real environments, it is not
+sufficient to simply show that naming is useful, it has be usable with the
+current functionality.
 
 **The Challenge**: How can we *lift* deep learning systems in a pragmatic manner
-so that they preserve the semantics of *named tensors*?
+so that they preserve the the semantics of *named tensors*?
+
+I do not have the correct answer to this question. But in this post, I will
+consider two methods: explicit annotations and lifting the library.
 
 
 
@@ -66,9 +70,10 @@ _im_init()
 
 ## Method 1: Explicit Annotations
 
-In PyTorch, the standard deep learning library lives in the `torch.nn` module
-which is commonly abbreviated to `nn`. This library contains a collection of
-modules that manipulate tensor objects.
+In PyTorch, the standard deep learning library lives in the `nn` module. This
+library contains bindings to all the useful functions that make up neural
+networks. To use them we pass around and manipulate tensor objects. Here are two
+mini modules:
 
 
 {% highlight python %}
@@ -87,8 +92,9 @@ Linear(in_features=3, out_features=1, bias=True)
 
 
 
-The API for these objects is specified through their tuple dimensions. For
-instance for "relu" we see that this keeps the size the same as the original.
+The API for these modules is specified through the shape of the tensors passed.
+For instance for "relu" we see that this keeps the size the same as the
+original.
 
 
 
@@ -136,7 +142,7 @@ print("\n".join(linear.__doc__.split("\n")[:14]))
 
 
 
-Now let's try this out with our trusty images.
+This gives a rough sense of the API. Now let's try this out with our images.
 
 
 {% highlight python %}
@@ -153,23 +159,24 @@ first
 
 
 
+The standard non-named way is to call these directly.
+
 
 {% highlight python %}
-# Standard method
 relu(first.values.sub(0.5)).add(0.5)
 {% endhighlight %}
 
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_17_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_18_0.png)
 
 
 
 Our approach is going to instead explicitly chain the operation through the `op`
-method. This method takes in an op function that takes a single raw tensor as an
-argument. In this case it is pretty boring it just applies the function
-directly.
+method. This method takes in an function that acts on the raw tensor.
+
+In this case of relu, it is pretty boring it just applies the function directly.
 
 
 {% highlight python %}
@@ -183,12 +190,13 @@ first.sub(0.5).op(relu).add(0.5)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_19_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_20_0.png)
 
 
 
-Consider instead what happens when we apply the linear operation which changes
-the dimension. Here the linear is modifying the last dimension of the tensor.
+Things get more interesting when we apply `linear`. This operation changes the
+size of the last dimension. If we try to do this we get an error. To do it
+right, we need to supply a new name.
 
 
 {% highlight python %}
@@ -209,13 +217,16 @@ first.op(linear, c2="c").get("c2", 0)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_22_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_23_0.png)
 
 
 
-The main trade-off of this approach is that we need to still know the ordering
-of the changed dimensions. For instance if we look at the shape of the Conv 2d
-class we see that it expects channel first.
+I say this approach is pragmatic, because it still requires us to give the
+correct ordering to all the pytorch modules, and to give new names. This can be
+a bit annoying, but I would argue it makes for more readable and safer code.
+
+For instance if we look at the shape of the Conv2d module we see that it expects
+channel first and changes three dimensions.
 
 
 {% highlight python %}
@@ -237,19 +248,21 @@ print("\n".join(conv.__doc__.split("\n")[75:85]))
 
 
 {% highlight python %}
-ims.transpose("c", "h", "w").op(conv, c2="c", h2="h", w2="w").get("b", 0).transpose("h2", "w2", "c2")
+ims.transpose("c", "h", "w").op(conv, c2="c", h2="h", w2="w") \
+   .get("b", 0).transpose("h2", "w2", "c2")
 {% endhighlight %}
 
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_25_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_26_0.png)
 
 
 
-In addition to `op` we consider two related methods. The method  `augment` wraps
-operations that add a new dimension and `reduce` wraps operations that drop a
-dimension,
+The `op` method is the core extension for interacting with "unsafe", unnamed
+PyTorch. We also consider two related methods. The method `reduce` wraps
+operations that drop a dimension, and the method `augment` wraps operations that
+add a new dimension.
 
 
 {% highlight python %}
@@ -291,18 +304,18 @@ OrderedDict([('batch', 10), ('slen', 20), ('embeddingsize', 20)])
 
 
 
-These two methods are really just syntactic sugar on top of the `op` method
-above, but they make it a bit easier to tell what is happening when you read the
-code.
+These methods are really just syntactic sugar on top of the `op` method above,
+but they make it a bit easier to tell what is happening when you read the code.
 
 ## Method 2: Named Everything
 
-The above approach is relatively pragmatic. We want to use the "unsafe" pytorch
-library so we need to type it on input and output so that we can maintain our
-labels. However ideally we can know exactly the names of the dimensions that are
-being used so that we can propagate them through. Interestingly the PyTorch
-distributions library is written in such a way to make this possible, so it is
-fun to see what it looks like as a named library.
+The above approach is relatively general. We want to use the pytorch library so
+we need to type it on input and output so that we can maintain our labels.
+Ideally though we can know exactly the names of the dimensions that are being
+used so that we can propagate them through.
+
+Interestingly the PyTorch distributions library is written in such a way to make
+this possible, so it is fun to see what it looks like as a named library.
 
 
 {% highlight python %}
@@ -319,7 +332,7 @@ distribution.
 {% highlight python %}
 mu = torch.randn(10, 2)
 Sigma = torch.zeros(10, 2, 2)
-Sigma[:] = torch.tensor([[3., 0], [0, 1.]])
+Sigma[:] = torch.tensor([[1., 0], [0, 1.]])
 {% endhighlight %}
 
 
@@ -327,7 +340,7 @@ Sigma[:] = torch.tensor([[3., 0], [0, 1.]])
 dist = distributions.MultivariateNormal(mu, Sigma)
 {% endhighlight %}
 
-Okay, so what happened here. We made a distribution object that has a bunch of
+Okay, so what happened here? We made a distribution object that has a bunch of
 different distributions all combined together. This object has two important
 properties, its batch shape and its event shape. In particular this is a batch
 of 10 distributions each over with 2D outputs.
@@ -366,12 +379,12 @@ torch.Size([20, 30, 10, 2])
 
 
 
-So now we have an object that is 20x30 samples of a 10 batches each of dim 2. Oh
-man...
+So now we have an object that is 20x30 samples of a 10 batches each of dim 2.
+This is nice to have, but we have to keep track of events, batches, samples...
+It gets hard fast.
 
 
-
-Okay, let's rewind and try it in named world now.
+Let's rewind and try it in named world now.
 
 
 {% highlight python %}
@@ -385,7 +398,7 @@ Sigma.values[:] = torch.tensor([[1., 0], [0, 1.]])
 dist = ndistributions.MultivariateNormal(mu, Sigma)
 {% endhighlight %}
 
-I've overridden the shape calls to give us named output now and sample takes in
+We've overridden the shape calls to give us named output now and sample takes in
 a dict. Should be a bit more clear.
 
 
@@ -419,10 +432,10 @@ OrderedDict([('sample1', 20), ('sample2', 30), ('dist', 10), ('out', 2)])
 
 
 
-So everything was the same as before, except that the distribution propagates
-our dimension labels through to the end. This really comes in handy when you
-want to do some plots. Here was enumerate over the samples from each
-distribution and plot the samples.
+Everything is the same as before, except that the distribution propagates our
+dimension labels through to the end. This really comes in handy when you want to
+do some plots. Here was enumerate over the samples from each distribution and
+plot the samples.
 
 
 {% highlight python %}
@@ -433,16 +446,15 @@ for i in range(10):
 {% endhighlight %}
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_48_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_49_0.png)
 
 
-# Usability Experiments
+# Experiments on the Canon
 
-The next question becomes whether this approach can actually be applied to real
-deep learning problems, and do we like the result. To test this, I went through
-several of the key deep learning micro-benchmarks to see what the code actually
-looks like. Honestly, I am not sure I am completely convinced, I think it looks
-like a start, but maybe not completely finished.
+Now the question is whether this approach can actually be applied to real deep
+learning problems. To test this, I went through several of the key deep learning
+mini-models to see what the code looks like. Honestly, I am not sure I am
+completely convinced... it looks like a start, but maybe not completely there.
 
 ## MNist
 
@@ -466,9 +478,10 @@ class BaseNet(nn.Module):
         self.fc2 = nn.Linear(500, 10)
 {% endhighlight %}
 
-The standard implementation is here (where I have added size comments). The code
-is pretty clean, it is a strain line of applying modules one after the other.
-The dimensions mostly line up along the way.
+The standard implementation is here. The code is pretty clean, it is a straight
+line of applying modules one after the other. The dimensions mostly line up
+along the way, but perhaps that was decided because this is the most standard
+example.
 
 
 {% highlight python %}
@@ -492,16 +505,16 @@ class StandardCNN(BaseNet):
         return F.log_softmax(x, dim=1)
 {% endhighlight %}
 
-Contrast this to our named variant. The code is not necessarily more concise and
-requires a bit more tinkering. However it does have some useful differences.
+Next consider the named version. The code is not necessarily more concise.
+However it does have some useful differences. Notably
 
-1) The `op` will check that changed dimensions get updated along the way, so it
+*  The `op` will check that changed dimensions get updated along the way, so it
 is harder to screw up transposes.
 
-2) Names are in the code so early failures have better errors. Furthermore we
-can add checks like the `assert_size`.
+* Names are in the code, so debugging gives better errors. Furthermore we can
+add checks like the `assert_size`.
 
-3) The view and softmax become nicer in the process.
+* The transpose, view and softmax become nicer in the process.
 
 
 
@@ -529,20 +542,21 @@ backpropagation.
 
 ## Text Classification
 
-The next example is a standard text classification problem. This is based model
-from Yoon Kim in [Convolutional Neural Networks for Sentence Classification
+The next example is a standard text classification CNN problem . This example is
+based on the model from Yoon Kim (2014) in [Convolutional Neural Networks for
+Sentence Classification
 ](https://arxiv.org/abs/1408.5882).
 
 
 <img src="http://www.wildml.com/wp-content/uploads/2015/11/Screen-
 Shot-2015-11-06-at-8.03.47-AM.png">
 
-This is a fun model because it is quite simple, but was surprisingly annoying to
-implement in 2015. Nowadays it is just a couple of lines of code. I borrowed the
-implementation of [Jun Wang](https://github.com/junwang4/CNN-sentence-
-classification-pytorch-2018) and updated it for a [named tensor version](https:/
-/github.com/harvardnlp/namedtensor/blob/master/examples/cnn_kim.py). Both use
-the same set of parameters.
+This is a fun model because it is quite simple and relatively effective (with
+word embeddings). Notably it was surprisingly annoying to implement in 2015, but
+nowadays it is just a couple of lines of code. I borrowed the implementation of
+[Jun Wang](https://github.com/junwang4/CNN-sentence-classification-pytorch-2018)
+and updated it for a [named tensor version](https://github.com/harvardnlp/namedt
+ensor/blob/master/examples/cnn_kim.py). Both use the same set of parameters.
 
 
 {% highlight python %}
@@ -575,9 +589,8 @@ class BaseCNN(nn.Module):
         self.fc = nn.Linear(num_filters * len(kernel_sizes), num_classes)
 {% endhighlight %}
 
-Here is Jun Wang's implementation (with the original comments). Even though this
-code looks simple, it has some traps including a transpose, cat, view and
-softmax.
+Here is the standard implementation. Even though this code looks simple, it has
+all the notable traps including a transpose, cat, view and softmax.
 
 
 {% highlight python %}
@@ -599,8 +612,8 @@ class StandardCNN(BaseCNN):
         return F.softmax(self.fc(out), dim=1), feature_extracted
 {% endhighlight %}
 
-Here is the named version. We need to use `augment` to handle the extra
-embedding dimension and
+Contrast this with the named version. We need to use `augment` to handle the
+extra embedding dimension and
 add several ops. However as a benefit we get to use names for the transpose,
 cat, view and softmax.
 
@@ -626,9 +639,9 @@ class NamedCNN(BaseCNN):
 
 ## VAE
 
-Finally let's consider a variational autoencoder (VAE). This is perhaps the
-simplest version of the model with a feed-forward encoder and decoder. This
-example is taken from the  [torch
+Finally let's consider a variational autoencoder (VAE). The version we look at
+is in its simplest form with a feed-forward encoder and decoder. This example is
+taken from the  [torch
 examples](https://github.com/pytorch/examples/blob/master/vae/main.py) VAE and
 updated to a [named
 vae](https://github.com/harvardnlp/namedtensor/blob/master/examples/vae.py).
@@ -682,7 +695,8 @@ class StandardVAE(V)
 {% endhighlight %}
 
 Named version. Relatively similar except using named distributions as above to
-propagate named dimensions through sampling.
+propagate named dimensions through sampling. This can be particularly useful
+when using multiple samples to backpropagate.
 
 
 {% highlight python %}
@@ -710,7 +724,10 @@ There was a lot of excellent feedback from the previous post, happy to hear
 other ideas or pointers to other approaches. I feel like personally this is
 getting close to a syntax that I would feel comfortable using. However, the
 chain function call / pseudo-monad style can be a bit off-putting to people, so
-it is possibly a non-statrter. Would be curious to know what you think.
+it is possibly a non-starter.
+
+Please let me know on twitter at @harvardnlp or by filing an issue at
+https://github.com/harvardnlp/namedtensor .
 
 
 *Sorry if there are tacky ads down here :(. Disqus seems to do it automatically.*
