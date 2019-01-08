@@ -549,12 +549,10 @@ backpropagation.
 
 The next example is a standard text classification CNN problem . This example is
 based on the model from Yoon Kim (2014) in [Convolutional Neural Networks for
-Sentence Classification
-](https://arxiv.org/abs/1408.5882).
+Sentence Classification](https://arxiv.org/abs/1408.5882).
 
 
-<img src="http://www.wildml.com/wp-content/uploads/2015/11/Screen-
-Shot-2015-11-06-at-8.03.47-AM.png">
+<img src="http://www.wildml.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-8.03.47-AM.png">
 
 This is a fun model because it is quite simple and relatively effective (with
 word embeddings). Notably it was surprisingly annoying to implement in 2015, but
