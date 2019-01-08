@@ -9,6 +9,7 @@ excerpt: "Named tensors for better deep learning code."
 src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In
 Colab"/></a>
 
+
 *TL;DR: The previous post [Tensor Considered
 Harmful](http://nlp.seas.harvard.edu/NamedTensor) called for using **named
 tensors** to remedy some of the issues with the ubiquitous Tensor object. The
@@ -19,8 +20,10 @@ more pragmatic tack, and examines two methods for integrating named tensors into
 the current deep learning ecosystem. As before all the code is available in the
 **PyTorch library** accompanying this blog post is available as
 [namedtensor](https://github.com/harvardnlp/NamedTensor)* which has been
-significantly upgrading based on comments to the previous post on
-twitter/reddit.*
+significantly changed based on ideas from
+[twitter](https://twitter.com/harvardnlp/status/1080911225427496966) / [reddit](
+https://www.reddit.com/r/MachineLearning/comments/accmek/d_tensor_considered_har
+mful_a_polemic_against/) comments.*
 
 
 * Table of Contents
