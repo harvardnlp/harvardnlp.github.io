@@ -18,7 +18,7 @@ the use of named tensors in real-world deep learning code. This post takes a
 more pragmatic tack, and examines two methods for integrating named tensors into
 the current deep learning ecosystem. As before all the code is available in the
 **PyTorch library** accompanying this blog post is available as
-[namedtensor](https://github.com/harvardnlp/NamedTensor)* which has been
+[namedtensor](https://github.com/harvardnlp/NamedTensor) which has been
 significantly changed based on ideas from
 [twitter](https://twitter.com/harvardnlp/status/1080911225427496966) / [reddit](
 https://www.reddit.com/r/MachineLearning/comments/accmek/d_tensor_considered_har
@@ -27,6 +27,11 @@ mful_a_polemic_against/) comments.*
 
 * Table of Contents
 {:toc}
+
+`Changelog`
+
+* Stephen Hoyer suggested several useful changes to this post which makes the
+syntax much clearer.
 
 # Named Tensors for Deep Learning
 
@@ -53,9 +58,9 @@ consider two methods: explicit annotations and lifting the library.
 
 {% highlight python %}
 #@title Setup
-!rm -fr NamedTensor/; git clone -q https://github.com/harvardnlp/NamedTensor.git
-!cd NamedTensor; pip install -q .; pip install -q torch numpy opt_einsum
-!cp NamedTensor/notebooks/test* .
+#!rm -fr NamedTensor/; git clone -q https://github.com/harvardnlp/NamedTensor.git
+#!cd NamedTensor; pip install -q .; pip install -q torch numpy opt_einsum
+#!cp NamedTensor/notebooks/test* .
 
 {% endhighlight %}
 
@@ -157,7 +162,7 @@ first
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_16_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_17_0.png)
 
 
 
@@ -171,7 +176,7 @@ relu(first.values.sub(0.5)).add(0.5)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_18_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_19_0.png)
 
 
 
@@ -192,7 +197,7 @@ first.sub(0.5).op(relu).add(0.5)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_20_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_21_0.png)
 
 
 
@@ -208,9 +213,6 @@ except AssertionError:
     print("Failed to apply linear op.")
 {% endhighlight %}
 
-    Failed to apply linear op.
-
-
 
 {% highlight python %}
 first.op(linear, c2="c").get("c2", 0)
@@ -219,7 +221,7 @@ first.op(linear, c2="c").get("c2", 0)
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_23_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_24_0.png)
 
 
 
@@ -257,7 +259,7 @@ ims.transpose("c", "h", "w").op(conv, c2="c", h2="h", w2="w") \
 
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_26_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_27_0.png)
 
 
 
@@ -448,7 +450,7 @@ for i in range(10):
 {% endhighlight %}
 
 
-![png]({{ BASE_PATH }}/images/namedtensor2_49_0.png)
+![png]({{ BASE_PATH }}/images/namedtensor2_50_0.png)
 
 
 # Experiments on Canonical Models
@@ -527,14 +529,15 @@ class NamedNet(nn.Module):
 
         return (
             x.transpose("c", "h", "w")
-            .op(self.conv1, F.relu, c1="c", h1="h", w1="w")
-            .op(pool, h1a="h1", w1a="w1")
-            .op(self.conv2, F.relu, c2="c1", h2="h1a", w2="w1a")
-            .assert_size(c2=50) # Just for fun.
-            .op(pool, h2a="h2", w2a="w2")
-            .stack(fc=("c2", "h2a", "w2a"))
-            .op(self.fc1, F.relu, fc2="fc")
-            .op(self.fc2, classes="fc2")
+            .op(self.conv1, F.relu)
+            .assert_size(c2=20) # Just for fun.
+            .op(pool)
+            .op(self.conv2, F.relu)
+            .assert_size(c=50)
+            .op(pool)
+            .stack(fc=("c", "h", "w"))
+            .op(self.fc1, F.relu)
+            .op(self.fc2, classes="fc")
             .log_softmax("classes")
         )
 {% endhighlight %}
@@ -623,17 +626,16 @@ cat, view and softmax.
 {% highlight python %}
 class NamedCNN(BaseCNN):
     def forward(self, x):  # x: (batch, slen)
-        x = x.augment(self.embedding, "embedding") \
-             .transpose("embedding", "slen")
+        x = x.augment(self.embedding, "h") \
+             .transpose("h", "slen")
 
-        x_list = [x.op(conv_block, F.relu, time="slen", filters="embedding")
-                  .max("time")[0]
+        x_list = [x.op(conv_block, F.relu).max("slen")[0]
                  for conv_block in self.conv_blocks]
-        out = ntorch.cat(x_list, "filters")
+        out = ntorch.cat(x_list, "h")
 
         feature_extracted = out
         drop = lambda x: F.dropout(x, p=0.5, training=self.training)
-        out = out.op(drop, self.fc, classes="filters") \
+        out = out.op(drop, self.fc, classes="h") \
                  .softmax("classes")
 
         return out, feature_extracted
@@ -677,7 +679,7 @@ Original code, using distributions for the latent space.
 
 
 {% highlight python %}
-class StandardVAE(V)
+class StandardVAE(BaseVAE):
     def encode(self, x):
         h1 = F.relu(self.fc1(x))
         return self.fc21(h1), self.fc22(h1)
@@ -702,17 +704,17 @@ when using multiple samples to backpropagate.
 
 
 {% highlight python %}
-class NamedVAE(V)
+class NamedVAE(BaseVAE):
     def encode(self, x):
-        h1 = x.op(self.fc1, F.relu, h="x")
-        return h1.op(self.fc21, z="h"), h1.op(self.fc22, z="h")
+        h1 = x.op(self.fc1, F.relu)
+        return h1.op(self.fc21, z="x"), h1.op(self.fc22, z="x")
 
     def reparameterize(self, mu, logvar):
         normal = ndistributions.Normal(mu, logvar.mul(0.5).exp())
         return normal.rsample(samples=self.num_samples), normal
 
     def decode(self, z):
-        return z.op(self.fc3, F.relu, h="z").op(self.fc4, x="h").sigmoid()
+        return z.op(self.fc3, F.relu).op(self.fc4, x="z").sigmoid()
 
     def forward(self, x):
         mu, logvar = self.encode(x.stack(x=("ch", "height", "width")))
