@@ -1,4 +1,16 @@
 code:
+    - link: https://github.com/justinchiu/sentclass
+      title: Tensor Variable Elimination for Plated Factor Graphs
+      abstract: efficient tensor algebrain graphs with plates of variables
+      image: /images/tensorelimination.png
+      authors: Fritz Obermeyer, Eli Bingham, Martin Jankowiak, Justin Chiu, Neeraj Pradhan, Alexander Rush, Noah Goodman
+      
+    - link: https://github.com/harvardnlp/TextFlow
+      title: Latent Normalizing Flows for Discrete Sequences
+      abstract: normalizing flow for text generation with latent variables
+      image: /images/textflow.png
+      authors: Zachary M. Ziegler, Alexander M. Rush
+     
     - link: https://github.com/harvardnlp/DeepLatentNLP/
       title: Deep Latent-Variable Models for Natural Language
       abstract: Inference in deep latent variable models.
