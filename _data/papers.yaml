@@ -1,4 +1,16 @@
 papers:
+    - title: "Tensor Variable Elimination for Plated Factor Graphs "
+      authors: Fritz Obermeyer, Eli Bingham, Martin Jankowiak, Justin Chiu, Neeraj Pradhan, Alexander Rush, Noah Goodman
+      conference: ArXiv Preprint
+      pdf: https://arxiv.org/pdf/1902.03210.pdf
+      code: https://github.com/justinchiu/sentclass
+      image: /images/tensorelimination.png
+    - title: "Latent Normalizing Flows for Discrete Sequences"
+      authors:  Zachary M. Ziegler, Alexander M. Rush
+      conference: ArXiv Preprint
+      pdf: https://arxiv.org/pdf/1901.10548
+      code: https://github.com/harvardnlp/TextFlow
+      image: /images/textflow.png
     - title: "Deep Latent-Variable Models for Natural Language"
       authors: Yoon Kim, Sam Wiseman, Alexander M. Rush
       conference: EMNLP 2018 (Tutorial)
@@ -194,7 +206,7 @@ papers:
     - title: Towards AI-Complete Question Answering A Set of Prerequisite Toy Tasks
       authors: Jason Weston, Antoine Bordes, Sumit Chopra, Tomas Mikolov, and Alexander M. Rush
       pdf : http://arxiv.org/pdf/1502.05698.pdf
-      conference: Arxiv Preprint
+      conference: ArXiv Preprint
       image : /images/babi.png
 
     - title: Learning Anaphoricity and Antecedent Ranking Features for Coreference Resolution
