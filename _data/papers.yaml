@@ -1,5 +1,15 @@
 papers:
-    - title: "Tensor Variable Elimination for Plated Factor Graphs "
+     - title: "Unsupervised Recurrent Neural Network Grammars"
+      authors: Yoon Kim, Alexander Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
+      conference: NAACL 2019
+
+     - title: "Avoiding Latent Variable Collapse With Generative Skip Models"
+      authors: Adji B. Dieng, Yoon Kim, Alexander M. Rush, David M. Blei
+      conference: AISTATS 2019
+      pdf: https://arxiv.org/pdf/1807.04863.pdf
+      image: /images/skipvae.png
+
+    - title: "Tensor Variable Elimination for Plated Factor Graphs"
       authors: Fritz Obermeyer, Eli Bingham, Martin Jankowiak, Justin Chiu, Neeraj Pradhan, Alexander Rush, Noah Goodman
       conference: ArXiv Preprint
       pdf: https://arxiv.org/pdf/1902.03210.pdf
