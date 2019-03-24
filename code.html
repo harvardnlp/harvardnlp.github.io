@@ -14,10 +14,8 @@ show: 1
 
 
 <!-- <h3>Projects</h3> -->
-
-{% for project in site.data.code.code %}
-
 <table>
+{% for project in site.data.code.code %}
   <tr><td style="padding:10px">
 {% if project.image %}<a class="paper" href="{{project.link}}"><img width="200px" src="{{project.image}}"> </a>{% endif %}
 </td><td style="padding:10px">
