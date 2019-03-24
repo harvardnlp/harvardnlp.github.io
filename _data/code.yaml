@@ -1,9 +1,20 @@
 code:
+    - link: http://nlp.seas.harvard.edu/NamedTensor
+      title: Tensor Considered Harmful
+      abstract: extend PyTorch tensor with named dimensions
+      image: /images/namedtensor.png
+      authors:  Alexander M. Rush
+
+    - link: http://gltr.io/dist/index.html
+      title: Giant Language model Test Room
+      abstract: detect whether a text could be real or fake
+      image: /images/gltr.png
+      authors:  Hendrik Strobelt, Sebastian Gehrmann, Alexander M. Rush
     - link: https://github.com/justinchiu/sentclass
       title: Tensor Variable Elimination for Plated Factor Graphs
       abstract: efficient tensor algebrain graphs with plates of variables
       image: /images/tensorelimination.png
-      authors: Fritz Obermeyer, Eli Bingham, Martin Jankowiak, Justin Chiu, Neeraj Pradhan, Alexander Rush, Noah Goodman
+      authors: Fritz Obermeyer, Eli Bingham, Martin Jankowiak, Justin Chiu, Neeraj Pradhan, Alexander M. Rush, Noah Goodman
       
     - link: https://github.com/harvardnlp/TextFlow
       title: Latent Normalizing Flows for Discrete Sequences
