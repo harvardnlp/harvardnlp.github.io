@@ -1,9 +1,9 @@
 papers:
-     - title: "Unsupervised Recurrent Neural Network Grammars"
+    - title: "Unsupervised Recurrent Neural Network Grammars"
       authors: Yoon Kim, Alexander Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
       conference: NAACL 2019
 
-     - title: "Avoiding Latent Variable Collapse With Generative Skip Models"
+    - title: "Avoiding Latent Variable Collapse With Generative Skip Models"
       authors: Adji B. Dieng, Yoon Kim, Alexander M. Rush, David M. Blei
       conference: AISTATS 2019
       pdf: https://arxiv.org/pdf/1807.04863.pdf
