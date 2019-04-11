@@ -1,6 +1,8 @@
 papers:
     - title: "Unsupervised Recurrent Neural Network Grammars"
       authors: Yoon Kim, Alexander Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
+      pdf: https://arxiv.org/pdf/1904.03746.pdf
+      code: https://github.com/harvardnlp/urnng
       conference: NAACL 2019
 
     - title: "Avoiding Latent Variable Collapse With Generative Skip Models"
@@ -36,6 +38,7 @@ papers:
     - title: "Learning Neural Templates for Text Generation"
       authors: Sam Wiseman, Alexander Rush
       conference: EMNLP 2018
+      code: https://github.com/harvardnlp/neural-template-gen
       pdf : https://arxiv.org/abs/1808.10122
       image: /images/template.png
 
