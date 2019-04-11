@@ -1,6 +1,6 @@
 papers:
     - title: "Unsupervised Recurrent Neural Network Grammars"
-      authors: Yoon Kim, Alexander Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
+      authors: Yoon Kim, Alexander M. Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
       pdf: https://arxiv.org/pdf/1904.03746.pdf
       code: https://github.com/harvardnlp/urnng
       image: /images/urnng.png
@@ -37,7 +37,7 @@ papers:
       code: https://github.com/harvardnlp/var-attn
       image: /images/VariationalAttention.png
     - title: "Learning Neural Templates for Text Generation"
-      authors: Sam Wiseman, Alexander Rush
+      authors: Sam Wiseman, Stuart M. Shieber, Alexander Rush
       conference: EMNLP 2018
       code: https://github.com/harvardnlp/neural-template-gen
       pdf : https://arxiv.org/abs/1808.10122
