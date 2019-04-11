@@ -3,6 +3,7 @@ papers:
       authors: Yoon Kim, Alexander Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
       pdf: https://arxiv.org/pdf/1904.03746.pdf
       code: https://github.com/harvardnlp/urnng
+      image: /images/urnng.png
       conference: NAACL 2019
 
     - title: "Avoiding Latent Variable Collapse With Generative Skip Models"
