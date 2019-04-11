@@ -1,4 +1,14 @@
 code:
+    - link:https://github.com/harvardnlp/urnng
+      title: Unsupervised Recurrent Neural Network Grammars
+      authors: Yoon Kim, Alexander Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
+      abstract: unsupervised learning of recurrent neural network grammars
+      image: /images/urnng.png
+    - link: https://github.com/harvardnlp/neural-template-gen
+      title: "Learning Neural Templates for Text Generation"
+      authors: Sam Wiseman, Alexander Rush
+      conference: EMNLP 2018
+      image: /images/template.png
     - link: http://nlp.seas.harvard.edu/NamedTensor
       title: Tensor Considered Harmful
       abstract: extend PyTorch tensor with named dimensions
