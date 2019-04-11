@@ -5,9 +5,9 @@ code:
       abstract: unsupervised learning of recurrent neural network grammars
       image: /images/urnng.png
     - link: https://github.com/harvardnlp/neural-template-gen
-      title: "Learning Neural Templates for Text Generation"
+      title: Learning Neural Templates for Text Generation
       authors: Sam Wiseman, Alexander Rush
-      conference: EMNLP 2018
+      abstract: neural templates for text generation
       image: /images/template.png
     - link: http://nlp.seas.harvard.edu/NamedTensor
       title: Tensor Considered Harmful
