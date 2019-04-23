@@ -14,13 +14,13 @@ papers:
 
     - title: "Tensor Variable Elimination for Plated Factor Graphs"
       authors: Fritz Obermeyer, Eli Bingham, Martin Jankowiak, Justin Chiu, Neeraj Pradhan, Alexander Rush, Noah Goodman
-      conference: ArXiv Preprint
+      conference: ICML 2019
       pdf: https://arxiv.org/pdf/1902.03210.pdf
       code: https://github.com/justinchiu/sentclass
       image: /images/tensorelimination.png
     - title: "Latent Normalizing Flows for Discrete Sequences"
       authors:  Zachary M. Ziegler, Alexander M. Rush
-      conference: ArXiv Preprint
+      conference: ICML 2019
       pdf: https://arxiv.org/pdf/1901.10548
       code: https://github.com/harvardnlp/TextFlow
       image: /images/textflow.png
