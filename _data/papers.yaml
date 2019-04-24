@@ -30,6 +30,14 @@ papers:
       pdf: https://github.com/harvardnlp/DeepLatentNLP/raw/master/tutorial_deep_latent.pdf
       code: http://nlp.seas.harvard.edu/latent-nlp-tutorial.html
       image: http://nlp.seas.harvard.edu/images/vae.png
+      
+    - title: "End-to-End Content and Plan Selection for Data-to-Text Generation"
+      authors: Sebastian Gehrmann, Falcon Z. Dai, Henry Elder, Alexander M. Rush
+      conference: INLG 2018
+      pdf: https://arxiv.org/pdf/1810.04700
+      code: https://github.com/sebastianGehrmann/diverse_ensembling
+      image: /images/diverse_ensembling.png
+      
     - title: "Latent Alignment and Variational Attention"
       authors: Yuntian Deng*, Yoon Kim*, Justin Chiu, Demi Guo, Alexander M. Rush
       conference: NIPS 2018
@@ -52,12 +60,12 @@ papers:
     - title: "Training for Diversity in Image Paragraph Captioning"
       authors: Luke Melas-Kyriazi, George Han, Alexander Rush
       conference: EMNLP 2018 (Short)
-      pdf:
+      pdf: https://www.aclweb.org/anthology/D18-1084
       image: /images/paracap.png
     - title: "Entity Tracking Improves Cloze-style Reading Comprehension"
       authors: Luong Hoang, Sam Wiseman, Alexander Rush
       conference: EMNLP 2018 (Short)
-      pdf:
+      pdf: https://www.aclweb.org/anthology/D18-1130
       image: /images/lambada.png
 
     - title: "Seq2Seq-Vis: A Visual Debugging Tool for Sequence-to-Sequence Models "
