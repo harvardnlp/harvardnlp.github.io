@@ -37,7 +37,11 @@ code:
       abstract: Inference in deep latent variable models.
       image: http://nlp.seas.harvard.edu/images/vae.png
       authors: Yoon Kim, Sam Wiseman, Alexander M. Rush
-      
+    - link: https://github.com/sebastianGehrmann/diverse_ensembling
+      title: End-to-End Content and Plan Selection for Data-to-Text Generation
+      authors: Sebastian Gehrmann, Falcon Z. Dai, Henry Elder, Alexander M. Rush
+      abstract: a training method based on diverse ensembling
+      image: /images/diverse_ensembling.png
     - link: https://github.com/harvardnlp/var-attn
       title: Variational Attention
       abstract: fast training for latent var. attention (e.g. hard attention) with accuracy like soft attention
