@@ -1,4 +1,10 @@
 papers:
+    - title: "Neural Linguistic Steganography"
+      authors: Zachary M. Ziegler*, Yuntian Deng*, Alexander M. Rush
+      pdf: https://github.com/harvardnlp/NeuralSteganography
+      code: https://github.com/harvardnlp/NeuralSteganography
+      image: /images/steganography.png
+      conference: EMNLP 2019
     - title: "Unsupervised Recurrent Neural Network Grammars"
       authors: Yoon Kim, Alexander M. Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
       pdf: https://arxiv.org/pdf/1904.03746.pdf
