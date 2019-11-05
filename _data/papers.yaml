@@ -5,6 +5,7 @@ papers:
       code: https://github.com/harvardnlp/NeuralSteganography
       image: /images/steganography.png
       conference: EMNLP 2019
+      slides: https://docs.google.com/presentation/d/11UKUrJYoK5BH0qaC7MV1t74Ckj7vD7SHaT8UZCj3J4g/edit?usp=sharing
     - title: "Unsupervised Recurrent Neural Network Grammars"
       authors: Yoon Kim, Alexander M. Rush, Lei Yu, Adhiguna Kuncoro, Chris Dyer, Gábor Melis
       pdf: https://arxiv.org/pdf/1904.03746.pdf
