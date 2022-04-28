@@ -13,6 +13,8 @@ Image(filename='images/aiayn.png')
 {% endhighlight %}
 
 
+**There is now a [new version](http://harvardnlp.github.io/annotated-transformer) of this blog post updated for modern PyTorch.** 
+
 
  
 ![png]({{ BASE_PATH }}/images/the-annotated-transformer_0_0.png) 
