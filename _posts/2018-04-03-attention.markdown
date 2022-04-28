@@ -7,13 +7,18 @@ tags:
     - notebook
 ---
 
+**----------------------**
+
+
+**There is now a [new version](http://harvardnlp.github.io/annotated-transformer) of this blog post updated for modern PyTorch.** 
+
+**----------------------**
+
+
 {% highlight python %}
 from IPython.display import Image
 Image(filename='images/aiayn.png')
 {% endhighlight %}
-
-
-**There is now a [new version](http://harvardnlp.github.io/annotated-transformer) of this blog post updated for modern PyTorch.** 
 
 
  
